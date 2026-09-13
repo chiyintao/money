@@ -487,6 +487,30 @@ def manage_open_position(runtime, symbol, price, now_ms=None):
             'reason': decision['reason']}
 
 
+def _plan_for(runtime, signal):
+    """The plan, and the reason there is none.
+
+    The reason is recorded on the signal so a decision the edge gate approved and the
+    plan gate then dropped leaves a trace. Without it the audit trail showed an approved
+    direction and no order, and nothing to explain the gap between them.
+    """
+    planner = getattr(runtime.decisions, "plan_or_reason", None)
+    if planner is None:
+        return runtime.decisions.plan(signal), "ok"
+    try:
+        plan, reason = planner(signal)
+    except Exception as exc:
+        return None, "plan_failed:%s" % type(exc).__name__
+    if plan is None:
+        # Appended once per distinct reason, not once per evaluation. The signal is
+        # cached per bar and re-read on every tick, so a plain append grew the list
+        # without bound: 200 recorded decisions carried fifty thousand entries.
+        codes = signal.setdefault("reason_codes", [])
+        if str(reason) not in codes:
+            codes.append(str(reason))
+    return plan, reason
+
+
 async def evaluate_tick(runtime, symbol, price):
     """Per-trade decision path; throttled per symbol."""
     settings = runtime.settings
@@ -512,7 +536,7 @@ async def evaluate_tick(runtime, symbol, price):
     session_id = session.session_id
     signal = await runtime.decisions.signal(symbol, rows, price)
     observe_features(runtime, signal)
-    candidate = runtime.decisions.plan(signal)
+    candidate, plan_reason = _plan_for(runtime, signal)
     state.last_tick_strategy[symbol] = now_ms
     record_signal(runtime, symbol, signal, candidate, 'tick', {'strategy_feed': 'tick'})
     previous = state.per_symbol.get(symbol, {})
@@ -563,7 +587,7 @@ async def evaluate_bar(runtime, symbol, rows):
     session_id = session.session_id
     signal = await runtime.decisions.signal(symbol, decision_rows)
     observe_features(runtime, signal)
-    candidate = runtime.decisions.plan(signal)
+    candidate, plan_reason = _plan_for(runtime, signal)
     state.per_symbol[symbol] = {'bar_time': bar_time, 'at': now_ms,
                                 'side': signal['side'], 'confidence': signal['confidence'],
                                 'candidate': bool(candidate)}

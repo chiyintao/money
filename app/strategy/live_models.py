@@ -1002,12 +1002,26 @@ class ModelDecision:
     # ---------------------------------------------------------------- plan
     def plan(self, signal, entry=None, fee_rate=None, slippage_bps=None):
         """Risk plan for an approved direction; stop geometry matches the rule engine."""
+        return self.plan_or_reason(signal, entry, fee_rate, slippage_bps)[0]
+
+    def plan_or_reason(self, signal, entry=None, fee_rate=None, slippage_bps=None):
+        """The plan, or (None, why) when there is not one.
+
+        `plan` used to return None from four different places without saying which, and
+        every caller treated that as "do nothing". A symbol whose decision had been
+        approved -- reason codes showing ensemble_agrees and no edge refusal -- then
+        produced no order and no record of why, so the audit trail showed an approved
+        direction that silently never traded. The gap is real: the edge gate upstream
+        accepts a predicted move of 2.5 bp while the multiple gate here demands 4.0 bp,
+        and between those two numbers a decision is approved and then dropped. Naming
+        the refusal is what makes that visible instead of looking like nothing happened.
+        """
         if signal.get('side') not in ('LONG', 'SHORT'):
-            return None
+            return None, 'plan_no_direction'
         features = signal.get('features') or {}
         price = finite(entry if entry is not None else features.get('price'))
         if price is None or price <= 0:
-            return None
+            return None, 'plan_no_price'
         atr = finite(features.get('atr')) or 0.0
         # One definition of the round trip, not two. This recomputed it from the taker rate
         # and the spread even when the entry was configured to rest on the book, so the
@@ -1028,24 +1042,24 @@ class ModelDecision:
         policy = self.exit_policy or exit_policy.get_policy()
         levels = exit_policy.plan_levels(policy, price, atr, signal['side'])
         if levels is None:
-            return None
+            return None, 'plan_no_levels'
         distance = levels['stop_distance']
         # The model's own expected move, and the geometry's target, are two different
-        # numbers and the gate has to be about the right one. This compared
-        # `max(geometry_target, model_expected)` against the cost floor -- and because the
+        # numbers and the gate has to be about the right one. This once compared
+        # max(geometry_target, model_expected) against the cost floor -- and because the
         # policy target is essentially always the larger of the two, the gate was measuring
-        # the stop/target ratio, which is a constant, rather than the model's edge, which is
-        # the only thing that varies. It passed unconditionally.
+        # the stop/target ratio, which is a constant, rather than the model's edge, which
+        # is the only thing that varies. It passed unconditionally.
         #
         # Requiring the MODEL's expected move to clear min_edge_multiple round trips is the
         # test the parameter was named for, and it is what makes MIN_EDGE_MULTIPLE an
         # independent gate rather than a restatement of the exit policy.
         model_move = abs(finite(signal.get('expected_return')) or 0.0) * price
-        if model_move < round_trip * self.min_edge_multiple:
-            return None
-        # The target still has to be at least what the model expects, or the plan would
-        # exit before the move it was taken for. It is never allowed below the policy
-        # ratio either, since that would quietly change what the exit policy means.
+        required = round_trip * self.min_edge_multiple
+        if model_move < required:
+            expected_bps = abs(finite(signal.get('expected_return')) or 0.0) * 10000
+            return None, ('plan_edge_below_multiple:%.2fbp<%.2fbp'
+                          % (expected_bps, self.round_trip_cost_pct * self.min_edge_multiple * 10000))
         expected_move = max(levels['target_distance'], model_move)
         side = signal['side']
         return {**signal, 'entry': price,
@@ -1053,9 +1067,8 @@ class ModelDecision:
                 'take_profit': price + expected_move if side == 'LONG' else price - expected_move,
                 'expected_cost': round_trip, 'expected_edge': expected_move - round_trip,
                 'stop_distance': distance, 'target_distance': expected_move,
-                'exit_policy': policy.name}
+                'exit_policy': policy.name}, 'ok'
 
-    # -------------------------------------------------------------- plumbing
     def invalidate(self, symbol, bar_time):
         self._cache.pop((symbol, int(bar_time or 0)), None)
 
