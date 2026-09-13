@@ -1,0 +1,7 @@
+-r requirements.txt
+lightgbm==4.7.0
+catboost==1.2.10
+chronos-forecasting==2.3.2
+transformers==4.51.3
+huggingface-hub==0.36.2
+pandas>=2.2,<3

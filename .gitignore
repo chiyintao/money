@@ -1,0 +1,36 @@
+# Runtime state and credentials. The deployed values live in .env; the portable
+# template is .env.example.
+.env
+
+# Everything the service writes while it runs. None of it is source.
+logs/
+data/*.log
+
+# The research database: candles, derivatives, funding. Large, and rebuildable
+# from the archive backfill -- but slow to rebuild, which is why it is not
+# deleted for you. See MOVE.md for whether to carry it.
+data/research.sqlite3
+data/research.sqlite3-wal
+data/research.sqlite3-shm
+
+# Built datasets. Regenerable in about two minutes per tier now that the builder
+# runs one process per symbol, so they are the first thing to drop before moving.
+data/research_v3/training_dataset*.jsonl
+data/research_v3/training_dataset*.profile.json
+
+# Downloaded archives and model weights.
+data/archive_cache/
+data/pretrained/
+data/wheels/
+
+# caches and scratch
+.pytest_cache/
+__pycache__/
+*.pyc
+catboost_info/
+data/_*.json
+data/ui_checks/
+
+# Contract specs and per-run state.
+data/contract_specs.json
+data/backfill_state/

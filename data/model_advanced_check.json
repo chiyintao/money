@@ -1,0 +1,78 @@
+{
+  "status": "ok",
+  "model": "gradient_boosted_stumps",
+  "model_version": "gbst-v1",
+  "rows": 80,
+  "features": [
+    "ema20",
+    "ema50",
+    "rsi",
+    "atr",
+    "return_10",
+    "volume"
+  ],
+  "train": {
+    "rows": 56,
+    "mae": 0.007486369834710745,
+    "directional_accuracy_pct": 50.0,
+    "mean_net_return": 0.002099999999999999,
+    "total_net_return": 0.11759999999999995,
+    "cost_bps": 4
+  },
+  "validation": {
+    "rows": 12,
+    "mae": 0.007500000000000001,
+    "directional_accuracy_pct": 50.0,
+    "mean_net_return": 0.0021000000000000007,
+    "total_net_return": 0.025200000000000007,
+    "cost_bps": 4
+  },
+  "test": {
+    "rows": 12,
+    "mae": 0.007500000000000001,
+    "directional_accuracy_pct": 50.0,
+    "mean_net_return": 0.0021000000000000007,
+    "total_net_return": 0.025200000000000007,
+    "cost_bps": 4
+  },
+  "normalization": {
+    "mean": [
+      28.5,
+      27.5,
+      50.0,
+      1.0,
+      0.010000000000000005,
+      37.5
+    ],
+    "scale": [
+      16.163229875244614,
+      16.163229875244614,
+      1.0,
+      1.0,
+      5.204170427930421e-18,
+      16.163229875244614
+    ]
+  },
+  "parameters": {
+    "rounds": 2,
+    "learning_rate": 0.05,
+    "max_depth": 1,
+    "cost_bps": 4
+  },
+  "stumps": [
+    [
+      0.0030927272727272735,
+      0,
+      1.6395237959578268,
+      -0.00013636363636363577,
+      0.0075000000000000015
+    ],
+    [
+      0.0030872472667167546,
+      0,
+      -1.7013926184468013,
+      -0.007493181818181817,
+      0.0001362396694214894
+    ]
+  ]
+}

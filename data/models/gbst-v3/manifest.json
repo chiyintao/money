@@ -1,0 +1,88 @@
+{
+  "version": "gbst-v3",
+  "created_at": 1789211232622,
+  "sha256": "fb562412501120236858f4c32884fc2e53d6568d971eb4e274a10f1dda157df1",
+  "metrics": {
+    "test": {
+      "rows": 237294,
+      "mae": 0.004375194999365442,
+      "directional_accuracy_pct": 49.53306868273113,
+      "mean_net_return": 0.0,
+      "sum_sample_net_return": 0.0,
+      "evaluation": "independent_overlapping_samples_not_portfolio",
+      "cost_bps": 12.0
+    },
+    "calibration": {
+      "fitted": true,
+      "method": "isotonic",
+      "rows": 166105,
+      "held_out_rows": 71189,
+      "score_scale": 10.0,
+      "base_rate": 0.4927165713804099,
+      "ece_before": 0.006321829909039234,
+      "ece_after": 0.49271557138040994,
+      "brier_before": 0.2499869172010396,
+      "brier_after": 0.49271558594764875,
+      "improved": false
+    },
+    "portfolio_oos": {
+      "costs_included": true,
+      "trades": 0,
+      "net_return": 0.0,
+      "max_drawdown": 0.0,
+      "status": "unavailable",
+      "reason": "too_few_symbols_with_decisions:0"
+    }
+  },
+  "dataset": {
+    "path": "data/research_v3/training_dataset_mainstream.jsonl",
+    "rows": 1578098
+  },
+  "feature_version": "features-v4",
+  "features": [
+    "ema20_gap",
+    "ema50_gap",
+    "rsi",
+    "atr_pct",
+    "return_10",
+    "volume_ratio",
+    "funding_rate",
+    "funding_z",
+    "funding_carry_24h",
+    "mark_basis",
+    "taker_imbalance",
+    "taker_imbalance_z",
+    "trade_count_z",
+    "avg_trade_size_z",
+    "quote_volume_ratio",
+    "oi_change_5m",
+    "oi_change_1h",
+    "oi_z",
+    "oi_price_quadrant",
+    "long_short_ratio_z",
+    "smart_retail_gap",
+    "global_long_short_ratio",
+    "taker_buy_sell_ratio_z",
+    "flow_delta_ratio",
+    "flow_delta_z",
+    "flow_trade_intensity_z",
+    "flow_largest_trade_z",
+    "liquidation_pressure",
+    "liquidation_share",
+    "liquidation_z"
+  ],
+  "model_version": "gbst-v3",
+  "split": {
+    "ready": true,
+    "reason": null,
+    "train": 1103668,
+    "validation": 237136,
+    "test": 237294,
+    "validation_start": 1779711899999,
+    "test_start": 1784457899999,
+    "purged": 269,
+    "label_intervals_verified": true
+  },
+  "status": "candidate",
+  "calibrated": true
+}

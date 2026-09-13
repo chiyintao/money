@@ -1,0 +1,10 @@
+{
+ "klines_done": [
+  "BTCUSDT:2025-09",
+  "BTCUSDT:2025-10"
+ ],
+ "metrics_done": [],
+ "unresolved": {
+  "BTCUSDT:2025-11": "absent"
+ }
+}

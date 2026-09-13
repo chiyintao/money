@@ -1,0 +1,30 @@
+.main{min-width:0;max-width:1800px}.panel{border-radius:0;box-shadow:none}.page-head h1{font-size:24px}.ops-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}.ops-summary span,.health-grid span{display:block;color:var(--muted);margin-bottom:10px}.ops-summary strong{font-size:20px}.health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}.health-grid>div{padding:24px 16px;border-bottom:1px solid var(--line);min-width:0}.health-grid strong{display:block;font-size:14px;overflow-wrap:anywhere;font-weight:500}#modelMessage{color:var(--red);padding:8px 0}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}.table-wrap{max-width:100%;overflow:auto}th{white-space:nowrap}.side-nav button{min-height:44px}.status-badge{white-space:nowrap}.view{min-width:0}@media(max-width:900px){.main{padding:20px 16px}.workspace{grid-template-columns:1fr}.sidebar{position:static;height:auto;min-height:0;padding:8px;border-right:0;border-bottom:1px solid var(--line)}.sidebar .account-label,.sidebar .account-id,.sidebar .feed-state{display:none}.side-nav{display:flex;overflow-x:auto;gap:4px}.side-nav button{white-space:nowrap;flex-shrink:0;width:auto}.global-nav{display:none}.health-grid,.ops-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.brand{width:auto;font-size:14px}.global-header{padding:0 12px}.header-tools{font-size:11px}.page-head{flex-wrap:wrap;gap:10px}.health-grid{grid-template-columns:1fr}.ops-summary strong{font-size:17px}.hero-value{font-size:30px}.session-config{display:grid;grid-template-columns:1fr 1fr}.session-actions{flex-wrap:wrap}.trade-drawer{width:100%;max-width:100%}}
+/* Risk profile panel: the aggressiveness setting that sizes every entry. */
+.risk-profile-stats{margin-top:10px}
+.risk-profile-actions{display:flex;gap:8px;margin-top:10px}
+.risk-profile-actions select{flex:1;min-width:0}
+.risk-profile-actions button{white-space:nowrap}
+#activeProfile{color:var(--yellow)}
+/* Live risk switch, kept in the session bar where sessions are configured. */
+.session-risk-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 12px;margin-top:8px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel2)}
+.session-risk-bar .risk-profile-current{color:var(--muted)}
+.session-risk-bar .risk-profile-current strong{color:var(--yellow);margin-left:6px}
+.session-risk-bar .risk-profile-readout{color:var(--muted);font-size:12px}
+.session-risk-bar .risk-profile-live{display:flex;align-items:center;gap:6px;color:var(--muted);margin-left:auto}
+.session-risk-bar select{min-width:220px}
+/* Narrow screens: let the switch wrap instead of forcing a 613px label into 370px. */
+@media(max-width:900px){
+.session-risk-bar{flex-direction:column;align-items:stretch;gap:8px}
+.session-risk-bar .risk-profile-live{margin-left:0;justify-content:space-between}
+.session-risk-bar select{min-width:0;flex:1}
+.session-risk-bar button{width:100%}
+}
+/* The readout is one long unbreakable string, so on narrow screens it forced the bar
+   to 613px inside a 370px viewport. Let it wrap and shrink. */
+.session-risk-bar .risk-profile-readout{min-width:0;overflow-wrap:anywhere}
+@media(max-width:900px){
+.session-risk-bar .risk-profile-current,
+.session-risk-bar .risk-profile-readout{width:100%}
+}
+/* Exit-policy row: same shape as the risk row so the two read as one control block. */
+.session-risk-bar + .session-risk-bar{margin-top:6px}
