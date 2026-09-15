@@ -152,7 +152,7 @@ def test_reconciliation_reports_a_refused_transition():
     It was neither refused nor counted: the status was written regardless, so nothing
     downstream could tell that the order had been moved somewhere the lifecycle forbids.
     """
-    from app.backtest.account_reconcile import reconcile
+    from app.ops.account_reconcile import reconcile
 
     class Store:
         def orders(self, active_only=False):
@@ -187,7 +187,7 @@ def test_reconciliation_reports_a_refused_transition():
 
 
 def test_a_clean_book_reports_no_refusals():
-    from app.backtest.account_reconcile import reconcile
+    from app.ops.account_reconcile import reconcile
 
     class Store:
         def orders(self, active_only=False):

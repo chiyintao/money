@@ -15,6 +15,31 @@ from .fit_model import FEATURES, load
 from .labels import sample_weights
 
 
+def _checked_trials(trials):
+    """The search size behind a candidate, as a positive integer.
+
+    Rejecting None is the whole point of this function. The parameter previously defaulted
+    to 1, and 1 is not a neutral default: it tells the deflated Sharpe that nothing was
+    selected, so the benchmark it subtracts is zero and there is no correction at all.
+    Every candidate trained through the ordinary path therefore carried an undeflated
+    Sharpe wearing a deflated label.
+    """
+    if trials is None:
+        raise ValueError('trials_required')
+    if isinstance(trials, bool):
+        # bool is an int subclass, so True would otherwise be accepted as one trial.
+        raise ValueError('invalid_trials')
+    try:
+        number = float(trials)
+    except (TypeError, ValueError):
+        raise ValueError('invalid_trials')
+    # A fractional count is a caller mistake rather than something to round: silently
+    # truncating 2.5 to 2 would change the deflation by an amount nobody chose.
+    if not number.is_integer() or number < 1:
+        raise ValueError('invalid_trials')
+    return int(number)
+
+
 def label_weights(rows):
     """Per-row fit weights from label overlap, or None when the rows carry no intervals.
 
@@ -157,9 +182,30 @@ def _gpu_requested():
 
 
 def train_tabular(rows, backend='lightgbm', output_root='data/candidates', rounds=200,
-                  cost_bps=12, trials=1):
+                  cost_bps=12, trials=None, search_note=''):
+    """Fit one candidate and write its manifest.
+
+    `trials` is how many configurations were compared before this one was kept, and it is
+    the input that decides whether the reported Sharpe means anything. It used to default to
+    1, which silently switched the deflation off: `expected_max_sharpe` returns 0 for a
+    single trial, so the "deflated" Sharpe was the raw one and the promotion signal was
+    whatever the unadjusted ratio happened to be.
+
+    The consequence was measured on the stored candidates. One reports `deflated_sharpe`
+    0.999959 and `survives=True` at trials=1, while its own verdict in the same manifest
+    reads "out-of-sample edge is negative (-10.33 bp): this would lose money". At the search
+    size that actually produced it -- the horizon, edge multiple and stop width were all
+    compared -- the same model stops surviving somewhere around 100 trials. The number moved
+    from a pass to a fail on an argument nobody was passing.
+
+    So it is required now, and it is validated. `None` is an error rather than a convenient
+    one: a caller that does not know how many configurations it tried does not know whether
+    its Sharpe is real, and the honest response is to say so instead of reporting the
+    flattering special case of a single draw.
+    """
     if backend not in ('lightgbm', 'catboost') or rounds < 1 or not np.isfinite(cost_bps) or cost_bps < 0:
         raise ValueError('invalid_model_parameters')
+    trials = _checked_trials(trials)
     train, valid, test, split = chronological_split(rows)
     if not split['ready'] or not split.get('label_intervals_verified'):
         raise ValueError({'reason': 'unverified_training_dataset', 'split': split})
@@ -233,6 +279,9 @@ def train_tabular(rows, backend='lightgbm', output_root='data/candidates', round
                 'parameters': parameters, 'cost_bps': cost_bps, 'metrics': reports,
                 'metrics_by_symbol': by_symbol,
                 'validation': validation,
+                # Written down because the deflated Sharpe is uninterpretable without it,
+                # and because a search whose size is not recorded cannot be audited later.
+                'search': {'trials': trials, 'note': str(search_note or '')},
                 'dataset_rows': len(rows),
                 'dataset_symbols': sorted({r['symbol'] for r in rows}),
                 'model_file': filename, 'sha256': hashlib.sha256((root/filename).read_bytes()).hexdigest(),
@@ -296,5 +345,13 @@ if __name__ == '__main__':
     parser.add_argument('--output-root', default='data/candidates')
     parser.add_argument('--rounds', type=int, default=200)
     parser.add_argument('--cost-bps', type=float, default=12)
+    # Required rather than defaulted, for the reason train_tabular documents: a missing
+    # search size turns the deflated Sharpe into the raw one.
+    parser.add_argument('--trials', type=int, required=True,
+                        help='how many configurations were compared before keeping this one')
+    parser.add_argument('--search-note', default='',
+                        help='what was searched, for the audit trail')
     args = parser.parse_args()
-    print(json.dumps(train_tabular(load(args.dataset), args.backend, args.output_root, args.rounds, args.cost_bps), indent=2))
+    print(json.dumps(train_tabular(load(args.dataset), args.backend, args.output_root,
+                                   args.rounds, args.cost_bps, args.trials, args.search_note),
+                     indent=2))

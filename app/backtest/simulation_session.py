@@ -141,6 +141,19 @@ class SimulationSession:
             'duration_ms':max(0,self.ended_at-self.started_at) if self.started_at else 0,
             'trades_detail':trades,
         }
+        # Carry the configuration with the result. A run whose safety gates were switched
+        # off produces an equity curve indistinguishable from a real one, and the only
+        # thing that ever said otherwise was a comment in .env that nobody reads from the
+        # output. Recording it here means a net figure can always be traced back to the
+        # settings that produced it, in the same artifact.
+        try:
+            from ..core.validation_config import demo_settings
+            demo = demo_settings()
+        except Exception:
+            demo = []
+        summary['demo_switches'] = [
+            {'name': name, 'value': value, 'reason': reason} for name, value, reason in demo]
+        summary['is_demo_configuration'] = bool(demo)
         self._event("simulation_ended", summary)
         self._persist()
 

@@ -22,6 +22,24 @@ position. At plan time, before anything has moved, both bounds must hold.
 # invalid rather than merely tight. Expressed in bps of entry price.
 MIN_TARGET_BPS = 1.0
 
+# How much reward a plan must carry per unit of risk.
+#
+# Direction and a 1bp target were the only geometric requirements, and they admit plans
+# that cannot work. The trade records contain a SHORT opened at 4.98 with its stop at
+# 5.1918 (425 bp away) and its target at 4.9822 (4.4 bp away): a 1:97 ratio that grosses
+# 4.4 bp against an 8 bp round trip, so even a WINNING touch loses money -- and it fires
+# on the first tick that moves. 36 trades closed within three seconds of opening this way,
+# and 41 inside two minutes.
+#
+# The floor is set where a plan stops being self-evidently absurd, not at a target ratio.
+# The exit policy's own geometry (target_rr = 1.6) is what expresses the intended
+# reward:risk; a gate that duplicated that number would either reject every policy worth
+# running or quietly become the thing that decides the geometry. What this refuses is the
+# tail where the reward is a rounding error against the risk.
+MIN_REWARD_RISK = 0.25
+# The same floor named in basis points, for callers that report ratios as bps.
+MIN_REWARD_RISK_BPS = MIN_REWARD_RISK
+
 
 def _finite(value):
     try:
@@ -70,6 +88,18 @@ def bracket_problem(plan_or_position, entry_key='entry', require_stop=True):
                 return 'missing_stop'
             if stop <= entry:
                 return 'stop_beyond_entry'
+    # And the reward has to be worth the risk being taken. A plan whose target sits a
+    # fraction of its stop away is not a trade, it is a fee donation with a directional
+    # opinion attached: it needs a near-perfect hit rate to break even, and because the
+    # target is close it resolves within seconds of the fill.
+    #
+    # Checked after the direction tests on purpose. "The target is on the losing side" is
+    # the more specific and more serious fault, and it is the reason string operators and
+    # tests already key on; reporting a ratio problem instead would hide it.
+    if require_stop and stop is not None and stop > 0:
+        stop_bps = abs(stop - entry) / entry * 10000.0
+        if stop_bps > 0 and target_bps / stop_bps < MIN_REWARD_RISK:
+            return 'reward_below_risk'
     return None
 
 

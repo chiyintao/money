@@ -160,10 +160,13 @@ def test_the_evidence_reaches_the_candidate_manifest(tmp_path):
     # a model that has the evidence.
     candidate = tmp_path / "lightgbm-abc"
     candidate.mkdir()
+    # "backend" is what makes the evidence attributable: a result produced from one
+    # model's predictions is only evidence about that model, so the manifest has to say
+    # which model it describes.
     (candidate / "manifest.json").write_text(json.dumps({
-        "status": "candidate", "metrics": {"test": {"rows": 100}},
+        "status": "candidate", "backend": "lightgbm", "metrics": {"test": {"rows": 100}},
         "feature_version": "features-v3"}), encoding="utf-8")
-    evidence = {"status": "ok", "costs_included": True, "trades": 40,
+    evidence = {"backend": "lightgbm", "status": "ok", "costs_included": True, "trades": 40,
                 "net_return": 0.02, "max_drawdown": 0.05}
     # Lives on TrainingRunner, which owns the run stages that produce the evidence.
     TrainingRunner._attach_portfolio_evidence(str(candidate), evidence)

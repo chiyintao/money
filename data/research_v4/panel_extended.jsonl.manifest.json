@@ -1,0 +1,318 @@
+{
+ "rows": 23694,
+ "symbols": [
+  "ADAUSDT",
+  "BNBUSDT",
+  "BTCUSDT",
+  "DOGEUSDT",
+  "ETHUSDT",
+  "LINKUSDT",
+  "NEARUSDT",
+  "SOLUSDT",
+  "UNIUSDT",
+  "XRPUSDT",
+  "ZECUSDT"
+ ],
+ "calendar": [
+  -1756,
+  402
+ ],
+ "digest": "2d15fd8d22f95f7d2f58aed8f395f3c9",
+ "origin": "2025-08-06T00:00:00+00:00",
+ "report": {
+  "rows": 23694,
+  "days": 2154,
+  "first_day": -1756,
+  "last_day": 402,
+  "first_date": "2020-10-15",
+  "last_date": "2026-09-12",
+  "symbols": [
+   "ADAUSDT",
+   "BNBUSDT",
+   "BTCUSDT",
+   "DOGEUSDT",
+   "ETHUSDT",
+   "LINKUSDT",
+   "NEARUSDT",
+   "SOLUSDT",
+   "UNIUSDT",
+   "XRPUSDT",
+   "ZECUSDT"
+  ],
+  "rows_per_coin": {
+   "ADAUSDT": 2154,
+   "BNBUSDT": 2154,
+   "BTCUSDT": 2154,
+   "DOGEUSDT": 2154,
+   "ETHUSDT": 2154,
+   "LINKUSDT": 2154,
+   "NEARUSDT": 2154,
+   "SOLUSDT": 2154,
+   "UNIUSDT": 2154,
+   "XRPUSDT": 2154,
+   "ZECUSDT": 2154
+  },
+  "dead_columns": [],
+  "coverage": {
+   "close": {
+    "present_pct": 100.0,
+    "distinct": 21422,
+    "dead": false
+   },
+   "open": {
+    "present_pct": 100.0,
+    "distinct": 21442,
+    "dead": false
+   },
+   "high": {
+    "present_pct": 100.0,
+    "distinct": 21239,
+    "dead": false
+   },
+   "low": {
+    "present_pct": 100.0,
+    "distinct": 20883,
+    "dead": false
+   },
+   "ret_1d": {
+    "present_pct": 100.0,
+    "distinct": 23570,
+    "dead": false
+   },
+   "ret_3d": {
+    "present_pct": 99.99,
+    "distinct": 23614,
+    "dead": false
+   },
+   "ret_7d": {
+    "present_pct": 99.97,
+    "distinct": 23638,
+    "dead": false
+   },
+   "ret_14d": {
+    "present_pct": 99.94,
+    "distinct": 23647,
+    "dead": false
+   },
+   "ret_30d": {
+    "present_pct": 99.86,
+    "distinct": 23636,
+    "dead": false
+   },
+   "ret_1d_prev": {
+    "present_pct": 99.99,
+    "distinct": 23569,
+    "dead": false
+   },
+   "gap_open": {
+    "present_pct": 100.0,
+    "distinct": 12617,
+    "dead": false
+   },
+   "vol_7d": {
+    "present_pct": 99.98,
+    "distinct": 23690,
+    "dead": false
+   },
+   "vol_30d": {
+    "present_pct": 99.86,
+    "distinct": 23661,
+    "dead": false
+   },
+   "vol_ratio": {
+    "present_pct": 99.86,
+    "distinct": 23661,
+    "dead": false
+   },
+   "atr_pct": {
+    "present_pct": 99.97,
+    "distinct": 23688,
+    "dead": false
+   },
+   "funding_daily": {
+    "present_pct": 12.37,
+    "distinct": 2229,
+    "dead": false
+   },
+   "funding_7d": {
+    "present_pct": 12.12,
+    "distinct": 2622,
+    "dead": false
+   },
+   "funding_30d": {
+    "present_pct": 11.34,
+    "distinct": 2507,
+    "dead": false
+   },
+   "funding_z": {
+    "present_pct": 11.34,
+    "distinct": 2578,
+    "dead": false
+   },
+   "oi": {
+    "present_pct": 12.43,
+    "distinct": 2946,
+    "dead": false
+   },
+   "oi_value": {
+    "present_pct": 12.43,
+    "distinct": 2946,
+    "dead": false
+   },
+   "oi_chg_1d": {
+    "present_pct": 12.39,
+    "distinct": 2936,
+    "dead": false
+   },
+   "oi_chg_7d": {
+    "present_pct": 12.19,
+    "distinct": 2888,
+    "dead": false
+   },
+   "oi_z": {
+    "present_pct": 11.45,
+    "distinct": 2712,
+    "dead": false
+   },
+   "oi_notional": {
+    "present_pct": 12.13,
+    "distinct": 2874,
+    "dead": false
+   },
+   "taker_daily": {
+    "present_pct": 100.0,
+    "distinct": 23623,
+    "dead": false
+   },
+   "taker_7d": {
+    "present_pct": 99.97,
+    "distinct": 23665,
+    "dead": false
+   },
+   "toptrader_ls": {
+    "present_pct": 12.43,
+    "distinct": 2945,
+    "dead": false
+   },
+   "global_ls": {
+    "present_pct": 12.43,
+    "distinct": 2946,
+    "dead": false
+   },
+   "ls_z": {
+    "present_pct": 11.45,
+    "distinct": 2712,
+    "dead": false
+   },
+   "ls_spread": {
+    "present_pct": 12.43,
+    "distinct": 2945,
+    "dead": false
+   },
+   "range_pct": {
+    "present_pct": 100.0,
+    "distinct": 23556,
+    "dead": false
+   },
+   "range_z": {
+    "present_pct": 99.87,
+    "distinct": 23650,
+    "dead": false
+   },
+   "close_pos": {
+    "present_pct": 100.0,
+    "distinct": 21453,
+    "dead": false
+   },
+   "buy_vol_share": {
+    "present_pct": 100.0,
+    "distinct": 23623,
+    "dead": false
+   },
+   "trades": {
+    "present_pct": 100.0,
+    "distinct": 23516,
+    "dead": false
+   },
+   "avg_trade_size": {
+    "present_pct": 99.7,
+    "distinct": 23622,
+    "dead": false
+   },
+   "trades_z": {
+    "present_pct": 99.87,
+    "distinct": 23654,
+    "dead": false
+   },
+   "liquidation_intensity": {
+    "present_pct": 0.03,
+    "distinct": 6,
+    "dead": false
+   },
+   "mkt_ret_1d": {
+    "present_pct": 100.0,
+    "distinct": 2154,
+    "dead": false
+   },
+   "mkt_ret_7d": {
+    "present_pct": 99.81,
+    "distinct": 2150,
+    "dead": false
+   },
+   "mkt_vol_30d": {
+    "present_pct": 99.35,
+    "distinct": 2140,
+    "dead": false
+   }
+  },
+  "label_coverage": {
+   "fwd_1d": 100.0,
+   "fwd_3d": 99.94,
+   "fwd_7d": 99.76,
+   "fwd_max_1d": 99.89,
+   "fwd_max_3d": 99.91,
+   "fwd_max_7d": 99.76,
+   "fwd_min_1d": 99.89,
+   "fwd_min_3d": 99.91,
+   "fwd_min_7d": 99.76
+  },
+  "digest": "2d15fd8d22f95f7d2f58aed8f395f3c9"
+ },
+ "families": {
+  "carry": {
+   "columns": 4,
+   "min_present_pct": 11.34,
+   "dead": []
+  },
+  "flow": {
+   "columns": 9,
+   "min_present_pct": 0.03,
+   "dead": []
+  },
+  "market": {
+   "columns": 3,
+   "min_present_pct": 99.35,
+   "dead": []
+  },
+  "momentum": {
+   "columns": 5,
+   "min_present_pct": 99.86,
+   "dead": []
+  },
+  "positioning": {
+   "columns": 5,
+   "min_present_pct": 11.45,
+   "dead": []
+  },
+  "trend": {
+   "columns": 6,
+   "min_present_pct": 99.81,
+   "dead": []
+  },
+  "volatility": {
+   "columns": 6,
+   "min_present_pct": 99.86,
+   "dead": []
+  }
+ }
+}

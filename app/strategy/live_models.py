@@ -641,7 +641,7 @@ class ModelDecision:
 
     def __init__(self, runtime, fee_rate=.0004, slippage_bps=2.0, min_edge_bps=0.5, min_agreement=0.6,
                  min_edge_multiple=1.0, rule_fallback=False, ood_policy='block', chronos_timeout_ms=3000,
-                 maker_fee_rate=0.0002, entry_order_type='market',
+                 maker_fee_rate=0.0002, entry_order_type='market', exit_order_type=None,
                  cache_size=512, recent_size=12, feature_source=None, degraded_blocks=True,
                  require_promoted=False, max_model_age_ms=0):
         self.runtime = runtime
@@ -664,9 +664,24 @@ class ModelDecision:
         self.fee_rate = float(fee_rate)
         self.maker_fee_rate = float(maker_fee_rate)
         self.slippage_bps = float(slippage_bps)
-        # Whether entries rest on the book. It decides the round-trip cost the gate is
-        # measured against, so it has to reach this object rather than only the broker.
+        # Whether each leg rests on the book. They decide the round-trip cost the gate is
+        # measured against, so both have to reach this object rather than only the broker.
+        #
+        # The exit leg was missing, and the omission was expensive in one direction: a
+        # resting entry was priced as `2 x maker`, which is the cost of a round trip only
+        # if the position also LEAVES as a maker. Nothing in the system closes passively --
+        # the stop, the target, the time stop and the manual close all send a market order
+        # -- so the account paid taker plus slippage on a leg the gate had priced at
+        # nothing, and cleared trades that could not pay for themselves.
+        #
+        # Default None means "whatever the entry does", which is the pre-existing answer:
+        # callers that know only about the entry keep the cost they were sized against,
+        # and only a caller that has actually chosen a passive exit asks for the cheaper
+        # number. `market` is the honest value for this system's real exit path and is what
+        # the service passes.
         self.maker_entry = str(entry_order_type or 'market').strip().lower() == 'limit'
+        resolved_exit = entry_order_type if exit_order_type is None else exit_order_type
+        self.maker_exit = str(resolved_exit or 'market').strip().lower() == 'limit'
         self.min_edge_bps = float(min_edge_bps)
         self.min_agreement = float(min_agreement)
         self.min_edge_multiple = float(min_edge_multiple)
@@ -683,21 +698,43 @@ class ModelDecision:
         self._recent_size = int(recent_size)
         self._cache = {}
 
+    def cost_breakdown(self):
+        """The round trip split by leg and by kind, in fractions of notional.
+
+        Reported per leg because "the trade did not clear its costs" is not actionable
+        until it says which leg consumed the edge. A resting entry that leaves at market
+        is dominated by the exit, and no amount of entry-side optimisation moves it.
+
+        Slippage is charged to a leg exactly when that leg crosses the spread. A passive
+        leg rests at the touch and pays none; a market leg pays the configured spread
+        estimate on that side. Fees are the taker rate unless the leg actually rests.
+        """
+        spread = self.slippage_bps / 10000
+        return {
+            'entry_fee_pct': self.maker_fee_rate if self.maker_entry else self.fee_rate,
+            'entry_slippage_pct': 0.0 if self.maker_entry else spread,
+            'exit_fee_pct': self.maker_fee_rate if self.maker_exit else self.fee_rate,
+            'exit_slippage_pct': 0.0 if self.maker_exit else spread,
+        }
+
     @property
     def round_trip_cost_pct(self):
         """What one round trip actually costs under the configured execution mode.
 
-        A market entry crosses the spread and pays the taker rate on both legs:
-        2 x taker + 2 x half-spread. A passive entry rests on the book, is charged the
-        maker rate when it fills, and never pays the spread, so the same round trip is
-        2 x maker. The gate, the labels and the training cost were all priced from one
-        number that assumed the first mode, which is why a 12 bp bar sat above every
-        prediction the model makes -- the median is about 1 bp and the 90th percentile
-        about 4 bp. Pricing the mode that is actually configured is what makes the
-        comparison meaningful; it does not change what the market does."""
-        if self.maker_entry:
-            return 2 * self.maker_fee_rate
-        return 2 * self.fee_rate + 2 * self.slippage_bps / 10000
+        Each leg is priced by the role it trades in: taker fee plus half-spread when it
+        crosses, maker fee alone when it rests. A market entry that exits at market is
+        2 x taker + 2 x spread. A resting entry costs maker on the way in and -- because
+        this system never closes passively -- taker plus spread on the way out.
+
+        That last case is the one that was wrong. The gate priced a resting entry as
+        `2 x maker`, a round trip that only exists if the exit also rests, so on the
+        shipped defaults a 4 bp assumption stood against an 8 bp bill. The gate, the
+        labels and the training cost were all priced from the same number, which is what
+        makes one wrong assumption here propagate everywhere; pricing the mode that is
+        actually configured is what keeps the comparison meaningful. It does not change
+        what the market does."""
+        breakdown = self.cost_breakdown()
+        return sum(breakdown.values())
 
     # ------------------------------------------------------------- signals
     async def signal(self, symbol, rows, price=None):

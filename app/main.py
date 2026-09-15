@@ -53,6 +53,12 @@ def _build_models(settings, broker, broker_store):
     decisions = ModelDecision(models, fee_rate=broker.fee_rate, slippage_bps=broker.slippage_bps,
                               maker_fee_rate=settings.maker_fee_rate,
                               entry_order_type=settings.entry_order_type,
+                              # The exit leg is priced explicitly: every close in this
+                              # system is a market order, so a passive entry still pays
+                              # taker plus spread on the way out. Leaving this to default
+                              # priced that leg as a maker and cleared trades the account
+                              # then lost money on.
+                              exit_order_type=settings.exit_order_type,
                               min_edge_bps=settings.model_min_edge_bps,
                               min_agreement=settings.model_min_agreement,
                               min_edge_multiple=settings.min_edge_multiple,

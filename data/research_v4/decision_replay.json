@@ -1,0 +1,6901 @@
+{
+ "verdict": [
+  "net 7.3 bps per day over 741 days at 56.9% mean gross exposure",
+  "t = 1.95, Sharpe 1.37, hit rate 51.1%",
+  "first half -4.3, second half 18.8",
+  "positive but not decisive",
+  "folds where the layer beats its own equal-weight control: 3/6",
+  "the layer is a risk-managed version of the control rather than a more profitable one: it cuts the losing fold roughly in half and gives up about a third of the winning folds"
+ ],
+ "summary": {
+  "trades": 741,
+  "net_bps_mean": 7.2686,
+  "net_bps_std": 101.6302,
+  "hit_rate": 0.5115,
+  "total_net": 0.538605,
+  "t_stat": 1.9469,
+  "sharpe": 1.3664,
+  "first_half_bps": -4.2995,
+  "second_half_bps": 18.8056,
+  "months": 27,
+  "months_positive": 18
+ },
+ "mean_exposure": 0.5686654520917679,
+ "mean_orders": 5.963562753036437,
+ "days": 741,
+ "per_fold": [
+  {
+   "fold": 0,
+   "test_start_day": -364,
+   "test_end_day": -238,
+   "suite": {
+    "trades": 124,
+    "net_bps_mean": -3.186,
+    "net_bps_std": 104.7448,
+    "hit_rate": 0.5161,
+    "total_net": -0.039507,
+    "t_stat": -0.3387,
+    "sharpe": -0.5811,
+    "first_half_bps": -16.4247,
+    "second_half_bps": 10.0526,
+    "months": 6,
+    "months_positive": 2
+   },
+   "control_equal_weight": {
+    "trades": 127,
+    "net_bps_mean": 11.5055,
+    "net_bps_std": 377.047,
+    "hit_rate": 0.4882,
+    "total_net": 0.14612,
+    "t_stat": 0.3439,
+    "sharpe": 0.583,
+    "first_half_bps": -41.1395,
+    "second_half_bps": 63.328,
+    "months": 6,
+    "months_positive": 2
+   },
+   "beats_control": false,
+   "mean_exposure": 0.5346549193548391
+  },
+  {
+   "fold": 1,
+   "test_start_day": -237,
+   "test_end_day": -111,
+   "suite": {
+    "trades": 127,
+    "net_bps_mean": -5.5219,
+    "net_bps_std": 73.4148,
+    "hit_rate": 0.4488,
+    "total_net": -0.070128,
+    "t_stat": -0.8476,
+    "sharpe": -1.437,
+    "first_half_bps": 4.4928,
+    "second_half_bps": -15.3801,
+    "months": 5,
+    "months_positive": 1
+   },
+   "control_equal_weight": {
+    "trades": 127,
+    "net_bps_mean": -57.9573,
+    "net_bps_std": 318.3912,
+    "hit_rate": 0.4252,
+    "total_net": -0.736058,
+    "t_stat": -2.0514,
+    "sharpe": -3.4777,
+    "first_half_bps": -12.1614,
+    "second_half_bps": -103.0377,
+    "months": 5,
+    "months_positive": 0
+   },
+   "beats_control": true,
+   "mean_exposure": 0.4397655118110236
+  },
+  {
+   "fold": 2,
+   "test_start_day": -110,
+   "test_end_day": 16,
+   "suite": {
+    "trades": 115,
+    "net_bps_mean": -4.4296,
+    "net_bps_std": 126.9732,
+    "hit_rate": 0.4783,
+    "total_net": -0.05094,
+    "t_stat": -0.3741,
+    "sharpe": -0.6665,
+    "first_half_bps": 4.4507,
+    "second_half_bps": -13.1568,
+    "months": 5,
+    "months_positive": 3
+   },
+   "control_equal_weight": {
+    "trades": 127,
+    "net_bps_mean": -29.6008,
+    "net_bps_std": 335.82,
+    "hit_rate": 0.4646,
+    "total_net": -0.37593,
+    "t_stat": -0.9933,
+    "sharpe": -1.684,
+    "first_half_bps": -18.1705,
+    "second_half_bps": -40.8524,
+    "months": 5,
+    "months_positive": 2
+   },
+   "beats_control": true,
+   "mean_exposure": 0.6620883391304353
+  },
+  {
+   "fold": 3,
+   "test_start_day": 17,
+   "test_end_day": 143,
+   "suite": {
+    "trades": 127,
+    "net_bps_mean": 27.0958,
+    "net_bps_std": 102.0722,
+    "hit_rate": 0.6063,
+    "total_net": 0.344117,
+    "t_stat": 2.9916,
+    "sharpe": 5.0716,
+    "first_half_bps": 41.9969,
+    "second_half_bps": 12.4276,
+    "months": 5,
+    "months_positive": 4
+   },
+   "control_equal_weight": {
+    "trades": 127,
+    "net_bps_mean": 102.2264,
+    "net_bps_std": 446.2614,
+    "hit_rate": 0.6063,
+    "total_net": 1.298275,
+    "t_stat": 2.5815,
+    "sharpe": 4.3764,
+    "first_half_bps": 121.0334,
+    "second_half_bps": 83.7133,
+    "months": 5,
+    "months_positive": 4
+   },
+   "beats_control": false,
+   "mean_exposure": 0.43734803149606305
+  },
+  {
+   "fold": 4,
+   "test_start_day": 144,
+   "test_end_day": 270,
+   "suite": {
+    "trades": 121,
+    "net_bps_mean": 11.3278,
+    "net_bps_std": 85.2209,
+    "hit_rate": 0.5041,
+    "total_net": 0.137066,
+    "t_stat": 1.4621,
+    "sharpe": 2.5395,
+    "first_half_bps": 1.4559,
+    "second_half_bps": 21.0378,
+    "months": 6,
+    "months_positive": 4
+   },
+   "control_equal_weight": {
+    "trades": 127,
+    "net_bps_mean": 4.3511,
+    "net_bps_std": 230.6973,
+    "hit_rate": 0.4803,
+    "total_net": 0.055259,
+    "t_stat": 0.2125,
+    "sharpe": 0.3603,
+    "first_half_bps": -14.3564,
+    "second_half_bps": 22.7663,
+    "months": 6,
+    "months_positive": 3
+   },
+   "beats_control": true,
+   "mean_exposure": 0.7433257355371898
+  },
+  {
+   "fold": 5,
+   "test_start_day": 271,
+   "test_end_day": 402,
+   "suite": {
+    "trades": 127,
+    "net_bps_mean": 17.1651,
+    "net_bps_std": 108.3061,
+    "hit_rate": 0.5118,
+    "total_net": 0.217997,
+    "t_stat": 1.7861,
+    "sharpe": 3.0279,
+    "first_half_bps": 22.8107,
+    "second_half_bps": 11.6077,
+    "months": 5,
+    "months_positive": 5
+   },
+   "control_equal_weight": {
+    "trades": 132,
+    "net_bps_mean": 31.4823,
+    "net_bps_std": 357.5537,
+    "hit_rate": 0.5,
+    "total_net": 0.415566,
+    "t_stat": 1.0116,
+    "sharpe": 1.6822,
+    "first_half_bps": 26.9547,
+    "second_half_bps": 36.0099,
+    "months": 5,
+    "months_positive": 5
+   },
+   "beats_control": false,
+   "mean_exposure": 0.6110858031496065
+  }
+ ],
+ "cost_bps": 12.0,
+ "quantile": 0.25,
+ "vol_target": 0.3,
+ "policy": "balanced",
+ "trades": [
+  {
+   "day": -364,
+   "gross": 0.0010965451407261044,
+   "net": 0.0009796315407261044,
+   "exposure": 0.194856,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1949
+  },
+  {
+   "day": -363,
+   "gross": 0.004528402586779553,
+   "net": 0.004375971386779553,
+   "exposure": 0.254052,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2541
+  },
+  {
+   "day": -362,
+   "gross": 0.0026089480990636104,
+   "net": 0.0023529052990636104,
+   "exposure": 0.426738,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4267
+  },
+  {
+   "day": -361,
+   "gross": -0.0013259002721600827,
+   "net": -0.0016152718721600826,
+   "exposure": 0.48228599999999994,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4823
+  },
+  {
+   "day": -360,
+   "gross": 0.005496556005835941,
+   "net": 0.0051790072058359405,
+   "exposure": 0.5292479999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5292
+  },
+  {
+   "day": -359,
+   "gross": -0.002616592535958903,
+   "net": -0.002849188535958903,
+   "exposure": 0.38766,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3877
+  },
+  {
+   "day": -358,
+   "gross": -0.0004899279426455099,
+   "net": -0.0007551831426455099,
+   "exposure": 0.44209200000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4421
+  },
+  {
+   "day": -357,
+   "gross": -0.003223994146747181,
+   "net": -0.003417515746747181,
+   "exposure": 0.32253600000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3225
+  },
+  {
+   "day": -356,
+   "gross": -0.0008838825229772957,
+   "net": -0.0011112909229772957,
+   "exposure": 0.3790140000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.379
+  },
+  {
+   "day": -355,
+   "gross": -0.00031086812334790823,
+   "net": -0.0005185917233479083,
+   "exposure": 0.346206,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3462
+  },
+  {
+   "day": -354,
+   "gross": -0.004351025364076439,
+   "net": -0.004539409764076439,
+   "exposure": 0.31397400000000003,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.314
+  },
+  {
+   "day": -353,
+   "gross": -0.0020365080986729763,
+   "net": -0.0021656004986729763,
+   "exposure": 0.215154,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2152
+  },
+  {
+   "day": -352,
+   "gross": 0.000770987426902829,
+   "net": 0.000655211426902829,
+   "exposure": 0.19296,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.193
+  },
+  {
+   "day": -351,
+   "gross": 0.0018404749284467482,
+   "net": 0.0016896385284467482,
+   "exposure": 0.251394,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2514
+  },
+  {
+   "day": -350,
+   "gross": -0.0014242875769515727,
+   "net": -0.0016114155769515726,
+   "exposure": 0.31188000000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3119
+  },
+  {
+   "day": -349,
+   "gross": -0.016361063404260336,
+   "net": -0.016705075804260335,
+   "exposure": 0.573354,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5734
+  },
+  {
+   "day": -348,
+   "gross": 0.0046865655029902165,
+   "net": 0.004468610702990217,
+   "exposure": 0.363258,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3633
+  },
+  {
+   "day": -347,
+   "gross": -0.001603008167655571,
+   "net": -0.001879549367655571,
+   "exposure": 0.46090200000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4609
+  },
+  {
+   "day": -346,
+   "gross": -0.005240532345512365,
+   "net": -0.005492291145512365,
+   "exposure": 0.419598,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4196
+  },
+  {
+   "day": -345,
+   "gross": -0.008544277693939676,
+   "net": -0.008925143293939676,
+   "exposure": 0.634776,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6348
+  },
+  {
+   "day": -344,
+   "gross": 0.0036009865450885464,
+   "net": 0.0033605857450885466,
+   "exposure": 0.400668,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4007
+  },
+  {
+   "day": -343,
+   "gross": -0.0013544408902966564,
+   "net": -0.0015013388902966563,
+   "exposure": 0.24483000000000002,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2448
+  },
+  {
+   "day": -342,
+   "gross": -0.0009837841850936302,
+   "net": -0.0010660981850936302,
+   "exposure": 0.13719,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1372
+  },
+  {
+   "day": -341,
+   "gross": 0.0010920926308723433,
+   "net": 0.0010367786308723432,
+   "exposure": 0.09219000000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0922
+  },
+  {
+   "day": -340,
+   "gross": 0.002515779264674112,
+   "net": 0.002433198864674112,
+   "exposure": 0.137634,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1376
+  },
+  {
+   "day": -339,
+   "gross": -0.0010121388158449178,
+   "net": -0.0011168376158449177,
+   "exposure": 0.17449800000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1745
+  },
+  {
+   "day": -338,
+   "gross": 0.005069962567687337,
+   "net": 0.004929573367687337,
+   "exposure": 0.233982,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.234
+  },
+  {
+   "day": -337,
+   "gross": -0.0003233427138998033,
+   "net": -0.0005148519138998034,
+   "exposure": 0.319182,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3192
+  },
+  {
+   "day": -336,
+   "gross": 0.004477805589137568,
+   "net": 0.004320982389137569,
+   "exposure": 0.261372,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2614
+  },
+  {
+   "day": -335,
+   "gross": 0.005905358334729636,
+   "net": 0.005678821134729636,
+   "exposure": 0.377562,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3776
+  },
+  {
+   "day": -334,
+   "gross": 0.00031809695149483293,
+   "net": 7.236455149483287e-05,
+   "exposure": 0.40955400000000003,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4096
+  },
+  {
+   "day": -333,
+   "gross": -0.0015248545409181852,
+   "net": -0.0018146689409181851,
+   "exposure": 0.48302400000000006,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.483
+  },
+  {
+   "day": -332,
+   "gross": -0.006266971442530193,
+   "net": -0.006831116642530193,
+   "exposure": 0.9402420000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.9402
+  },
+  {
+   "day": -331,
+   "gross": -0.00731673562333737,
+   "net": -0.00786936802333737,
+   "exposure": 0.921054,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9211
+  },
+  {
+   "day": -330,
+   "gross": 0.028044294443647904,
+   "net": 0.027444293243647905,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -329,
+   "gross": 0.0062083006593708565,
+   "net": 0.005608300659370857,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": 0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": -328,
+   "gross": 0.0030991710849086057,
+   "net": 0.002499171084908606,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": 0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": -327,
+   "gross": -0.0067272324258271145,
+   "net": -0.007327233625827115,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -326,
+   "gross": 0.009566244237724817,
+   "net": 0.008966243037724817,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -325,
+   "gross": -0.008263748576904035,
+   "net": -0.008863749776904035,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -324,
+   "gross": -0.01613546295370122,
+   "net": -0.01668746895370122,
+   "exposure": 0.92001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.92
+  },
+  {
+   "day": -323,
+   "gross": -0.010226578202596355,
+   "net": -0.010812906602596355,
+   "exposure": 0.9772140000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.9772
+  },
+  {
+   "day": -322,
+   "gross": -0.0024702413962865545,
+   "net": -0.003070242596286555,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -321,
+   "gross": 0.00713786602404286,
+   "net": 0.00653786482404286,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -320,
+   "gross": 0.0006623200522059551,
+   "net": 6.231885220595512e-05,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -319,
+   "gross": 0.019365496324302168,
+   "net": 0.01876549512430217,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -318,
+   "gross": -0.025601993590563178,
+   "net": -0.026201994790563177,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -317,
+   "gross": 0.013651457154442471,
+   "net": 0.013051457154442472,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": -0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": -316,
+   "gross": 0.003253536067461593,
+   "net": 0.0026535360674615933,
+   "exposure": 1.0,
+   "orders": 4,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -315,
+   "gross": -0.04674857384150257,
+   "net": -0.047348573841502574,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": -0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": -311,
+   "gross": -0.014487889030052173,
+   "net": -0.014976289030052173,
+   "exposure": 0.8140000000000001,
+   "orders": 5,
+   "net_exposure": 0.1628,
+   "leverage": 0.814
+  },
+  {
+   "day": -310,
+   "gross": 0.007863436431228266,
+   "net": 0.007263435231228266,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -309,
+   "gross": -0.008864245775393909,
+   "net": -0.009464246975393909,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -308,
+   "gross": -0.030178703282282657,
+   "net": -0.030608496482282657,
+   "exposure": 0.716322,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7163
+  },
+  {
+   "day": -307,
+   "gross": -0.00834374562693887,
+   "net": -0.00864275802693887,
+   "exposure": 0.49835399999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4984
+  },
+  {
+   "day": -306,
+   "gross": -0.0006933744857394492,
+   "net": -0.0010044468857394492,
+   "exposure": 0.518454,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5185
+  },
+  {
+   "day": -305,
+   "gross": -0.0010822260616750662,
+   "net": -0.0014159820616750662,
+   "exposure": 0.55626,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5563
+  },
+  {
+   "day": -304,
+   "gross": 0.004851880384953193,
+   "net": 0.004447672384953193,
+   "exposure": 0.6736800000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6737
+  },
+  {
+   "day": -303,
+   "gross": -0.002111087147114793,
+   "net": -0.0026328855471147933,
+   "exposure": 0.8696639999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8697
+  },
+  {
+   "day": -302,
+   "gross": 0.004432755237583924,
+   "net": 0.0038327540375839237,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -301,
+   "gross": 0.039595229742441646,
+   "net": 0.03899522854244165,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -300,
+   "gross": -0.02167675872130631,
+   "net": -0.02213724552130631,
+   "exposure": 0.7674779999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7675
+  },
+  {
+   "day": -299,
+   "gross": 0.005171661413962739,
+   "net": 0.004658672213962739,
+   "exposure": 0.854982,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.855
+  },
+  {
+   "day": -298,
+   "gross": 0.010487412565166075,
+   "net": 0.009933070165166076,
+   "exposure": 0.9239040000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9239
+  },
+  {
+   "day": -297,
+   "gross": -0.019370052163754127,
+   "net": -0.019970053363754126,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -296,
+   "gross": -0.0031468315164288538,
+   "net": -0.003746832716428854,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -295,
+   "gross": -0.006646311893467681,
+   "net": -0.007246313093467681,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -294,
+   "gross": -0.00545649210893002,
+   "net": -0.0059016969089300195,
+   "exposure": 0.742008,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.742
+  },
+  {
+   "day": -293,
+   "gross": 0.020228334127401944,
+   "net": 0.019824093727401945,
+   "exposure": 0.6737339999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6737
+  },
+  {
+   "day": -292,
+   "gross": 0.0067739186045158335,
+   "net": 0.006173917404515833,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -291,
+   "gross": -0.013268803066170629,
+   "net": -0.013734970666170628,
+   "exposure": 0.776946,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7769
+  },
+  {
+   "day": -290,
+   "gross": -0.005005246313127929,
+   "net": -0.005313165113127929,
+   "exposure": 0.5131979999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5132
+  },
+  {
+   "day": -289,
+   "gross": 0.004685132838468621,
+   "net": 0.0043123384384686205,
+   "exposure": 0.621324,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6213
+  },
+  {
+   "day": -288,
+   "gross": -5.639619686872988e-07,
+   "net": -0.0003161219619686873,
+   "exposure": 0.52593,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5259
+  },
+  {
+   "day": -287,
+   "gross": 0.002075008976947971,
+   "net": 0.0017114881769479712,
+   "exposure": 0.605868,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6059
+  },
+  {
+   "day": -286,
+   "gross": 0.00703816102420043,
+   "net": 0.0065489354242004305,
+   "exposure": 0.815376,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8154
+  },
+  {
+   "day": -285,
+   "gross": -0.006544260949454911,
+   "net": -0.006804058549454911,
+   "exposure": 0.432996,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.433
+  },
+  {
+   "day": -284,
+   "gross": 0.003029565655637549,
+   "net": 0.002804450455637549,
+   "exposure": 0.3751920000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3752
+  },
+  {
+   "day": -283,
+   "gross": 0.009072384644564935,
+   "net": 0.008788384244564936,
+   "exposure": 0.473334,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4733
+  },
+  {
+   "day": -282,
+   "gross": -0.007149015228016574,
+   "net": -0.007437375228016574,
+   "exposure": 0.4806,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4806
+  },
+  {
+   "day": -281,
+   "gross": 0.003926637603093774,
+   "net": 0.003657346803093774,
+   "exposure": 0.448818,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4488
+  },
+  {
+   "day": -280,
+   "gross": -0.003953525610886597,
+   "net": -0.004239804810886596,
+   "exposure": 0.47713199999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4771
+  },
+  {
+   "day": -279,
+   "gross": 0.00201359831280116,
+   "net": 0.00162249791280116,
+   "exposure": 0.651834,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6518
+  },
+  {
+   "day": -278,
+   "gross": 0.0003194543520660595,
+   "net": -0.00011532124793394051,
+   "exposure": 0.724626,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7246
+  },
+  {
+   "day": -277,
+   "gross": 0.005734895826997076,
+   "net": 0.005302445826997076,
+   "exposure": 0.72075,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7208
+  },
+  {
+   "day": -276,
+   "gross": 0.0049247038344943945,
+   "net": 0.0046450162344943945,
+   "exposure": 0.466146,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4661
+  },
+  {
+   "day": -275,
+   "gross": 3.54666397292501e-05,
+   "net": -0.0002610797602707499,
+   "exposure": 0.494244,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4942
+  },
+  {
+   "day": -274,
+   "gross": -0.014969584457004916,
+   "net": -0.015253448057004916,
+   "exposure": 0.473106,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4731
+  },
+  {
+   "day": -273,
+   "gross": -0.003475181842242108,
+   "net": -0.003715280242242108,
+   "exposure": 0.4001640000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4002
+  },
+  {
+   "day": -272,
+   "gross": 0.008993249456285022,
+   "net": 0.008748877856285022,
+   "exposure": 0.4072859999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4073
+  },
+  {
+   "day": -271,
+   "gross": 0.011220108414163188,
+   "net": 0.010981993614163188,
+   "exposure": 0.396858,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3969
+  },
+  {
+   "day": -270,
+   "gross": 0.013627371568934503,
+   "net": 0.013413981568934502,
+   "exposure": 0.35565,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3557
+  },
+  {
+   "day": -269,
+   "gross": 0.0072605351930142845,
+   "net": 0.007033447193014284,
+   "exposure": 0.37848000000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3785
+  },
+  {
+   "day": -268,
+   "gross": -0.003464263328138018,
+   "net": -0.003661719728138018,
+   "exposure": 0.329094,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3291
+  },
+  {
+   "day": -267,
+   "gross": 0.010584004750208684,
+   "net": 0.010373491150208684,
+   "exposure": 0.35085599999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3509
+  },
+  {
+   "day": -266,
+   "gross": 0.012956336694490499,
+   "net": 0.012679457094490499,
+   "exposure": 0.461466,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4615
+  },
+  {
+   "day": -265,
+   "gross": 0.011947154580345426,
+   "net": 0.011723994180345426,
+   "exposure": 0.37193400000000004,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3719
+  },
+  {
+   "day": -264,
+   "gross": -0.0009124875225035665,
+   "net": -0.0010942983225035664,
+   "exposure": 0.303018,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.303
+  },
+  {
+   "day": -263,
+   "gross": -0.002311668552847173,
+   "net": -0.0024754253528471728,
+   "exposure": 0.272928,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2729
+  },
+  {
+   "day": -262,
+   "gross": -0.005942382076866632,
+   "net": -0.006075052876866632,
+   "exposure": 0.22111799999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2211
+  },
+  {
+   "day": -261,
+   "gross": 0.004717620334932239,
+   "net": 0.004572381934932239,
+   "exposure": 0.24206399999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2421
+  },
+  {
+   "day": -260,
+   "gross": 0.007776471496627066,
+   "net": 0.007596334696627066,
+   "exposure": 0.30022800000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3002
+  },
+  {
+   "day": -259,
+   "gross": 0.0007862203336565794,
+   "net": 0.0006205663336565794,
+   "exposure": 0.27609,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2761
+  },
+  {
+   "day": -258,
+   "gross": 0.01195574537703871,
+   "net": 0.01182745577703871,
+   "exposure": 0.213816,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2138
+  },
+  {
+   "day": -257,
+   "gross": 0.0006767443528342583,
+   "net": 0.0005386807528342583,
+   "exposure": 0.230106,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2301
+  },
+  {
+   "day": -256,
+   "gross": -0.008787682009565177,
+   "net": -0.008957677609565177,
+   "exposure": 0.283326,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2833
+  },
+  {
+   "day": -255,
+   "gross": 0.002648658520569034,
+   "net": 0.002450521720569034,
+   "exposure": 0.33022799999999997,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3302
+  },
+  {
+   "day": -254,
+   "gross": -0.0036204915318185293,
+   "net": -0.0038439327318185294,
+   "exposure": 0.37240199999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3724
+  },
+  {
+   "day": -253,
+   "gross": 0.007634789985659623,
+   "net": 0.007437844785659623,
+   "exposure": 0.328242,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3282
+  },
+  {
+   "day": -252,
+   "gross": -0.0019601463093260035,
+   "net": -0.0020927991093260033,
+   "exposure": 0.22108799999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2211
+  },
+  {
+   "day": -251,
+   "gross": -0.0033631616759030487,
+   "net": -0.0035186960759030486,
+   "exposure": 0.259224,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2592
+  },
+  {
+   "day": -250,
+   "gross": 0.012322347810792928,
+   "net": 0.012199271010792928,
+   "exposure": 0.205128,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2051
+  },
+  {
+   "day": -249,
+   "gross": 0.001411653766991484,
+   "net": 0.001278514966991484,
+   "exposure": 0.22189799999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2219
+  },
+  {
+   "day": -248,
+   "gross": 0.011258472952522029,
+   "net": 0.011059331752522028,
+   "exposure": 0.331902,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3319
+  },
+  {
+   "day": -247,
+   "gross": -0.02347921229427476,
+   "net": -0.02368916789427476,
+   "exposure": 0.349926,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3499
+  },
+  {
+   "day": -246,
+   "gross": -0.008072685042427485,
+   "net": -0.008268611442427484,
+   "exposure": 0.32654400000000006,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3265
+  },
+  {
+   "day": -245,
+   "gross": 0.002319990301147698,
+   "net": 0.002123109901147698,
+   "exposure": 0.328134,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3281
+  },
+  {
+   "day": -244,
+   "gross": 0.009419860333127972,
+   "net": 0.009245281933127972,
+   "exposure": 0.290964,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.291
+  },
+  {
+   "day": -243,
+   "gross": 0.0007790445454079248,
+   "net": 0.0005949117454079248,
+   "exposure": 0.30688799999999994,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3069
+  },
+  {
+   "day": -242,
+   "gross": 0.004397899717047921,
+   "net": 0.004132266517047921,
+   "exposure": 0.442722,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4427
+  },
+  {
+   "day": -241,
+   "gross": 0.0031754737097342174,
+   "net": 0.0029416285097342175,
+   "exposure": 0.389742,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3897
+  },
+  {
+   "day": -240,
+   "gross": -0.016471667770971612,
+   "net": -0.01668743017097161,
+   "exposure": 0.359604,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3596
+  },
+  {
+   "day": -239,
+   "gross": 0.001441189735233108,
+   "net": 0.001376054935233108,
+   "exposure": 0.108558,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1086
+  },
+  {
+   "day": -238,
+   "gross": 0.0018813634392856893,
+   "net": 0.0018147058392856893,
+   "exposure": 0.11109600000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1111
+  },
+  {
+   "day": -237,
+   "gross": -7.55723409128918e-05,
+   "net": -0.00015398394091289182,
+   "exposure": 0.130686,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1307
+  },
+  {
+   "day": -236,
+   "gross": 0.0015447973997629808,
+   "net": 0.0014503549997629808,
+   "exposure": 0.15740400000000002,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1574
+  },
+  {
+   "day": -235,
+   "gross": 0.002595494765415142,
+   "net": 0.002502438365415142,
+   "exposure": 0.155094,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1551
+  },
+  {
+   "day": -234,
+   "gross": 0.0005044421337526164,
+   "net": 0.0003389177337526164,
+   "exposure": 0.275874,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2759
+  },
+  {
+   "day": -233,
+   "gross": 0.0004604753075313937,
+   "net": 0.0002512433075313937,
+   "exposure": 0.34872,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3487
+  },
+  {
+   "day": -232,
+   "gross": 0.0035636182431561707,
+   "net": 0.003431451443156171,
+   "exposure": 0.220278,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2203
+  },
+  {
+   "day": -231,
+   "gross": -0.0010721719644584777,
+   "net": -0.0011906515644584778,
+   "exposure": 0.197466,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1975
+  },
+  {
+   "day": -230,
+   "gross": -0.0026176101950483254,
+   "net": -0.0026830869950483253,
+   "exposure": 0.10912799999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1091
+  },
+  {
+   "day": -229,
+   "gross": -0.0008612957878661097,
+   "net": -0.0009077177878661098,
+   "exposure": 0.07737000000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0774
+  },
+  {
+   "day": -228,
+   "gross": -0.0007644561071102457,
+   "net": -0.0008085093071102458,
+   "exposure": 0.073422,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0734
+  },
+  {
+   "day": -227,
+   "gross": -0.00034469675432697027,
+   "net": -0.00039009635432697026,
+   "exposure": 0.075666,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0757
+  },
+  {
+   "day": -226,
+   "gross": -0.000718236922317224,
+   "net": -0.0007835373223172241,
+   "exposure": 0.108834,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1088
+  },
+  {
+   "day": -225,
+   "gross": 0.003290817347288789,
+   "net": 0.003168248147288789,
+   "exposure": 0.204282,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2043
+  },
+  {
+   "day": -224,
+   "gross": 0.001419232159430601,
+   "net": 0.001218506959430601,
+   "exposure": 0.334542,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3345
+  },
+  {
+   "day": -223,
+   "gross": -0.0014689679612639142,
+   "net": -0.0016069559612639141,
+   "exposure": 0.22998000000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.23
+  },
+  {
+   "day": -222,
+   "gross": -8.556039975995977e-05,
+   "net": -0.00019173879975995975,
+   "exposure": 0.17696399999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.177
+  },
+  {
+   "day": -221,
+   "gross": -0.0008815049614691896,
+   "net": -0.0010039841614691897,
+   "exposure": 0.20413199999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2041
+  },
+  {
+   "day": -220,
+   "gross": -0.0022365985021257483,
+   "net": -0.0023481121021257483,
+   "exposure": 0.185856,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1859
+  },
+  {
+   "day": -219,
+   "gross": 0.0016787651707786035,
+   "net": 0.0016091843707786036,
+   "exposure": 0.115968,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.116
+  },
+  {
+   "day": -218,
+   "gross": -0.0029467333376838197,
+   "net": -0.0030251845376838195,
+   "exposure": 0.130752,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1308
+  },
+  {
+   "day": -217,
+   "gross": -0.001492913832341871,
+   "net": -0.0016150078323418711,
+   "exposure": 0.20349,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2035
+  },
+  {
+   "day": -216,
+   "gross": 0.011969911814066102,
+   "net": 0.011782578614066102,
+   "exposure": 0.312222,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3122
+  },
+  {
+   "day": -215,
+   "gross": 0.003995921440568206,
+   "net": 0.0038355162405682066,
+   "exposure": 0.267342,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2673
+  },
+  {
+   "day": -214,
+   "gross": -0.0007137031456226793,
+   "net": -0.0009321115456226792,
+   "exposure": 0.36401399999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.364
+  },
+  {
+   "day": -213,
+   "gross": -0.0112432723630823,
+   "net": -0.011445999163082301,
+   "exposure": 0.337878,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3379
+  },
+  {
+   "day": -212,
+   "gross": -0.0036118117065179,
+   "net": -0.0038885869065179,
+   "exposure": 0.46129200000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4613
+  },
+  {
+   "day": -211,
+   "gross": -0.0012525773611118058,
+   "net": -0.0014576225611118057,
+   "exposure": 0.341742,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3417
+  },
+  {
+   "day": -210,
+   "gross": -0.00042899117651706874,
+   "net": -0.0005351623765170688,
+   "exposure": 0.176952,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.177
+  },
+  {
+   "day": -209,
+   "gross": 0.0027807370986174702,
+   "net": 0.0026205082986174703,
+   "exposure": 0.267048,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.267
+  },
+  {
+   "day": -208,
+   "gross": -0.0036531494491712996,
+   "net": -0.0037843298491712996,
+   "exposure": 0.218634,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2186
+  },
+  {
+   "day": -207,
+   "gross": 0.0016337948654250305,
+   "net": 0.0014264672654250305,
+   "exposure": 0.345546,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3455
+  },
+  {
+   "day": -206,
+   "gross": 0.0062639061100428495,
+   "net": 0.00605518171004285,
+   "exposure": 0.347874,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3479
+  },
+  {
+   "day": -205,
+   "gross": -0.0036854844017209652,
+   "net": -0.003945195601720965,
+   "exposure": 0.43285199999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4329
+  },
+  {
+   "day": -204,
+   "gross": 0.001693078972816597,
+   "net": 0.001402076572816597,
+   "exposure": 0.48500400000000005,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.485
+  },
+  {
+   "day": -203,
+   "gross": 0.009539425144306578,
+   "net": 0.009204049144306578,
+   "exposure": 0.55896,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.559
+  },
+  {
+   "day": -202,
+   "gross": 0.0011024272560132605,
+   "net": 0.0008041132560132605,
+   "exposure": 0.4971899999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4972
+  },
+  {
+   "day": -201,
+   "gross": -0.00202560413937195,
+   "net": -0.00234007493937195,
+   "exposure": 0.524118,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5241
+  },
+  {
+   "day": -200,
+   "gross": 0.009231278324584228,
+   "net": 0.008851298324584228,
+   "exposure": 0.6333000000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6333
+  },
+  {
+   "day": -199,
+   "gross": 0.0009443474004615588,
+   "net": 0.00045564380046155873,
+   "exposure": 0.814506,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8145
+  },
+  {
+   "day": -198,
+   "gross": -0.010397799017535006,
+   "net": -0.010809520217535005,
+   "exposure": 0.686202,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6862
+  },
+  {
+   "day": -197,
+   "gross": 0.0010011966935758235,
+   "net": 0.0006267318935758235,
+   "exposure": 0.6241079999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6241
+  },
+  {
+   "day": -196,
+   "gross": -0.001677363474439119,
+   "net": -0.002062693074439119,
+   "exposure": 0.642216,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6422
+  },
+  {
+   "day": -195,
+   "gross": 0.0012629236169089716,
+   "net": 0.0009015628169089717,
+   "exposure": 0.6022679999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6023
+  },
+  {
+   "day": -194,
+   "gross": 0.0037473476792438338,
+   "net": 0.003330557679243834,
+   "exposure": 0.69465,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6946
+  },
+  {
+   "day": -193,
+   "gross": 0.012632795692076268,
+   "net": 0.012149747692076268,
+   "exposure": 0.8050799999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8051
+  },
+  {
+   "day": -192,
+   "gross": 0.0009232392382984749,
+   "net": 0.0004968300382984748,
+   "exposure": 0.7106819999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7107
+  },
+  {
+   "day": -191,
+   "gross": 0.0011083441522895263,
+   "net": 0.0007797901522895263,
+   "exposure": 0.54759,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5476
+  },
+  {
+   "day": -190,
+   "gross": -0.0052425997172941005,
+   "net": -0.005518518117294101,
+   "exposure": 0.459864,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4599
+  },
+  {
+   "day": -189,
+   "gross": -0.012968757327924248,
+   "net": -0.013228176927924247,
+   "exposure": 0.432366,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4324
+  },
+  {
+   "day": -188,
+   "gross": -0.003443847167270135,
+   "net": -0.003711168767270135,
+   "exposure": 0.445536,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4455
+  },
+  {
+   "day": -187,
+   "gross": 0.008602373360696667,
+   "net": 0.008315629760696667,
+   "exposure": 0.47790600000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4779
+  },
+  {
+   "day": -186,
+   "gross": 0.013783659516463168,
+   "net": 0.013479351516463168,
+   "exposure": 0.50718,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5072
+  },
+  {
+   "day": -185,
+   "gross": -0.014899328340529795,
+   "net": -0.015143455140529795,
+   "exposure": 0.406878,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4069
+  },
+  {
+   "day": -184,
+   "gross": 0.011805778187271142,
+   "net": 0.011560254587271142,
+   "exposure": 0.409206,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4092
+  },
+  {
+   "day": -183,
+   "gross": -0.007772227614110044,
+   "net": -0.007991053614110044,
+   "exposure": 0.36471,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3647
+  },
+  {
+   "day": -182,
+   "gross": 0.002585883826216301,
+   "net": 0.0024756986262163007,
+   "exposure": 0.183642,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1836
+  },
+  {
+   "day": -181,
+   "gross": -0.0015241452135331456,
+   "net": -0.0016011384135331457,
+   "exposure": 0.128322,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1283
+  },
+  {
+   "day": -180,
+   "gross": -0.0008919798425193596,
+   "net": -0.0010436010425193597,
+   "exposure": 0.25270200000000004,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2527
+  },
+  {
+   "day": -179,
+   "gross": 0.008730065085081453,
+   "net": 0.008522456685081453,
+   "exposure": 0.34601399999999993,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.346
+  },
+  {
+   "day": -178,
+   "gross": -0.0004442955206912807,
+   "net": -0.0006661419206912807,
+   "exposure": 0.369744,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3697
+  },
+  {
+   "day": -177,
+   "gross": 0.007590867401335586,
+   "net": 0.007311097001335585,
+   "exposure": 0.46628400000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4663
+  },
+  {
+   "day": -176,
+   "gross": 0.004760204634978877,
+   "net": 0.0044152886349788775,
+   "exposure": 0.57486,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5749
+  },
+  {
+   "day": -175,
+   "gross": 0.0007612087351417645,
+   "net": 0.0003452539351417646,
+   "exposure": 0.6932579999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6933
+  },
+  {
+   "day": -174,
+   "gross": -0.017991714572199332,
+   "net": -0.01846312017219933,
+   "exposure": 0.785676,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7857
+  },
+  {
+   "day": -173,
+   "gross": 0.011314813250979697,
+   "net": 0.010924090850979697,
+   "exposure": 0.651204,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6512
+  },
+  {
+   "day": -172,
+   "gross": 0.0027983150874206428,
+   "net": 0.002297472287420643,
+   "exposure": 0.834738,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8347
+  },
+  {
+   "day": -171,
+   "gross": 0.008740501084368628,
+   "net": 0.008298701884368627,
+   "exposure": 0.736332,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7363
+  },
+  {
+   "day": -170,
+   "gross": 0.0008416180612735389,
+   "net": 0.0003162844612735389,
+   "exposure": 0.875556,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8756
+  },
+  {
+   "day": -169,
+   "gross": 0.01758442087252371,
+   "net": 0.017113674072523708,
+   "exposure": 0.7845779999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7846
+  },
+  {
+   "day": -168,
+   "gross": -0.019641771048398576,
+   "net": -0.020090856648398575,
+   "exposure": 0.748476,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7485
+  },
+  {
+   "day": -167,
+   "gross": -0.016317082916341305,
+   "net": -0.016791109316341306,
+   "exposure": 0.7900440000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.79
+  },
+  {
+   "day": -166,
+   "gross": -0.004204304215634609,
+   "net": -0.004804305415634609,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -165,
+   "gross": 0.00763374428678354,
+   "net": 0.00703374308678354,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -164,
+   "gross": 0.0074355472737907685,
+   "net": 0.006835546073790768,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -163,
+   "gross": -0.0164491692026141,
+   "net": -0.017049170402614097,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -162,
+   "gross": 0.010981387175309974,
+   "net": 0.010790623175309974,
+   "exposure": 0.31794,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3179
+  },
+  {
+   "day": -161,
+   "gross": -0.00036771900549556507,
+   "net": -0.000550199405495565,
+   "exposure": 0.30413399999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3041
+  },
+  {
+   "day": -160,
+   "gross": -0.005189387271857501,
+   "net": -0.0053966284718575015,
+   "exposure": 0.345402,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3454
+  },
+  {
+   "day": -159,
+   "gross": 0.0009521735135362812,
+   "net": 0.0006979919135362811,
+   "exposure": 0.423636,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4236
+  },
+  {
+   "day": -158,
+   "gross": -0.01333917829080312,
+   "net": -0.01363006909080312,
+   "exposure": 0.484818,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4848
+  },
+  {
+   "day": -157,
+   "gross": -0.005795139961448802,
+   "net": -0.0060347019614488025,
+   "exposure": 0.39927000000000007,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3993
+  },
+  {
+   "day": -156,
+   "gross": 0.00626357087643561,
+   "net": 0.00608128487643561,
+   "exposure": 0.30380999999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3038
+  },
+  {
+   "day": -155,
+   "gross": -0.0017564189521747234,
+   "net": -0.0018900437521747234,
+   "exposure": 0.22270799999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2227
+  },
+  {
+   "day": -154,
+   "gross": -0.005097203320819837,
+   "net": -0.005234561320819836,
+   "exposure": 0.22893,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2289
+  },
+  {
+   "day": -153,
+   "gross": -0.017747133265980954,
+   "net": -0.017910695665980955,
+   "exposure": 0.272604,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2726
+  },
+  {
+   "day": -152,
+   "gross": 0.0007912238177984293,
+   "net": 0.0006400814177984293,
+   "exposure": 0.251904,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2519
+  },
+  {
+   "day": -151,
+   "gross": 0.00022535499993812447,
+   "net": 0.00019959699993812448,
+   "exposure": 0.04293,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0429
+  },
+  {
+   "day": -150,
+   "gross": 0.004110045547451698,
+   "net": 0.003984023947451698,
+   "exposure": 0.21003600000000003,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.21
+  },
+  {
+   "day": -149,
+   "gross": -0.004408866822536486,
+   "net": -0.0045095948225364856,
+   "exposure": 0.16788,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1679
+  },
+  {
+   "day": -148,
+   "gross": -0.0007876609441575103,
+   "net": -0.0008098153441575103,
+   "exposure": 0.036924,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0369
+  },
+  {
+   "day": -147,
+   "gross": -0.00016098554846642196,
+   "net": -0.00019975394846642196,
+   "exposure": 0.064614,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0646
+  },
+  {
+   "day": -146,
+   "gross": -0.0013673387156223822,
+   "net": -0.0014258603156223821,
+   "exposure": 0.09753599999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0975
+  },
+  {
+   "day": -145,
+   "gross": -0.0014786541320916675,
+   "net": -0.0015681681320916675,
+   "exposure": 0.14919000000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1492
+  },
+  {
+   "day": -144,
+   "gross": -0.00381319900438339,
+   "net": -0.00404929780438339,
+   "exposure": 0.393498,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3935
+  },
+  {
+   "day": -143,
+   "gross": 0.0010980731280584664,
+   "net": 0.0007918643280584664,
+   "exposure": 0.5103479999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5103
+  },
+  {
+   "day": -142,
+   "gross": -0.0034763221373527798,
+   "net": -0.0037238005373527797,
+   "exposure": 0.41246400000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4125
+  },
+  {
+   "day": -141,
+   "gross": -0.003562068309786566,
+   "net": -0.003719823909786566,
+   "exposure": 0.262926,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2629
+  },
+  {
+   "day": -140,
+   "gross": 0.001914767728087032,
+   "net": 0.001752040528087032,
+   "exposure": 0.271212,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2712
+  },
+  {
+   "day": -139,
+   "gross": -0.006254949457325809,
+   "net": -0.00645068865732581,
+   "exposure": 0.32623199999999997,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3262
+  },
+  {
+   "day": -138,
+   "gross": -0.0011539872339769081,
+   "net": -0.0013151448339769082,
+   "exposure": 0.268596,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2686
+  },
+  {
+   "day": -137,
+   "gross": -0.001225777363266393,
+   "net": -0.001383486163266393,
+   "exposure": 0.262848,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2628
+  },
+  {
+   "day": -136,
+   "gross": -0.0003587354688395013,
+   "net": -0.0005247242688395013,
+   "exposure": 0.276648,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2766
+  },
+  {
+   "day": -135,
+   "gross": -0.008190142885789068,
+   "net": -0.008471342485789068,
+   "exposure": 0.46866599999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4687
+  },
+  {
+   "day": -134,
+   "gross": -0.00269878603048071,
+   "net": -0.00290119603048071,
+   "exposure": 0.3373499999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3373
+  },
+  {
+   "day": -133,
+   "gross": -0.00506111162356971,
+   "net": -0.00539344202356971,
+   "exposure": 0.5538839999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5539
+  },
+  {
+   "day": -132,
+   "gross": -0.005836231382049792,
+   "net": -0.006170732582049792,
+   "exposure": 0.557502,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5575
+  },
+  {
+   "day": -131,
+   "gross": -0.004480682552362189,
+   "net": -0.004826055752362188,
+   "exposure": 0.575622,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5756
+  },
+  {
+   "day": -130,
+   "gross": 0.006772018108833627,
+   "net": 0.006505520908833627,
+   "exposure": 0.444162,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4442
+  },
+  {
+   "day": -129,
+   "gross": -0.0025112017328423916,
+   "net": -0.0026642017328423915,
+   "exposure": 0.255,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.255
+  },
+  {
+   "day": -128,
+   "gross": -0.002279455991287218,
+   "net": -0.002414643191287218,
+   "exposure": 0.225312,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2253
+  },
+  {
+   "day": -127,
+   "gross": 0.005711315678607545,
+   "net": 0.005564651678607545,
+   "exposure": 0.24444,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2444
+  },
+  {
+   "day": -126,
+   "gross": -0.0001668845134640629,
+   "net": -0.0004572173134640629,
+   "exposure": 0.483888,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4839
+  },
+  {
+   "day": -125,
+   "gross": 0.00019782311717935077,
+   "net": -0.00018115608282064924,
+   "exposure": 0.6316320000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6316
+  },
+  {
+   "day": -124,
+   "gross": -0.001395532325090809,
+   "net": -0.001860601925090809,
+   "exposure": 0.775116,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7751
+  },
+  {
+   "day": -123,
+   "gross": 0.02432528219711274,
+   "net": 0.02379365219711274,
+   "exposure": 0.88605,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8861
+  },
+  {
+   "day": -122,
+   "gross": -0.021120010941304272,
+   "net": -0.021547737741304272,
+   "exposure": 0.7128780000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7129
+  },
+  {
+   "day": -121,
+   "gross": 0.008435984536923168,
+   "net": 0.008144182936923167,
+   "exposure": 0.48633600000000005,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4863
+  },
+  {
+   "day": -120,
+   "gross": -0.021271099165293086,
+   "net": -0.021602324365293087,
+   "exposure": 0.552042,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.552
+  },
+  {
+   "day": -119,
+   "gross": 0.003029954414538149,
+   "net": 0.002693221214538149,
+   "exposure": 0.561222,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5612
+  },
+  {
+   "day": -118,
+   "gross": 0.0023849293312450367,
+   "net": 0.0019203169312450366,
+   "exposure": 0.7743540000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7744
+  },
+  {
+   "day": -117,
+   "gross": -0.003290376769553215,
+   "net": -0.0036978859695532148,
+   "exposure": 0.6791820000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6792
+  },
+  {
+   "day": -116,
+   "gross": 0.002756917729455113,
+   "net": 0.0021569165294551126,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -115,
+   "gross": 0.013058028851724225,
+   "net": 0.012471696851724225,
+   "exposure": 0.9772199999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9772
+  },
+  {
+   "day": -114,
+   "gross": 0.00598624278812763,
+   "net": 0.00538896318812763,
+   "exposure": 0.9954660000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.9955
+  },
+  {
+   "day": -113,
+   "gross": 0.0019111230793381721,
+   "net": 0.0014301450793381722,
+   "exposure": 0.80163,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8016
+  },
+  {
+   "day": -112,
+   "gross": -0.00170907248971608,
+   "net": -0.00215859008971608,
+   "exposure": 0.7491960000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7492
+  },
+  {
+   "day": -111,
+   "gross": -0.003982568159843512,
+   "net": -0.004386228959843513,
+   "exposure": 0.672768,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6728
+  },
+  {
+   "day": -110,
+   "gross": -0.005651013278847718,
+   "net": -0.006024894878847718,
+   "exposure": 0.6231359999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6231
+  },
+  {
+   "day": -109,
+   "gross": 0.00298223658696777,
+   "net": 0.00259591338696777,
+   "exposure": 0.643872,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6439
+  },
+  {
+   "day": -108,
+   "gross": -0.006851306250613706,
+   "net": -0.0073799446506137055,
+   "exposure": 0.881064,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8811
+  },
+  {
+   "day": -107,
+   "gross": -0.012991169928749241,
+   "net": -0.013591171128749241,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -106,
+   "gross": 0.017838937353289286,
+   "net": 0.017372215353289287,
+   "exposure": 0.7778700000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7779
+  },
+  {
+   "day": -105,
+   "gross": 0.03134980363461445,
+   "net": 0.030871889234614446,
+   "exposure": 0.7965240000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7965
+  },
+  {
+   "day": -104,
+   "gross": 0.025536192593616103,
+   "net": 0.025071194993616104,
+   "exposure": 0.774996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.775
+  },
+  {
+   "day": -103,
+   "gross": 0.019812596782797547,
+   "net": 0.019381777582797546,
+   "exposure": 0.718032,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.718
+  },
+  {
+   "day": -102,
+   "gross": -0.009044486449258711,
+   "net": -0.00947249044925871,
+   "exposure": 0.7133399999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7133
+  },
+  {
+   "day": -101,
+   "gross": -0.012115618189636725,
+   "net": -0.012582350989636724,
+   "exposure": 0.777888,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7779
+  },
+  {
+   "day": -100,
+   "gross": -0.001042297362026334,
+   "net": -0.001480518162026334,
+   "exposure": 0.7303680000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7304
+  },
+  {
+   "day": -99,
+   "gross": -0.0015688762616143553,
+   "net": -0.002062267061614355,
+   "exposure": 0.822318,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8223
+  },
+  {
+   "day": -98,
+   "gross": -0.008540923261811904,
+   "net": -0.009000434461811905,
+   "exposure": 0.7658520000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7659
+  },
+  {
+   "day": -97,
+   "gross": 0.002908197470521961,
+   "net": 0.0024174958705219613,
+   "exposure": 0.8178360000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8178
+  },
+  {
+   "day": -96,
+   "gross": 0.011463869948682606,
+   "net": 0.010999048748682606,
+   "exposure": 0.7747020000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7747
+  },
+  {
+   "day": -95,
+   "gross": 0.004478328878788895,
+   "net": 0.004064559278788895,
+   "exposure": 0.689616,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6896
+  },
+  {
+   "day": -94,
+   "gross": 0.018436601120844588,
+   "net": 0.01806837872084459,
+   "exposure": 0.613704,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6137
+  },
+  {
+   "day": -93,
+   "gross": -0.003961257566966293,
+   "net": -0.004317239966966292,
+   "exposure": 0.5933039999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5933
+  },
+  {
+   "day": -92,
+   "gross": 0.00939428150623077,
+   "net": 0.00900797270623077,
+   "exposure": 0.643848,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6438
+  },
+  {
+   "day": -91,
+   "gross": -0.05470007013446229,
+   "net": -0.05506934733446229,
+   "exposure": 0.6154620000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6155
+  },
+  {
+   "day": -90,
+   "gross": -0.008509994009129003,
+   "net": -0.008973357209129004,
+   "exposure": 0.7722719999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7723
+  },
+  {
+   "day": -85,
+   "gross": -0.016822002332423487,
+   "net": -0.017327715932423486,
+   "exposure": 0.842856,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8429
+  },
+  {
+   "day": -84,
+   "gross": -0.019719188097084527,
+   "net": -0.020160864897084525,
+   "exposure": 0.736128,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7361
+  },
+  {
+   "day": -83,
+   "gross": 0.0038196559338254587,
+   "net": 0.0033243283338254587,
+   "exposure": 0.825546,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8255
+  },
+  {
+   "day": -82,
+   "gross": -0.007212092175059608,
+   "net": -0.007531073775059608,
+   "exposure": 0.531636,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5316
+  },
+  {
+   "day": -81,
+   "gross": -0.01135763224508967,
+   "net": -0.01157451064508967,
+   "exposure": 0.361464,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3615
+  },
+  {
+   "day": -80,
+   "gross": 0.0017133193834252868,
+   "net": 0.0013860397834252868,
+   "exposure": 0.545466,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5455
+  },
+  {
+   "day": -79,
+   "gross": -0.0006141029210169139,
+   "net": -0.0008365541210169139,
+   "exposure": 0.370752,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3708
+  },
+  {
+   "day": -78,
+   "gross": -0.0037846682867317596,
+   "net": -0.003983730286731759,
+   "exposure": 0.33176999999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3318
+  },
+  {
+   "day": -77,
+   "gross": 0.004732986835910811,
+   "net": 0.004416500035910811,
+   "exposure": 0.527478,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5275
+  },
+  {
+   "day": -76,
+   "gross": 0.0022939014405355326,
+   "net": 0.0018194466405355326,
+   "exposure": 0.7907580000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7908
+  },
+  {
+   "day": -75,
+   "gross": 0.012650683303208725,
+   "net": 0.012102039703208724,
+   "exposure": 0.914406,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9144
+  },
+  {
+   "day": -74,
+   "gross": 0.009369677926268753,
+   "net": 0.009065179126268752,
+   "exposure": 0.507498,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5075
+  },
+  {
+   "day": -73,
+   "gross": 0.000393141568339996,
+   "net": -9.657003166000408e-05,
+   "exposure": 0.8161860000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8162
+  },
+  {
+   "day": -72,
+   "gross": -0.01257961916890969,
+   "net": -0.01293614516890969,
+   "exposure": 0.59421,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5942
+  },
+  {
+   "day": -71,
+   "gross": 0.006933847420532081,
+   "net": 0.006476748220532081,
+   "exposure": 0.761832,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7618
+  },
+  {
+   "day": -70,
+   "gross": 0.0008898114461115087,
+   "net": 0.0005422746461115088,
+   "exposure": 0.579228,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5792
+  },
+  {
+   "day": -69,
+   "gross": 0.009259407884682042,
+   "net": 0.008858652284682042,
+   "exposure": 0.667926,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6679
+  },
+  {
+   "day": -68,
+   "gross": 0.0008386539063080746,
+   "net": 0.0005898075063080746,
+   "exposure": 0.41474400000000006,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4147
+  },
+  {
+   "day": -67,
+   "gross": 0.0012353808170999874,
+   "net": 0.0011443800170999874,
+   "exposure": 0.151668,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1517
+  },
+  {
+   "day": -66,
+   "gross": 3.885060880601715e-06,
+   "net": -8.100653911939828e-05,
+   "exposure": 0.141486,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1415
+  },
+  {
+   "day": -65,
+   "gross": -0.00019711880433957789,
+   "net": -0.0002992796043395779,
+   "exposure": 0.17026800000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1703
+  },
+  {
+   "day": -64,
+   "gross": 0.0008640585668980553,
+   "net": 0.0007437645668980554,
+   "exposure": 0.20049,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2005
+  },
+  {
+   "day": -63,
+   "gross": 0.0034709176828267877,
+   "net": 0.0033545440828267876,
+   "exposure": 0.193956,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.194
+  },
+  {
+   "day": -62,
+   "gross": -0.0016435010849238985,
+   "net": -0.0017658578849238985,
+   "exposure": 0.20392799999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2039
+  },
+  {
+   "day": -61,
+   "gross": -0.0011378218888246196,
+   "net": -0.0012354142888246196,
+   "exposure": 0.162654,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1627
+  },
+  {
+   "day": -60,
+   "gross": -0.00048309288808569034,
+   "net": -0.0006163252880856903,
+   "exposure": 0.22205400000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2221
+  },
+  {
+   "day": -59,
+   "gross": -0.0017819543744862672,
+   "net": -0.0021688283744862673,
+   "exposure": 0.6447900000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6448
+  },
+  {
+   "day": -58,
+   "gross": 0.024746987033448367,
+   "net": 0.024348305033448366,
+   "exposure": 0.66447,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6645
+  },
+  {
+   "day": -56,
+   "gross": -0.0008813059573834318,
+   "net": -0.0014813071573834319,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -55,
+   "gross": 0.017264202546942192,
+   "net": 0.016665191346942193,
+   "exposure": 0.998352,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9983
+  },
+  {
+   "day": -54,
+   "gross": 0.0001399941443097916,
+   "net": -0.0003236678556902084,
+   "exposure": 0.77277,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7728
+  },
+  {
+   "day": -53,
+   "gross": -0.0027356854408412687,
+   "net": -0.0031784170408412685,
+   "exposure": 0.7378859999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7379
+  },
+  {
+   "day": -52,
+   "gross": 0.003205395807770034,
+   "net": 0.0028191158077700337,
+   "exposure": 0.6437999999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6438
+  },
+  {
+   "day": -51,
+   "gross": 0.00894215282932685,
+   "net": 0.008668002029326851,
+   "exposure": 0.45691800000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4569
+  },
+  {
+   "day": -50,
+   "gross": -0.006039235409708086,
+   "net": -0.0062827358097080855,
+   "exposure": 0.40583400000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4058
+  },
+  {
+   "day": -49,
+   "gross": 0.0013551282671257663,
+   "net": 0.0010285038671257662,
+   "exposure": 0.544374,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5444
+  },
+  {
+   "day": -48,
+   "gross": 0.0009556660494113526,
+   "net": 0.0005338036494113526,
+   "exposure": 0.703104,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7031
+  },
+  {
+   "day": -47,
+   "gross": 0.006706859263320411,
+   "net": 0.006390462463320411,
+   "exposure": 0.5273279999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5273
+  },
+  {
+   "day": -46,
+   "gross": 0.006251532633904978,
+   "net": 0.005876945433904978,
+   "exposure": 0.6243120000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6243
+  },
+  {
+   "day": -45,
+   "gross": -0.02297485894311351,
+   "net": -0.02330878054311351,
+   "exposure": 0.556536,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5565
+  },
+  {
+   "day": -44,
+   "gross": -0.0017716184588247538,
+   "net": -0.002068636458824754,
+   "exposure": 0.49502999999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.495
+  },
+  {
+   "day": -43,
+   "gross": 0.0016838097803323973,
+   "net": 0.0012107697803323974,
+   "exposure": 0.7883999999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7884
+  },
+  {
+   "day": -42,
+   "gross": 0.002504652370422071,
+   "net": 0.002213945170422071,
+   "exposure": 0.484512,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4845
+  },
+  {
+   "day": -41,
+   "gross": -0.005713944305109435,
+   "net": -0.006049791905109435,
+   "exposure": 0.559746,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5597
+  },
+  {
+   "day": -40,
+   "gross": -0.004130634932788327,
+   "net": -0.004574450132788327,
+   "exposure": 0.739692,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7397
+  },
+  {
+   "day": -39,
+   "gross": -0.00390923600160942,
+   "net": -0.00450923720160942,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -38,
+   "gross": -0.010184449286755774,
+   "net": -0.010756370486755774,
+   "exposure": 0.953202,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9532
+  },
+  {
+   "day": -37,
+   "gross": -0.006875502073427492,
+   "net": -0.007475503273427492,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -36,
+   "gross": -0.024936987021888665,
+   "net": -0.025536988221888664,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -35,
+   "gross": -0.007480618382572717,
+   "net": -0.007942721582572717,
+   "exposure": 0.770172,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7702
+  },
+  {
+   "day": -34,
+   "gross": -0.016452798300580475,
+   "net": -0.016863083100580475,
+   "exposure": 0.683808,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6838
+  },
+  {
+   "day": -33,
+   "gross": -0.009588962083433584,
+   "net": -0.010048894483433584,
+   "exposure": 0.766554,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7666
+  },
+  {
+   "day": -32,
+   "gross": -0.005777709888329257,
+   "net": -0.006271079088329258,
+   "exposure": 0.8222820000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8223
+  },
+  {
+   "day": -31,
+   "gross": 0.004600712254880016,
+   "net": 0.004124795854880016,
+   "exposure": 0.793194,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7932
+  },
+  {
+   "day": -30,
+   "gross": 0.003502169446931553,
+   "net": 0.0029021682469315526,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -29,
+   "gross": -0.010130566969629648,
+   "net": -0.010604359369629649,
+   "exposure": 0.789654,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7897
+  },
+  {
+   "day": -28,
+   "gross": -0.025725877038605897,
+   "net": -0.026325878238605896,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -22,
+   "gross": -0.0023729888284970474,
+   "net": -0.0029336498284970474,
+   "exposure": 0.934435,
+   "orders": 5,
+   "net_exposure": 0.186887,
+   "leverage": 0.9344
+  },
+  {
+   "day": -21,
+   "gross": 0.023804748302772943,
+   "net": 0.02336232030277294,
+   "exposure": 0.7373799999999999,
+   "orders": 5,
+   "net_exposure": 0.147476,
+   "leverage": 0.7374
+  },
+  {
+   "day": -20,
+   "gross": -0.045058266438255896,
+   "net": -0.045627551238255896,
+   "exposure": 0.948808,
+   "orders": 4,
+   "net_exposure": 0.0,
+   "leverage": 0.9488
+  },
+  {
+   "day": -19,
+   "gross": 0.001079675492600427,
+   "net": 0.000479674292600427,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -18,
+   "gross": -0.003872727659404218,
+   "net": -0.004472727659404218,
+   "exposure": 1.0,
+   "orders": 4,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -15,
+   "gross": 0.015188871682017907,
+   "net": 0.014865997282017908,
+   "exposure": 0.538124,
+   "orders": 4,
+   "net_exposure": -0.269062,
+   "leverage": 0.5381
+  },
+  {
+   "day": -14,
+   "gross": 0.008704746395672171,
+   "net": 0.008104745195672171,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -13,
+   "gross": 0.04214259492852843,
+   "net": 0.041542593728528435,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -12,
+   "gross": 0.0004964846601245447,
+   "net": -0.00010351653987545532,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": -11,
+   "gross": 0.019861530003550284,
+   "net": 0.019299991203550283,
+   "exposure": 0.935898,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9359
+  },
+  {
+   "day": -10,
+   "gross": -0.007601365757370419,
+   "net": -0.008145433757370419,
+   "exposure": 0.9067799999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9068
+  },
+  {
+   "day": -9,
+   "gross": -0.01691438164730547,
+   "net": -0.01751153164730547,
+   "exposure": 0.99525,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9952
+  },
+  {
+   "day": -8,
+   "gross": 0.01631473646765314,
+   "net": 0.015800771667653143,
+   "exposure": 0.856608,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8566
+  },
+  {
+   "day": -7,
+   "gross": 0.004978002007468586,
+   "net": 0.004477033207468586,
+   "exposure": 0.834948,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.835
+  },
+  {
+   "day": -6,
+   "gross": 0.00493058077103019,
+   "net": 0.00451369717103019,
+   "exposure": 0.694806,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6948
+  },
+  {
+   "day": -5,
+   "gross": -0.002650803194334953,
+   "net": -0.003008139194334953,
+   "exposure": 0.59556,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5956
+  },
+  {
+   "day": -4,
+   "gross": -0.0034707564729500296,
+   "net": -0.0037172556729500295,
+   "exposure": 0.410832,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4108
+  },
+  {
+   "day": -3,
+   "gross": 3.0305827808612892e-05,
+   "net": -0.0002804497721913871,
+   "exposure": 0.517926,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5179
+  },
+  {
+   "day": -2,
+   "gross": 0.007823040589092955,
+   "net": 0.007447186189092955,
+   "exposure": 0.6264239999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6264
+  },
+  {
+   "day": -1,
+   "gross": -0.00029910712009674793,
+   "net": -0.0007444379200967478,
+   "exposure": 0.7422179999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7422
+  },
+  {
+   "day": 0,
+   "gross": -0.01193332885973288,
+   "net": -0.01228909165973288,
+   "exposure": 0.592938,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5929
+  },
+  {
+   "day": 1,
+   "gross": 0.0035810875892785398,
+   "net": 0.0032220415892785397,
+   "exposure": 0.59841,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5984
+  },
+  {
+   "day": 2,
+   "gross": 0.01884743706804028,
+   "net": 0.01824743586804028,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 3,
+   "gross": 0.0074343975213698316,
+   "net": 0.0070336959213698315,
+   "exposure": 0.667836,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6678
+  },
+  {
+   "day": 4,
+   "gross": 0.0005973936987736569,
+   "net": 7.26648987736568e-05,
+   "exposure": 0.8745480000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8745
+  },
+  {
+   "day": 5,
+   "gross": 0.0019903554714919107,
+   "net": 0.0013903542714919107,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 6,
+   "gross": -0.004409508427583387,
+   "net": -0.004826086027583386,
+   "exposure": 0.694296,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6943
+  },
+  {
+   "day": 7,
+   "gross": -0.0013381936356250115,
+   "net": -0.0016929304356250114,
+   "exposure": 0.591228,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5912
+  },
+  {
+   "day": 8,
+   "gross": -0.0022601422461107318,
+   "net": -0.0027605350461107317,
+   "exposure": 0.833988,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.834
+  },
+  {
+   "day": 9,
+   "gross": -0.002552525634610856,
+   "net": -0.002755306434610856,
+   "exposure": 0.337968,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.338
+  },
+  {
+   "day": 10,
+   "gross": 0.004401851817889034,
+   "net": 0.0041862874178890345,
+   "exposure": 0.35927400000000004,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3593
+  },
+  {
+   "day": 11,
+   "gross": 0.0057806287037478685,
+   "net": 0.005558699503747868,
+   "exposure": 0.369882,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3699
+  },
+  {
+   "day": 12,
+   "gross": -0.0012310914548298922,
+   "net": -0.0013753254548298922,
+   "exposure": 0.24039000000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2404
+  },
+  {
+   "day": 13,
+   "gross": 0.0012242360927044382,
+   "net": 0.001141576492704438,
+   "exposure": 0.137766,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1378
+  },
+  {
+   "day": 14,
+   "gross": 0.002286612635054327,
+   "net": 0.0022083306350543274,
+   "exposure": 0.13047,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1305
+  },
+  {
+   "day": 15,
+   "gross": -0.008156289500241862,
+   "net": -0.008293863500241862,
+   "exposure": 0.22929,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2293
+  },
+  {
+   "day": 16,
+   "gross": 0.0004563327311112783,
+   "net": 0.0003562887311112783,
+   "exposure": 0.16674,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1667
+  },
+  {
+   "day": 17,
+   "gross": -0.0015417552737131673,
+   "net": -0.0017652072737131673,
+   "exposure": 0.37242000000000003,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3724
+  },
+  {
+   "day": 18,
+   "gross": -0.003731773707531952,
+   "net": -0.004052026107531952,
+   "exposure": 0.533754,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5338
+  },
+  {
+   "day": 19,
+   "gross": 0.006449496971523199,
+   "net": 0.006172455371523199,
+   "exposure": 0.46173600000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4617
+  },
+  {
+   "day": 20,
+   "gross": 0.0012301307957668613,
+   "net": 0.0011376647957668613,
+   "exposure": 0.15411000000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1541
+  },
+  {
+   "day": 21,
+   "gross": -0.005733420496542366,
+   "net": -0.005900694496542366,
+   "exposure": 0.27879,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2788
+  },
+  {
+   "day": 22,
+   "gross": 3.5831161555887107e-05,
+   "net": -1.9727638444112887e-05,
+   "exposure": 0.092598,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0926
+  },
+  {
+   "day": 23,
+   "gross": -0.000960460848465368,
+   "net": -0.0010377672484653678,
+   "exposure": 0.128844,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1288
+  },
+  {
+   "day": 24,
+   "gross": 0.0004962176587594729,
+   "net": 0.00043730725875947295,
+   "exposure": 0.09818400000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0982
+  },
+  {
+   "day": 25,
+   "gross": 0.0016343748010537165,
+   "net": 0.0014428476010537165,
+   "exposure": 0.31921199999999994,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3192
+  },
+  {
+   "day": 26,
+   "gross": 0.002031690795207882,
+   "net": 0.0019123183952078817,
+   "exposure": 0.198954,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.199
+  },
+  {
+   "day": 27,
+   "gross": 0.0014969730150354455,
+   "net": 0.0013571814150354455,
+   "exposure": 0.232986,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.233
+  },
+  {
+   "day": 28,
+   "gross": -0.003883162049350147,
+   "net": -0.004024886849350148,
+   "exposure": 0.23620800000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2362
+  },
+  {
+   "day": 29,
+   "gross": -0.0029475631438090305,
+   "net": -0.0031461715438090305,
+   "exposure": 0.33101400000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.331
+  },
+  {
+   "day": 30,
+   "gross": 0.00730399881127668,
+   "net": 0.007128124411276681,
+   "exposure": 0.293124,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2931
+  },
+  {
+   "day": 31,
+   "gross": 0.0037467219438898232,
+   "net": 0.003532385143889823,
+   "exposure": 0.357228,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3572
+  },
+  {
+   "day": 32,
+   "gross": 0.045835339370626685,
+   "net": 0.04555403177062668,
+   "exposure": 0.46884600000000004,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4688
+  },
+  {
+   "day": 33,
+   "gross": 0.010746720150153499,
+   "net": 0.010566097350153498,
+   "exposure": 0.30103800000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.301
+  },
+  {
+   "day": 34,
+   "gross": -0.007454226409388507,
+   "net": -0.007663022809388507,
+   "exposure": 0.347994,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.348
+  },
+  {
+   "day": 35,
+   "gross": -0.012085101469393691,
+   "net": -0.012361253869393692,
+   "exposure": 0.46025400000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4603
+  },
+  {
+   "day": 36,
+   "gross": -0.00027596056232564466,
+   "net": -0.0004795909623256447,
+   "exposure": 0.339384,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3394
+  },
+  {
+   "day": 37,
+   "gross": 0.010859473311095429,
+   "net": 0.01057356131109543,
+   "exposure": 0.47652,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4765
+  },
+  {
+   "day": 38,
+   "gross": 0.0001438779599736739,
+   "net": -0.0001646744400263261,
+   "exposure": 0.514254,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5143
+  },
+  {
+   "day": 39,
+   "gross": -0.0014493609606155847,
+   "net": -0.0017539281606155847,
+   "exposure": 0.507612,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5076
+  },
+  {
+   "day": 40,
+   "gross": 8.12010572316925e-06,
+   "net": -0.00021211349427683072,
+   "exposure": 0.367056,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3671
+  },
+  {
+   "day": 41,
+   "gross": 0.000753411003363151,
+   "net": 0.0005849310033631509,
+   "exposure": 0.2808,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2808
+  },
+  {
+   "day": 42,
+   "gross": -0.00015900156688778214,
+   "net": -0.00033611076688778215,
+   "exposure": 0.295182,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2952
+  },
+  {
+   "day": 43,
+   "gross": 0.004156241874061676,
+   "net": 0.003966125874061676,
+   "exposure": 0.31686000000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3169
+  },
+  {
+   "day": 44,
+   "gross": 0.004661705337094571,
+   "net": 0.004463831337094572,
+   "exposure": 0.32978999999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3298
+  },
+  {
+   "day": 45,
+   "gross": 0.003981009492534779,
+   "net": 0.0037712878925347795,
+   "exposure": 0.34953599999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3495
+  },
+  {
+   "day": 46,
+   "gross": 0.004421878408374987,
+   "net": 0.004162152808374987,
+   "exposure": 0.432876,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4329
+  },
+  {
+   "day": 47,
+   "gross": 0.005647969055069161,
+   "net": 0.005090645855069161,
+   "exposure": 0.9288719999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9289
+  },
+  {
+   "day": 48,
+   "gross": 0.006867710549774999,
+   "net": 0.006618644549774999,
+   "exposure": 0.41511,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4151
+  },
+  {
+   "day": 49,
+   "gross": -0.005018089087125826,
+   "net": -0.005273386687125826,
+   "exposure": 0.425496,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4255
+  },
+  {
+   "day": 50,
+   "gross": -0.004417127728416038,
+   "net": -0.004733895328416038,
+   "exposure": 0.527946,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5279
+  },
+  {
+   "day": 51,
+   "gross": 0.0009133051333268219,
+   "net": 0.000650296333326822,
+   "exposure": 0.438348,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4383
+  },
+  {
+   "day": 52,
+   "gross": 0.0037047457057362036,
+   "net": 0.0034223005057362034,
+   "exposure": 0.470742,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4707
+  },
+  {
+   "day": 53,
+   "gross": 0.010299985551520945,
+   "net": 0.009699984351520944,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 54,
+   "gross": 0.008977337885560516,
+   "net": 0.008642062685560515,
+   "exposure": 0.5587920000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5588
+  },
+  {
+   "day": 55,
+   "gross": 0.04746178587459821,
+   "net": 0.047138531074598214,
+   "exposure": 0.538758,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5388
+  },
+  {
+   "day": 56,
+   "gross": 0.0015017087453201312,
+   "net": 0.001076789945320131,
+   "exposure": 0.7081980000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7082
+  },
+  {
+   "day": 57,
+   "gross": -0.0020312562925229585,
+   "net": -0.0024587598925229583,
+   "exposure": 0.7125060000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7125
+  },
+  {
+   "day": 58,
+   "gross": 0.03613362486779937,
+   "net": 0.03569175366779937,
+   "exposure": 0.736452,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7365
+  },
+  {
+   "day": 59,
+   "gross": 0.003149761125414287,
+   "net": 0.002756137125414287,
+   "exposure": 0.6560400000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.656
+  },
+  {
+   "day": 60,
+   "gross": -0.01656445880917305,
+   "net": -0.01699760000917305,
+   "exposure": 0.7219019999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7219
+  },
+  {
+   "day": 61,
+   "gross": 0.007731944487631675,
+   "net": 0.0072968052876316745,
+   "exposure": 0.725232,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7252
+  },
+  {
+   "day": 62,
+   "gross": 0.025633220850076223,
+   "net": 0.025277216850076223,
+   "exposure": 0.5933400000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5933
+  },
+  {
+   "day": 63,
+   "gross": 0.015375678252534802,
+   "net": 0.015167954652534803,
+   "exposure": 0.346206,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3462
+  },
+  {
+   "day": 64,
+   "gross": 0.037494348452014985,
+   "net": 0.03722255205201498,
+   "exposure": 0.45299399999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.453
+  },
+  {
+   "day": 65,
+   "gross": 0.032089366538251424,
+   "net": 0.03179080773825142,
+   "exposure": 0.4975980000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4976
+  },
+  {
+   "day": 66,
+   "gross": -0.0015025297630368913,
+   "net": -0.0015261565630368913,
+   "exposure": 0.039378,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0394
+  },
+  {
+   "day": 67,
+   "gross": -0.0016832232130730865,
+   "net": -0.0017069940130730865,
+   "exposure": 0.039618,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0396
+  },
+  {
+   "day": 68,
+   "gross": 0.001497230349619363,
+   "net": 0.001417130349619363,
+   "exposure": 0.13349999999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1335
+  },
+  {
+   "day": 69,
+   "gross": -0.0001955805223653852,
+   "net": -0.00026478332236538524,
+   "exposure": 0.11533800000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1153
+  },
+  {
+   "day": 70,
+   "gross": -0.00012020217900254057,
+   "net": -0.00017427417900254058,
+   "exposure": 0.09012,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0901
+  },
+  {
+   "day": 71,
+   "gross": -0.0017937139330846186,
+   "net": -0.0019545835330846187,
+   "exposure": 0.26811599999999997,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2681
+  },
+  {
+   "day": 72,
+   "gross": -0.0014189427967500445,
+   "net": -0.0016094943967500444,
+   "exposure": 0.317586,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3176
+  },
+  {
+   "day": 73,
+   "gross": -0.0006351701680801684,
+   "net": -0.0006766061680801683,
+   "exposure": 0.06906,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0691
+  },
+  {
+   "day": 74,
+   "gross": -0.0026738318860135275,
+   "net": -0.0027102890860135273,
+   "exposure": 0.060762,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0608
+  },
+  {
+   "day": 75,
+   "gross": 0.0011788320679458446,
+   "net": 0.0011028792679458445,
+   "exposure": 0.126588,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1266
+  },
+  {
+   "day": 76,
+   "gross": -0.003492215462670642,
+   "net": -0.003609024662670642,
+   "exposure": 0.194682,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1947
+  },
+  {
+   "day": 77,
+   "gross": -0.00034625725873907876,
+   "net": -0.0004848608587390788,
+   "exposure": 0.23100600000000002,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.231
+  },
+  {
+   "day": 78,
+   "gross": 0.00403000655106504,
+   "net": 0.00390923015106504,
+   "exposure": 0.201294,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2013
+  },
+  {
+   "day": 79,
+   "gross": 0.0010755537706397806,
+   "net": 0.0009441105706397806,
+   "exposure": 0.219072,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2191
+  },
+  {
+   "day": 80,
+   "gross": 0.0022007891492966235,
+   "net": 0.0020606123492966236,
+   "exposure": 0.233628,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2336
+  },
+  {
+   "day": 81,
+   "gross": 0.003956587568502664,
+   "net": 0.0038166663685026644,
+   "exposure": 0.23320199999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2332
+  },
+  {
+   "day": 82,
+   "gross": -0.0039142734388590925,
+   "net": -0.004100541038859092,
+   "exposure": 0.310446,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3104
+  },
+  {
+   "day": 83,
+   "gross": 0.006895319364417788,
+   "net": 0.006681191364417788,
+   "exposure": 0.35688,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3569
+  },
+  {
+   "day": 84,
+   "gross": 0.006090656527386487,
+   "net": 0.0059171761273864865,
+   "exposure": 0.289134,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2891
+  },
+  {
+   "day": 85,
+   "gross": 0.009835529871105404,
+   "net": 0.009681428271105404,
+   "exposure": 0.256836,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2568
+  },
+  {
+   "day": 86,
+   "gross": -0.0024632306015305314,
+   "net": -0.0025769762015305313,
+   "exposure": 0.18957600000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1896
+  },
+  {
+   "day": 87,
+   "gross": 0.0018141265224504313,
+   "net": 0.0016972381224504313,
+   "exposure": 0.194814,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1948
+  },
+  {
+   "day": 88,
+   "gross": 0.010289218447894693,
+   "net": 0.010145758447894693,
+   "exposure": 0.23909999999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2391
+  },
+  {
+   "day": 89,
+   "gross": 0.00195407029438531,
+   "net": 0.00177251509438531,
+   "exposure": 0.30259199999999997,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3026
+  },
+  {
+   "day": 90,
+   "gross": 0.0002085194406893961,
+   "net": 0.00011938344068939611,
+   "exposure": 0.14856,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1486
+  },
+  {
+   "day": 91,
+   "gross": 0.00446818082761962,
+   "net": 0.00437171882761962,
+   "exposure": 0.16077000000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1608
+  },
+  {
+   "day": 92,
+   "gross": 0.01068328700794935,
+   "net": 0.01056858020794935,
+   "exposure": 0.19117800000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1912
+  },
+  {
+   "day": 93,
+   "gross": 0.0009308418251836454,
+   "net": 0.0008479734251836455,
+   "exposure": 0.13811400000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1381
+  },
+  {
+   "day": 94,
+   "gross": 0.0024538635908008984,
+   "net": 0.0022942863908008986,
+   "exposure": 0.265962,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.266
+  },
+  {
+   "day": 95,
+   "gross": 0.0067779477075470005,
+   "net": 0.006515000107547001,
+   "exposure": 0.438246,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4382
+  },
+  {
+   "day": 96,
+   "gross": -0.01062038747594855,
+   "net": -0.01096997267594855,
+   "exposure": 0.582642,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5826
+  },
+  {
+   "day": 97,
+   "gross": -0.02366565993135247,
+   "net": -0.02404392993135247,
+   "exposure": 0.6304500000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6305
+  },
+  {
+   "day": 98,
+   "gross": 0.012657219325514958,
+   "net": 0.012399833725514958,
+   "exposure": 0.428976,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.429
+  },
+  {
+   "day": 99,
+   "gross": -0.0018956983008897458,
+   "net": -0.0021290755008897457,
+   "exposure": 0.3889619999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.389
+  },
+  {
+   "day": 100,
+   "gross": 0.009287678132571265,
+   "net": 0.009057580532571266,
+   "exposure": 0.38349599999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3835
+  },
+  {
+   "day": 101,
+   "gross": 0.008015434251355917,
+   "net": 0.007817441451355918,
+   "exposure": 0.329988,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.33
+  },
+  {
+   "day": 102,
+   "gross": -0.0021722614688643514,
+   "net": -0.0023741314688643512,
+   "exposure": 0.33644999999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3364
+  },
+  {
+   "day": 103,
+   "gross": -0.011071117786965755,
+   "net": -0.011417563786965755,
+   "exposure": 0.57741,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5774
+  },
+  {
+   "day": 104,
+   "gross": 0.006886004746095329,
+   "net": 0.006598814746095329,
+   "exposure": 0.47864999999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4787
+  },
+  {
+   "day": 105,
+   "gross": 0.0029292731802667083,
+   "net": 0.0026774783802667084,
+   "exposure": 0.419658,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4197
+  },
+  {
+   "day": 106,
+   "gross": -0.0012252881611974301,
+   "net": -0.00159742736119743,
+   "exposure": 0.620232,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6202
+  },
+  {
+   "day": 107,
+   "gross": 0.0007603644186813404,
+   "net": 0.0004934856186813404,
+   "exposure": 0.444798,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4448
+  },
+  {
+   "day": 108,
+   "gross": -0.0018986607340797724,
+   "net": -0.0020288907340797724,
+   "exposure": 0.21705000000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2171
+  },
+  {
+   "day": 109,
+   "gross": 0.004063712718320194,
+   "net": 0.003909218718320194,
+   "exposure": 0.25749,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2575
+  },
+  {
+   "day": 110,
+   "gross": 0.0007942107065270225,
+   "net": 0.0006674115065270225,
+   "exposure": 0.21133200000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2113
+  },
+  {
+   "day": 111,
+   "gross": -0.0011638895787976495,
+   "net": -0.0013250219787976495,
+   "exposure": 0.268554,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2686
+  },
+  {
+   "day": 112,
+   "gross": 0.004160401157846154,
+   "net": 0.003954092357846154,
+   "exposure": 0.34384800000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3438
+  },
+  {
+   "day": 113,
+   "gross": 0.0053911462746844005,
+   "net": 0.005135963874684401,
+   "exposure": 0.425304,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4253
+  },
+  {
+   "day": 114,
+   "gross": 0.0006692887945171603,
+   "net": 0.00040884679451716027,
+   "exposure": 0.43407,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4341
+  },
+  {
+   "day": 115,
+   "gross": -0.0008130886300077326,
+   "net": -0.0010659346300077325,
+   "exposure": 0.42141,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4214
+  },
+  {
+   "day": 116,
+   "gross": 0.008994125530822324,
+   "net": 0.008764657930822324,
+   "exposure": 0.382446,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3824
+  },
+  {
+   "day": 117,
+   "gross": -0.002485747877088558,
+   "net": -0.002707554677088558,
+   "exposure": 0.36967800000000006,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3697
+  },
+  {
+   "day": 118,
+   "gross": 0.0004174938281592336,
+   "net": 0.0002763090281592336,
+   "exposure": 0.23530800000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2353
+  },
+  {
+   "day": 119,
+   "gross": -0.005695453354677713,
+   "net": -0.005909113354677713,
+   "exposure": 0.3561,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3561
+  },
+  {
+   "day": 120,
+   "gross": 0.0012188300389404947,
+   "net": 0.0009178664389404947,
+   "exposure": 0.501606,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5016
+  },
+  {
+   "day": 121,
+   "gross": 0.004892340295156724,
+   "net": 0.004609344295156724,
+   "exposure": 0.47166,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4717
+  },
+  {
+   "day": 122,
+   "gross": 0.002371434623997285,
+   "net": 0.0021138834239972848,
+   "exposure": 0.42925199999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4293
+  },
+  {
+   "day": 123,
+   "gross": -0.026857752898832986,
+   "net": -0.027218156098832987,
+   "exposure": 0.600672,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6007
+  },
+  {
+   "day": 124,
+   "gross": 0.008509584762232365,
+   "net": 0.008080889562232364,
+   "exposure": 0.714492,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7145
+  },
+  {
+   "day": 125,
+   "gross": -0.0035098393438414404,
+   "net": -0.00393399134384144,
+   "exposure": 0.70692,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7069
+  },
+  {
+   "day": 126,
+   "gross": 0.0024886370295630986,
+   "net": 0.0019625438295630985,
+   "exposure": 0.8768219999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8768
+  },
+  {
+   "day": 127,
+   "gross": 0.007646596686636489,
+   "net": 0.007046595486636489,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 128,
+   "gross": -0.007444756085673322,
+   "net": -0.008044757285673321,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 129,
+   "gross": -0.0042596952468785,
+   "net": -0.004797596446878501,
+   "exposure": 0.896502,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8965
+  },
+  {
+   "day": 130,
+   "gross": 0.00958076451445188,
+   "net": 0.00907082091445188,
+   "exposure": 0.8499059999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8499
+  },
+  {
+   "day": 131,
+   "gross": 0.001714429346772055,
+   "net": 0.001296789746772055,
+   "exposure": 0.696066,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6961
+  },
+  {
+   "day": 132,
+   "gross": 0.007876698860177042,
+   "net": 0.007460898860177042,
+   "exposure": 0.6930000000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.693
+  },
+  {
+   "day": 133,
+   "gross": 0.014992561963076634,
+   "net": 0.014543353963076634,
+   "exposure": 0.74868,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7487
+  },
+  {
+   "day": 134,
+   "gross": -0.009552452082785401,
+   "net": -0.009949416882785401,
+   "exposure": 0.6616080000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6616
+  },
+  {
+   "day": 135,
+   "gross": 0.01825494170378634,
+   "net": 0.01786543250378634,
+   "exposure": 0.649182,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6492
+  },
+  {
+   "day": 136,
+   "gross": 0.0032434151092516285,
+   "net": 0.0028050467092516286,
+   "exposure": 0.730614,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7306
+  },
+  {
+   "day": 137,
+   "gross": -0.0035044756941923928,
+   "net": -0.004094490494192393,
+   "exposure": 0.9833580000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9834
+  },
+  {
+   "day": 138,
+   "gross": -0.0004419581545527843,
+   "net": -0.0010291901545527841,
+   "exposure": 0.9787199999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9787
+  },
+  {
+   "day": 139,
+   "gross": 0.0020175538744604525,
+   "net": 0.0014175526744604524,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 140,
+   "gross": 0.005778946971263577,
+   "net": 0.005178945771263576,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 141,
+   "gross": -0.002415437271969431,
+   "net": -0.0029257624719694307,
+   "exposure": 0.850542,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8505
+  },
+  {
+   "day": 142,
+   "gross": 0.008513910672176907,
+   "net": 0.008004363072176907,
+   "exposure": 0.8492460000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8492
+  },
+  {
+   "day": 143,
+   "gross": -0.0068147862670189,
+   "net": -0.0072486978670188995,
+   "exposure": 0.7231859999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7232
+  },
+  {
+   "day": 144,
+   "gross": -0.005265652952276474,
+   "net": -0.005801296952276474,
+   "exposure": 0.89274,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8927
+  },
+  {
+   "day": 145,
+   "gross": -0.00918992945581177,
+   "net": -0.00977570345581177,
+   "exposure": 0.9762899999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9763
+  },
+  {
+   "day": 146,
+   "gross": 0.006913271141658324,
+   "net": 0.006313269941658324,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 147,
+   "gross": -0.01291102729682872,
+   "net": -0.01351102849682872,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 154,
+   "gross": 0.018243058347222754,
+   "net": 0.017643058347222754,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": 0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": 155,
+   "gross": -0.0030877427390034315,
+   "net": -0.0036877439390034317,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 156,
+   "gross": 0.01682450516365718,
+   "net": 0.016224503963657183,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 157,
+   "gross": -0.004169387529116008,
+   "net": -0.004688773929116008,
+   "exposure": 0.8656440000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8656
+  },
+  {
+   "day": 158,
+   "gross": -0.001345258617351074,
+   "net": -0.0017811250173510739,
+   "exposure": 0.726444,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7264
+  },
+  {
+   "day": 159,
+   "gross": -0.005041480617500982,
+   "net": -0.005372831817500982,
+   "exposure": 0.552252,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5523
+  },
+  {
+   "day": 160,
+   "gross": -0.005683743283732076,
+   "net": -0.006050792083732076,
+   "exposure": 0.611748,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6117
+  },
+  {
+   "day": 161,
+   "gross": 0.01595074165633331,
+   "net": 0.015414395656333311,
+   "exposure": 0.8939100000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8939
+  },
+  {
+   "day": 162,
+   "gross": 0.005185832385528174,
+   "net": 0.004647927585528174,
+   "exposure": 0.8965080000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8965
+  },
+  {
+   "day": 163,
+   "gross": 0.0005950114056426166,
+   "net": 7.771300564261667e-05,
+   "exposure": 0.8621639999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8622
+  },
+  {
+   "day": 164,
+   "gross": 0.016673413828051372,
+   "net": 0.01615022942805137,
+   "exposure": 0.8719740000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.872
+  },
+  {
+   "day": 165,
+   "gross": 0.0040914089423622685,
+   "net": 0.0035890397423622685,
+   "exposure": 0.837282,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8373
+  },
+  {
+   "day": 166,
+   "gross": 0.002402121216545568,
+   "net": 0.0020692400165455683,
+   "exposure": 0.5548019999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5548
+  },
+  {
+   "day": 167,
+   "gross": -0.0019460882414252976,
+   "net": -0.0022929950414252976,
+   "exposure": 0.578178,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5782
+  },
+  {
+   "day": 168,
+   "gross": -0.00029569226485639437,
+   "net": -0.0005837318648563944,
+   "exposure": 0.480066,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4801
+  },
+  {
+   "day": 169,
+   "gross": 0.0014580095142100072,
+   "net": 0.001116002314210007,
+   "exposure": 0.5700120000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.57
+  },
+  {
+   "day": 170,
+   "gross": -0.0007948317203474128,
+   "net": -0.0011334729203474128,
+   "exposure": 0.564402,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5644
+  },
+  {
+   "day": 171,
+   "gross": 0.009212202702843397,
+   "net": 0.008831920302843398,
+   "exposure": 0.633804,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6338
+  },
+  {
+   "day": 172,
+   "gross": -0.005216571854099745,
+   "net": -0.005726252654099744,
+   "exposure": 0.849468,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8495
+  },
+  {
+   "day": 173,
+   "gross": 0.005667618886460636,
+   "net": 0.005131582486460636,
+   "exposure": 0.893394,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8934
+  },
+  {
+   "day": 174,
+   "gross": -0.008149842443016798,
+   "net": -0.008737675643016798,
+   "exposure": 0.9797219999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9797
+  },
+  {
+   "day": 175,
+   "gross": -0.008997296814892584,
+   "net": -0.009575244414892584,
+   "exposure": 0.963246,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9632
+  },
+  {
+   "day": 176,
+   "gross": 0.003483154243067767,
+   "net": 0.002922522643067767,
+   "exposure": 0.9343860000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9344
+  },
+  {
+   "day": 177,
+   "gross": -0.0021959579589400906,
+   "net": -0.0025830155589400905,
+   "exposure": 0.6450959999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6451
+  },
+  {
+   "day": 178,
+   "gross": -0.001785878079714235,
+   "net": -0.002185568079714235,
+   "exposure": 0.66615,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6662
+  },
+  {
+   "day": 179,
+   "gross": -0.002945245410283949,
+   "net": -0.003074510610283949,
+   "exposure": 0.215442,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2154
+  },
+  {
+   "day": 180,
+   "gross": 0.0052870319217195,
+   "net": 0.0051063947217195,
+   "exposure": 0.30106200000000005,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3011
+  },
+  {
+   "day": 181,
+   "gross": 0.0024510976116306664,
+   "net": 0.0022851232116306666,
+   "exposure": 0.276624,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2766
+  },
+  {
+   "day": 182,
+   "gross": 0.0019828414467737724,
+   "net": 0.0018567550467737724,
+   "exposure": 0.210144,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2101
+  },
+  {
+   "day": 183,
+   "gross": -0.003538660954608046,
+   "net": -0.0037553341546080463,
+   "exposure": 0.361122,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3611
+  },
+  {
+   "day": 184,
+   "gross": -0.00033610923007830744,
+   "net": -0.00036082683007830743,
+   "exposure": 0.041195999999999997,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0412
+  },
+  {
+   "day": 185,
+   "gross": -0.0010084586617467072,
+   "net": -0.0011615558617467073,
+   "exposure": 0.255162,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2552
+  },
+  {
+   "day": 186,
+   "gross": 0.00014628048575916584,
+   "net": 4.102728575916581e-05,
+   "exposure": 0.17542200000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1754
+  },
+  {
+   "day": 187,
+   "gross": 0.0005165762819857433,
+   "net": 0.00037917868198574325,
+   "exposure": 0.228996,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.229
+  },
+  {
+   "day": 188,
+   "gross": -0.0006560452726526948,
+   "net": -0.0008550208726526949,
+   "exposure": 0.33162600000000003,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3316
+  },
+  {
+   "day": 189,
+   "gross": -0.01669978322057716,
+   "net": -0.01710281762057716,
+   "exposure": 0.671724,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6717
+  },
+  {
+   "day": 190,
+   "gross": 0.0019802306726922794,
+   "net": 0.0018751070726922795,
+   "exposure": 0.175206,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1752
+  },
+  {
+   "day": 191,
+   "gross": 0.008423057047098965,
+   "net": 0.008229737047098964,
+   "exposure": 0.32219999999999993,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3222
+  },
+  {
+   "day": 192,
+   "gross": -0.00668808290926843,
+   "net": -0.0069477077092684305,
+   "exposure": 0.43270800000000004,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4327
+  },
+  {
+   "day": 193,
+   "gross": -0.0048019788319428195,
+   "net": -0.0051280632319428195,
+   "exposure": 0.543474,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5435
+  },
+  {
+   "day": 194,
+   "gross": 0.0021348033963121604,
+   "net": 0.0018367197963121604,
+   "exposure": 0.496806,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4968
+  },
+  {
+   "day": 195,
+   "gross": -0.008970673481268803,
+   "net": -0.009293931881268803,
+   "exposure": 0.538764,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5388
+  },
+  {
+   "day": 196,
+   "gross": -0.002006796254134444,
+   "net": -0.0023143514541344437,
+   "exposure": 0.5125919999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5126
+  },
+  {
+   "day": 197,
+   "gross": -0.0031143094050589838,
+   "net": -0.0033597718050589836,
+   "exposure": 0.409104,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4091
+  },
+  {
+   "day": 198,
+   "gross": -0.00018179476904301255,
+   "net": -0.00032221636904301257,
+   "exposure": 0.23403599999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.234
+  },
+  {
+   "day": 199,
+   "gross": 0.005443832747609723,
+   "net": 0.005223995147609723,
+   "exposure": 0.366396,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3664
+  },
+  {
+   "day": 200,
+   "gross": -0.002927886655787022,
+   "net": -0.003137896255787022,
+   "exposure": 0.350016,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.35
+  },
+  {
+   "day": 201,
+   "gross": -0.001352918507648692,
+   "net": -0.001530042107648692,
+   "exposure": 0.295206,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2952
+  },
+  {
+   "day": 202,
+   "gross": 0.007399929226779506,
+   "net": 0.007189113226779506,
+   "exposure": 0.35136,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3514
+  },
+  {
+   "day": 203,
+   "gross": -0.0019711953668480817,
+   "net": -0.0021729537668480816,
+   "exposure": 0.33626399999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3363
+  },
+  {
+   "day": 204,
+   "gross": 0.004698341351090584,
+   "net": 0.004386732551090584,
+   "exposure": 0.519348,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5194
+  },
+  {
+   "day": 205,
+   "gross": 0.005895179791199904,
+   "net": 0.005583045391199904,
+   "exposure": 0.520224,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5202
+  },
+  {
+   "day": 206,
+   "gross": -0.0001316851667874778,
+   "net": -0.00043209796678747776,
+   "exposure": 0.5006879999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5007
+  },
+  {
+   "day": 207,
+   "gross": 0.023537850809158194,
+   "net": 0.023155088009158196,
+   "exposure": 0.6379379999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6379
+  },
+  {
+   "day": 208,
+   "gross": 0.0046143318266430615,
+   "net": 0.004239708626643061,
+   "exposure": 0.624372,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6244
+  },
+  {
+   "day": 209,
+   "gross": -0.01804632882089513,
+   "net": -0.01834726002089513,
+   "exposure": 0.501552,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5016
+  },
+  {
+   "day": 210,
+   "gross": 0.0010012961871538766,
+   "net": 0.0006454937871538766,
+   "exposure": 0.593004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.593
+  },
+  {
+   "day": 211,
+   "gross": -0.00384228083702071,
+   "net": -0.00427242683702071,
+   "exposure": 0.7169099999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7169
+  },
+  {
+   "day": 212,
+   "gross": 0.006011424563396426,
+   "net": 0.0056178149633964265,
+   "exposure": 0.656016,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.656
+  },
+  {
+   "day": 213,
+   "gross": 0.0027166779759899007,
+   "net": 0.0023519547759899007,
+   "exposure": 0.607872,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6079
+  },
+  {
+   "day": 214,
+   "gross": -0.0036664413916657683,
+   "net": -0.004091367391665768,
+   "exposure": 0.70821,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7082
+  },
+  {
+   "day": 215,
+   "gross": 0.000800482503361958,
+   "net": 0.0003501549033619578,
+   "exposure": 0.7505460000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7505
+  },
+  {
+   "day": 216,
+   "gross": -0.0020760621166589065,
+   "net": -0.0026036313166589065,
+   "exposure": 0.879282,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8793
+  },
+  {
+   "day": 217,
+   "gross": 0.009837250307425235,
+   "net": 0.009261041507425235,
+   "exposure": 0.9603480000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.9603
+  },
+  {
+   "day": 218,
+   "gross": -0.004828048218562052,
+   "net": -0.005428049418562052,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 219,
+   "gross": -0.0019290112414983094,
+   "net": -0.0025290124414983095,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 220,
+   "gross": 0.005732518225832084,
+   "net": 0.0051325170258320835,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 221,
+   "gross": 0.010467886708589584,
+   "net": 0.009867885508589583,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 222,
+   "gross": 0.004251229210451024,
+   "net": 0.0037467948104510243,
+   "exposure": 0.840724,
+   "orders": 4,
+   "net_exposure": 0.0,
+   "leverage": 0.8407
+  },
+  {
+   "day": 223,
+   "gross": -0.011108670682087615,
+   "net": -0.011708671882087615,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 224,
+   "gross": -0.0033548691717529638,
+   "net": -0.003954870371752964,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 225,
+   "gross": 0.0021069874427748075,
+   "net": 0.0015069862427748075,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 226,
+   "gross": -0.006497975085062878,
+   "net": -0.0070979762850628784,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 227,
+   "gross": 0.003909160595011465,
+   "net": 0.0033091593950114644,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 228,
+   "gross": 0.005174999608778244,
+   "net": 0.004718084008778245,
+   "exposure": 0.7615260000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7615
+  },
+  {
+   "day": 229,
+   "gross": -0.007003250390257289,
+   "net": -0.007334749190257289,
+   "exposure": 0.552498,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5525
+  },
+  {
+   "day": 230,
+   "gross": -0.0035620817097201593,
+   "net": -0.004006606109720159,
+   "exposure": 0.740874,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7409
+  },
+  {
+   "day": 231,
+   "gross": 0.005334238472098771,
+   "net": 0.004823438072098772,
+   "exposure": 0.8513339999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8513
+  },
+  {
+   "day": 232,
+   "gross": 0.02479553986904775,
+   "net": 0.02419553866904775,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 233,
+   "gross": -0.011610692397682648,
+   "net": -0.012102574797682647,
+   "exposure": 0.8198040000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8198
+  },
+  {
+   "day": 234,
+   "gross": -0.0005986712620349951,
+   "net": -0.0011986724620349951,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 235,
+   "gross": 0.008064099935267577,
+   "net": 0.007464098735267577,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 236,
+   "gross": 0.010969110819819022,
+   "net": 0.010369109619819022,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 237,
+   "gross": 0.0039709366945098554,
+   "net": 0.003370935494509855,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 238,
+   "gross": -0.004715776550274221,
+   "net": -0.005315777750274221,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 239,
+   "gross": -0.004164180617498116,
+   "net": -0.004764181817498116,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 240,
+   "gross": 0.008015173215104716,
+   "net": 0.0074151720151047155,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 241,
+   "gross": 0.0015992885799292875,
+   "net": 0.0009992873799292874,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 242,
+   "gross": 0.009029144600726704,
+   "net": 0.008429143400726704,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 243,
+   "gross": 0.013486448720137694,
+   "net": 0.012886447520137694,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 244,
+   "gross": 0.018113005187128446,
+   "net": 0.017513003987128448,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 245,
+   "gross": 0.017805711812262107,
+   "net": 0.017205710612262108,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 246,
+   "gross": -0.00629739431811948,
+   "net": -0.00689739551811948,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 247,
+   "gross": -0.006467170613727553,
+   "net": -0.007067171813727553,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 248,
+   "gross": 0.013211164992459024,
+   "net": 0.012611164992459024,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": -0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": 249,
+   "gross": 0.005303624776799882,
+   "net": 0.004809053176799882,
+   "exposure": 0.824286,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8243
+  },
+  {
+   "day": 250,
+   "gross": -0.007087188827128231,
+   "net": -0.007427964827128231,
+   "exposure": 0.5679599999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.568
+  },
+  {
+   "day": 251,
+   "gross": -0.009301845538606386,
+   "net": -0.009901846738606387,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 252,
+   "gross": 0.00899468841305584,
+   "net": 0.008421021213055841,
+   "exposure": 0.9561119999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9561
+  },
+  {
+   "day": 253,
+   "gross": 0.0006294410415613869,
+   "net": 0.00017850504156138695,
+   "exposure": 0.75156,
+   "orders": 5,
+   "net_exposure": 0.150312,
+   "leverage": 0.7516
+  },
+  {
+   "day": 254,
+   "gross": 0.0038152775655160205,
+   "net": 0.0035023031655160206,
+   "exposure": 0.521624,
+   "orders": 4,
+   "net_exposure": 0.0,
+   "leverage": 0.5216
+  },
+  {
+   "day": 255,
+   "gross": -0.0039571268723686236,
+   "net": -0.004557128072368624,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 256,
+   "gross": -0.00950742156233637,
+   "net": -0.01004091276233637,
+   "exposure": 0.8891519999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8892
+  },
+  {
+   "day": 257,
+   "gross": -0.0017791389359562446,
+   "net": -0.0022439493359562445,
+   "exposure": 0.7746839999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7747
+  },
+  {
+   "day": 258,
+   "gross": -0.008980787250685357,
+   "net": -0.009489928050685357,
+   "exposure": 0.848568,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8486
+  },
+  {
+   "day": 259,
+   "gross": -0.0052048861343403415,
+   "net": -0.005588379734340341,
+   "exposure": 0.639156,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6392
+  },
+  {
+   "day": 260,
+   "gross": 0.008408985648369656,
+   "net": 0.007870882848369655,
+   "exposure": 0.8968379999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8968
+  },
+  {
+   "day": 261,
+   "gross": 0.002792152288495229,
+   "net": 0.002244703888495229,
+   "exposure": 0.9124140000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9124
+  },
+  {
+   "day": 262,
+   "gross": -0.005846874061847758,
+   "net": -0.006446875261847758,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 263,
+   "gross": 0.005407456823439256,
+   "net": 0.0048074556234392555,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 264,
+   "gross": -0.004986061735335939,
+   "net": -0.005586062935335939,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 265,
+   "gross": -0.00010777001462539452,
+   "net": -0.0007077712146253945,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 266,
+   "gross": 0.022139892421616757,
+   "net": 0.021539891221616758,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 267,
+   "gross": 0.029466056468896468,
+   "net": 0.028913161268896467,
+   "exposure": 0.921492,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9215
+  },
+  {
+   "day": 268,
+   "gross": -0.0061014270763800425,
+   "net": -0.0066792810763800425,
+   "exposure": 0.9630899999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9631
+  },
+  {
+   "day": 269,
+   "gross": 0.020715923331769973,
+   "net": 0.020115922131769975,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 270,
+   "gross": 0.01178007977271181,
+   "net": 0.01118007857271181,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 271,
+   "gross": 0.020464800894627412,
+   "net": 0.019864799694627414,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 272,
+   "gross": -0.027166555876787575,
+   "net": -0.027753250876787573,
+   "exposure": 0.9778249999999999,
+   "orders": 5,
+   "net_exposure": 0.195565,
+   "leverage": 0.9778
+  },
+  {
+   "day": 278,
+   "gross": 0.010110407008660727,
+   "net": 0.009510407008660727,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": -0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": 279,
+   "gross": -0.014174895332204285,
+   "net": -0.014774895332204285,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": -0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": 280,
+   "gross": -0.015129130801431962,
+   "net": -0.015729132001431962,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 281,
+   "gross": 0.0069707329774472936,
+   "net": 0.006391683777447294,
+   "exposure": 0.9650819999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9651
+  },
+  {
+   "day": 282,
+   "gross": -0.0037761652960094216,
+   "net": -0.004239402496009422,
+   "exposure": 0.7720620000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7721
+  },
+  {
+   "day": 283,
+   "gross": -0.0024419777733873595,
+   "net": -0.0027387725733873593,
+   "exposure": 0.494658,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4947
+  },
+  {
+   "day": 284,
+   "gross": -0.0030357935083382666,
+   "net": -0.0034469603083382666,
+   "exposure": 0.6852779999999999,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6853
+  },
+  {
+   "day": 285,
+   "gross": 0.006479472067736121,
+   "net": 0.006009837667736121,
+   "exposure": 0.7827239999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7827
+  },
+  {
+   "day": 286,
+   "gross": 0.023504218991488298,
+   "net": 0.022963786991488298,
+   "exposure": 0.9007200000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.9007
+  },
+  {
+   "day": 287,
+   "gross": 0.006578147468580259,
+   "net": 0.006086614268580259,
+   "exposure": 0.819222,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8192
+  },
+  {
+   "day": 288,
+   "gross": 0.0131170066275689,
+   "net": 0.0125387602275689,
+   "exposure": 0.9637439999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9637
+  },
+  {
+   "day": 289,
+   "gross": 0.0355598852379638,
+   "net": 0.0349598840379638,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 290,
+   "gross": 0.006097993561196965,
+   "net": 0.005671717561196965,
+   "exposure": 0.71046,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7105
+  },
+  {
+   "day": 291,
+   "gross": 0.04589554886411867,
+   "net": 0.04529554766411867,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 292,
+   "gross": 0.019905125560555986,
+   "net": 0.019305124360555988,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 293,
+   "gross": -0.00046081230980619687,
+   "net": -0.001044195909806197,
+   "exposure": 0.9723059999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9723
+  },
+  {
+   "day": 294,
+   "gross": -0.01836625293759669,
+   "net": -0.018771731737596692,
+   "exposure": 0.675798,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6758
+  },
+  {
+   "day": 295,
+   "gross": 0.009398496289594927,
+   "net": 0.009054851089594928,
+   "exposure": 0.572742,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5727
+  },
+  {
+   "day": 296,
+   "gross": 0.008627797967548307,
+   "net": 0.008337155567548306,
+   "exposure": 0.48440399999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4844
+  },
+  {
+   "day": 297,
+   "gross": -0.003769234045552736,
+   "net": -0.003998525245552735,
+   "exposure": 0.38215199999999994,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3822
+  },
+  {
+   "day": 298,
+   "gross": 0.01569255644860248,
+   "net": 0.015468431248602482,
+   "exposure": 0.373542,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3735
+  },
+  {
+   "day": 299,
+   "gross": -0.025726495285554037,
+   "net": -0.025975338085554037,
+   "exposure": 0.414738,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4147
+  },
+  {
+   "day": 300,
+   "gross": 0.005723006325811282,
+   "net": 0.0054017315258112816,
+   "exposure": 0.535458,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5355
+  },
+  {
+   "day": 301,
+   "gross": -0.009928536537590332,
+   "net": -0.010073346537590332,
+   "exposure": 0.24135,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2413
+  },
+  {
+   "day": 302,
+   "gross": 0.013837493512167787,
+   "net": 0.013612324312167787,
+   "exposure": 0.37528200000000006,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3753
+  },
+  {
+   "day": 303,
+   "gross": -0.003854296533896479,
+   "net": -0.0039311601338964785,
+   "exposure": 0.128106,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1281
+  },
+  {
+   "day": 304,
+   "gross": -0.0005979295334344367,
+   "net": -0.0006230431334344367,
+   "exposure": 0.041856000000000004,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0419
+  },
+  {
+   "day": 305,
+   "gross": -0.00024801583776188594,
+   "net": -0.0002709478377618859,
+   "exposure": 0.03822,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0382
+  },
+  {
+   "day": 306,
+   "gross": -0.00023428654683398386,
+   "net": -0.0002878473468339839,
+   "exposure": 0.089268,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0893
+  },
+  {
+   "day": 307,
+   "gross": -0.0002329887436431058,
+   "net": -0.00027171754364310583,
+   "exposure": 0.06454800000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0645
+  },
+  {
+   "day": 308,
+   "gross": -0.0018325659110147538,
+   "net": -0.0019005627110147538,
+   "exposure": 0.113328,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1133
+  },
+  {
+   "day": 309,
+   "gross": 0.0027681942924309283,
+   "net": 0.0026882958924309285,
+   "exposure": 0.13316399999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1332
+  },
+  {
+   "day": 310,
+   "gross": -0.007091462919567666,
+   "net": -0.0072736841195676655,
+   "exposure": 0.303702,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3037
+  },
+  {
+   "day": 311,
+   "gross": 0.0031138268729596257,
+   "net": 0.0030446636729596255,
+   "exposure": 0.11527200000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1153
+  },
+  {
+   "day": 312,
+   "gross": 0.0018092686175240538,
+   "net": 0.0016985074175240537,
+   "exposure": 0.184602,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1846
+  },
+  {
+   "day": 313,
+   "gross": 0.012786098893129982,
+   "net": 0.012634988893129983,
+   "exposure": 0.25184999999999996,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2518
+  },
+  {
+   "day": 314,
+   "gross": -0.0021502953714066433,
+   "net": -0.0023129577714066435,
+   "exposure": 0.271104,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2711
+  },
+  {
+   "day": 315,
+   "gross": 0.0030816024112939894,
+   "net": 0.0029043744112939892,
+   "exposure": 0.29538000000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2954
+  },
+  {
+   "day": 316,
+   "gross": -0.006347561722317662,
+   "net": -0.0065277345223176625,
+   "exposure": 0.300288,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3003
+  },
+  {
+   "day": 317,
+   "gross": -0.0026208627234933406,
+   "net": -0.0027500739234933404,
+   "exposure": 0.21535200000000002,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2154
+  },
+  {
+   "day": 318,
+   "gross": -0.0001396955465229513,
+   "net": -0.0002321111465229513,
+   "exposure": 0.154026,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.154
+  },
+  {
+   "day": 319,
+   "gross": -1.5292991587309145e-05,
+   "net": -0.00010136539158730914,
+   "exposure": 0.143454,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1435
+  },
+  {
+   "day": 320,
+   "gross": -0.0008262042550065595,
+   "net": -0.0008884554550065595,
+   "exposure": 0.103752,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1038
+  },
+  {
+   "day": 321,
+   "gross": -0.0006320872113739662,
+   "net": -0.0006998248113739662,
+   "exposure": 0.112896,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1129
+  },
+  {
+   "day": 322,
+   "gross": 0.0009352586920740422,
+   "net": 0.0008760638920740422,
+   "exposure": 0.098658,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0987
+  },
+  {
+   "day": 323,
+   "gross": 0.003010805695379923,
+   "net": 0.002953443295379923,
+   "exposure": 0.09560400000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0956
+  },
+  {
+   "day": 324,
+   "gross": 2.3074897557722254e-05,
+   "net": -2.1363502442277744e-05,
+   "exposure": 0.074064,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.0741
+  },
+  {
+   "day": 325,
+   "gross": 0.0016188530388602208,
+   "net": 0.0015544022388602207,
+   "exposure": 0.107418,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1074
+  },
+  {
+   "day": 326,
+   "gross": 0.00033684078033675044,
+   "net": 0.00028243038033675045,
+   "exposure": 0.090684,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.0907
+  },
+  {
+   "day": 327,
+   "gross": 0.0015627326131085182,
+   "net": 0.0014666522131085182,
+   "exposure": 0.160134,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1601
+  },
+  {
+   "day": 328,
+   "gross": 0.008007752731790017,
+   "net": 0.007888531531790017,
+   "exposure": 0.19870200000000002,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1987
+  },
+  {
+   "day": 329,
+   "gross": -0.004804534075034795,
+   "net": -0.004919730475034795,
+   "exposure": 0.191994,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.192
+  },
+  {
+   "day": 330,
+   "gross": -0.0005096580103762956,
+   "net": -0.0006590760103762956,
+   "exposure": 0.24903000000000003,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.249
+  },
+  {
+   "day": 331,
+   "gross": 0.007695737686620092,
+   "net": 0.007419405286620092,
+   "exposure": 0.460554,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4606
+  },
+  {
+   "day": 332,
+   "gross": -0.002463356429129545,
+   "net": -0.002779879229129545,
+   "exposure": 0.527538,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5275
+  },
+  {
+   "day": 333,
+   "gross": 0.002204705081874749,
+   "net": 0.001847275481874749,
+   "exposure": 0.595716,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5957
+  },
+  {
+   "day": 334,
+   "gross": 0.017897109033211074,
+   "net": 0.017430246633211074,
+   "exposure": 0.778104,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.7781
+  },
+  {
+   "day": 335,
+   "gross": -0.010614435009633747,
+   "net": -0.011101425009633747,
+   "exposure": 0.8116500000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.8117
+  },
+  {
+   "day": 336,
+   "gross": 0.007934897971650832,
+   "net": 0.007380253171650832,
+   "exposure": 0.924408,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9244
+  },
+  {
+   "day": 337,
+   "gross": 0.0050054892771472115,
+   "net": 0.004625703677147212,
+   "exposure": 0.6329760000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.633
+  },
+  {
+   "day": 338,
+   "gross": 0.0030200057209644167,
+   "net": 0.002637919720964417,
+   "exposure": 0.63681,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6368
+  },
+  {
+   "day": 339,
+   "gross": -0.001365661896794936,
+   "net": -0.001811316696794936,
+   "exposure": 0.742758,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7428
+  },
+  {
+   "day": 340,
+   "gross": -0.014982818758917583,
+   "net": -0.015582819958917584,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 341,
+   "gross": 0.01621865483687085,
+   "net": 0.01561865363687085,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 342,
+   "gross": -0.0007976945047825598,
+   "net": -0.0013976957047825598,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 343,
+   "gross": -0.006117129888516519,
+   "net": -0.006717131088516519,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 344,
+   "gross": -0.002260607679153665,
+   "net": -0.0028606088791536654,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 345,
+   "gross": 0.006099023789578142,
+   "net": 0.005499022589578142,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 346,
+   "gross": 0.005724591587786755,
+   "net": 0.005124590387786755,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 347,
+   "gross": -0.012159668455649867,
+   "net": -0.012759669655649867,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 348,
+   "gross": -0.004969964339427908,
+   "net": -0.005556695939427908,
+   "exposure": 0.977886,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9779
+  },
+  {
+   "day": 349,
+   "gross": 0.005965010544346004,
+   "net": 0.005460276144346004,
+   "exposure": 0.841224,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8412
+  },
+  {
+   "day": 350,
+   "gross": -0.00980492960606896,
+   "net": -0.01040493080606896,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 351,
+   "gross": 0.007166873161957538,
+   "net": 0.006566871961957538,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 352,
+   "gross": -0.0027801349823289505,
+   "net": -0.0033631981823289505,
+   "exposure": 0.9717719999999999,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9718
+  },
+  {
+   "day": 353,
+   "gross": 0.007474822194664949,
+   "net": 0.006918776994664949,
+   "exposure": 0.9267420000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9267
+  },
+  {
+   "day": 354,
+   "gross": 0.005484016060986885,
+   "net": 0.004962005260986885,
+   "exposure": 0.870018,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.87
+  },
+  {
+   "day": 355,
+   "gross": 0.020229976732333378,
+   "net": 0.01972795313233338,
+   "exposure": 0.836706,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8367
+  },
+  {
+   "day": 356,
+   "gross": 0.0065994176177484425,
+   "net": 0.006206762017748443,
+   "exposure": 0.6544260000000001,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.6544
+  },
+  {
+   "day": 357,
+   "gross": 0.011718282047941233,
+   "net": 0.011243499647941232,
+   "exposure": 0.791304,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.7913
+  },
+  {
+   "day": 358,
+   "gross": -0.0024525096059584634,
+   "net": -0.0029786748059584633,
+   "exposure": 0.876942,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.8769
+  },
+  {
+   "day": 359,
+   "gross": -0.006183524320968732,
+   "net": -0.006783525520968732,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 360,
+   "gross": -0.0122316804776454,
+   "net": -0.012812724077645402,
+   "exposure": 0.968406,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.9684
+  },
+  {
+   "day": 361,
+   "gross": -0.008705230378468693,
+   "net": -0.009305231578468694,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 362,
+   "gross": 0.0018110820541317857,
+   "net": 0.0012110808541317857,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 363,
+   "gross": -0.013407519414303667,
+   "net": -0.014007520614303668,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 364,
+   "gross": 0.015317592136729985,
+   "net": 0.014717592136729985,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": 0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": 365,
+   "gross": 0.005101004531161096,
+   "net": 0.004501003331161096,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 366,
+   "gross": -0.00831189050196802,
+   "net": -0.00891189170196802,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 367,
+   "gross": -0.006865703924942736,
+   "net": -0.007465705124942736,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 368,
+   "gross": -0.008491420047763437,
+   "net": -0.009091421247763437,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 369,
+   "gross": -0.004744671826089615,
+   "net": -0.005344673026089615,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 370,
+   "gross": -0.008911044762298382,
+   "net": -0.009511045962298383,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 371,
+   "gross": 0.01862277516846571,
+   "net": 0.01802277516846571,
+   "exposure": 1.0,
+   "orders": 5,
+   "net_exposure": 0.2,
+   "leverage": 1.0
+  },
+  {
+   "day": 372,
+   "gross": 0.019158052464972694,
+   "net": 0.018558051264972696,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 373,
+   "gross": 0.01556579235686025,
+   "net": 0.01496579115686025,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 374,
+   "gross": 0.0033328338526260543,
+   "net": 0.002732832652626054,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 375,
+   "gross": 0.003735281655452019,
+   "net": 0.003145461255452019,
+   "exposure": 0.9830340000000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.983
+  },
+  {
+   "day": 376,
+   "gross": -0.002415352549074925,
+   "net": -0.003006242149074925,
+   "exposure": 0.9848160000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9848
+  },
+  {
+   "day": 377,
+   "gross": -0.00230677121850696,
+   "net": -0.00290677241850696,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 378,
+   "gross": -0.014324766584362849,
+   "net": -0.01492476778436285,
+   "exposure": 1.000002,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 1.0
+  },
+  {
+   "day": 379,
+   "gross": 0.020482883846234316,
+   "net": 0.019930600646234316,
+   "exposure": 0.920472,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.9205
+  },
+  {
+   "day": 380,
+   "gross": 0.031397890568586696,
+   "net": 0.030989664968586697,
+   "exposure": 0.6803760000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.6804
+  },
+  {
+   "day": 381,
+   "gross": -0.0009844114401779454,
+   "net": -0.0012977158401779455,
+   "exposure": 0.522174,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5222
+  },
+  {
+   "day": 382,
+   "gross": -0.009196865082646895,
+   "net": -0.009508941882646895,
+   "exposure": 0.520128,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.5201
+  },
+  {
+   "day": 383,
+   "gross": -0.004829633856672895,
+   "net": -0.005140594656672895,
+   "exposure": 0.518268,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.5183
+  },
+  {
+   "day": 384,
+   "gross": 0.0026600368331602927,
+   "net": 0.0023759320331602925,
+   "exposure": 0.473508,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4735
+  },
+  {
+   "day": 385,
+   "gross": 0.008152474510290858,
+   "net": 0.007891690510290858,
+   "exposure": 0.43464,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4346
+  },
+  {
+   "day": 386,
+   "gross": 0.000548428124882679,
+   "net": 0.00039520852488267896,
+   "exposure": 0.25536600000000004,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2554
+  },
+  {
+   "day": 387,
+   "gross": 0.0016303678116209826,
+   "net": 0.0014246026116209827,
+   "exposure": 0.342942,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3429
+  },
+  {
+   "day": 388,
+   "gross": 0.0067997646030025114,
+   "net": 0.006663911403002511,
+   "exposure": 0.22642199999999998,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2264
+  },
+  {
+   "day": 389,
+   "gross": -0.0009084238521285113,
+   "net": -0.0011179762521285113,
+   "exposure": 0.349254,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.3493
+  },
+  {
+   "day": 390,
+   "gross": 0.0043874093559711,
+   "net": 0.0041901185559711,
+   "exposure": 0.328818,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3288
+  },
+  {
+   "day": 391,
+   "gross": -0.003913291915940865,
+   "net": -0.004043734315940865,
+   "exposure": 0.217404,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.2174
+  },
+  {
+   "day": 392,
+   "gross": 0.003528952870801934,
+   "net": 0.0034265148708019343,
+   "exposure": 0.17073000000000002,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1707
+  },
+  {
+   "day": 393,
+   "gross": 0.004696507962217061,
+   "net": 0.004509973962217061,
+   "exposure": 0.31089,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.3109
+  },
+  {
+   "day": 394,
+   "gross": 0.001884650153992709,
+   "net": 0.001620147353992709,
+   "exposure": 0.440838,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4408
+  },
+  {
+   "day": 395,
+   "gross": 0.022377703588013508,
+   "net": 0.022100100388013508,
+   "exposure": 0.462672,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.4627
+  },
+  {
+   "day": 396,
+   "gross": -0.009377920658822517,
+   "net": -0.009629542658822517,
+   "exposure": 0.41936999999999997,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4194
+  },
+  {
+   "day": 397,
+   "gross": -0.0014648537957404285,
+   "net": -0.0017209289957404285,
+   "exposure": 0.42679199999999995,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4268
+  },
+  {
+   "day": 398,
+   "gross": 0.007782208814212,
+   "net": 0.007497402014212001,
+   "exposure": 0.474678,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.4747
+  },
+  {
+   "day": 399,
+   "gross": -0.0046886414013611955,
+   "net": -0.004888434201361196,
+   "exposure": 0.332988,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.333
+  },
+  {
+   "day": 400,
+   "gross": 0.0024687632995769137,
+   "net": 0.0022924028995769136,
+   "exposure": 0.293934,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.2939
+  },
+  {
+   "day": 401,
+   "gross": -0.001025882773429791,
+   "net": -0.001113769573429791,
+   "exposure": 0.146478,
+   "orders": 6,
+   "net_exposure": -0.0,
+   "leverage": 0.1465
+  },
+  {
+   "day": 402,
+   "gross": -0.00016476814944804707,
+   "net": -0.00023610934944804708,
+   "exposure": 0.11890200000000001,
+   "orders": 6,
+   "net_exposure": 0.0,
+   "leverage": 0.1189
+  }
+ ]
+}

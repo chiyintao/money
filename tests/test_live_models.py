@@ -256,7 +256,8 @@ def test_runtime_loads_real_candidate_weights(tmp_path):
     import json
     from app.models.tabular_model import train_tabular
     rows_used = dataset()
-    trained = train_tabular(rows_used, 'lightgbm', str(tmp_path / 'candidates'), rounds=10)
+    trained = train_tabular(rows_used, 'lightgbm', str(tmp_path / 'candidates'), rounds=10,
+                            trials=1)
     dataset_path = tmp_path / 'research_v3' / 'training_dataset.jsonl'
     dataset_path.parent.mkdir(parents=True, exist_ok=True)
     dataset_path.write_text('\n'.join(json.dumps(row) for row in rows_used), encoding='utf-8')

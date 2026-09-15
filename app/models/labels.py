@@ -34,18 +34,37 @@ UPPER = "upper"
 LOWER = "lower"
 VERTICAL = "vertical"
 
+# How to label a bar that touches BOTH barriers. OHLC cannot order the two touches, so the
+# choice is a modelling decision, and it has to agree with the rule the account trades on.
+AMBIGUOUS_STOP = "stop"      # matches execution_rules.evaluate_bar_exit; the default
+AMBIGUOUS_TARGET = "target"  # the optimistic reading, for measuring the bias only
 
-def triple_barrier(bars, index, stop_distance, target_distance, horizon, entry_price=None):
+
+def triple_barrier(bars, index, stop_distance, target_distance, horizon, entry_price=None,
+                   ambiguous_policy=AMBIGUOUS_STOP):
     """Resolve one row's label by walking forward until a barrier is touched.
 
     Returns a dict with the realised return, which barrier fired, and the bar it fired on.
     The walk is over the same bars the fixed-horizon label used, but it stops at the first
     touch instead of always running to `horizon`.
 
-    The upper barrier is checked before the lower within a bar. That is a choice, and it is
-    the optimistic one: when a single bar spans both levels, the data cannot say which came
-    first. It is stated here rather than hidden because the alternative -- assuming the stop
-    -- understates every winner in a volatile bar.
+    **The tie-break matches the live exit rule, and that is the point.** OHLC data cannot
+    say whether the high or the low of a bar came first, so a bar that spans both barriers
+    is genuinely ambiguous. This function used to resolve it optimistically -- the upper
+    barrier was tested first -- while `execution_rules.evaluate_bar_exit`, the rule the
+    paper account actually trades on, resolves it conservatively by taking the stop. The
+    model was therefore trained on one outcome and traded on its opposite: every bar that
+    touched both levels was a winner in the training set and a loser in the account.
+
+    The size of that is not small. The median row's ATR is 0.00318 against a 0.004 barrier,
+    so one bar routinely spans both, and the labelled returns are asymmetric by construction
+    -- mean |upper| 0.00676 against mean |lower| 0.00653 on 300k rows, which is 5.8% of the
+    barrier of free optimism the model was fitted to.
+
+    `ambiguous_policy` exists for research that wants to measure the optimistic case. The
+    default is the one that agrees with execution, because a label that flatters the
+    strategy is worse than no label: it teaches the model to expect a fill the broker will
+    never give it.
     """
     if horizon < 1:
         raise ValueError("invalid_horizon")
@@ -57,17 +76,23 @@ def triple_barrier(bars, index, stop_distance, target_distance, horizon, entry_p
     upper = entry + target_distance
     lower = entry - stop_distance
     last = min(index + horizon, len(bars) - 1)
+    optimistic = ambiguous_policy == AMBIGUOUS_TARGET
     for step in range(index + 1, last + 1):
         bar = bars[step]
         high = float(bar["high"]); low = float(bar["low"])
-        if high >= upper:
-            return {"future_return": (upper - entry) / entry, "barrier": UPPER,
-                    "barrier_time": int(bar.get("close_time") or bar.get("open_time") or 0),
-                    "bars_held": step - index}
-        if low <= lower:
+        touched_upper = high >= upper
+        touched_lower = low <= lower
+        stamp = int(bar.get("close_time") or bar.get("open_time") or 0)
+        if touched_upper and touched_lower and not optimistic:
             return {"future_return": (lower - entry) / entry, "barrier": LOWER,
-                    "barrier_time": int(bar.get("close_time") or bar.get("open_time") or 0),
-                    "bars_held": step - index}
+                    "barrier_time": stamp, "bars_held": step - index, "ambiguous": True}
+        if touched_upper:
+            return {"future_return": (upper - entry) / entry, "barrier": UPPER,
+                    "barrier_time": stamp, "bars_held": step - index,
+                    "ambiguous": bool(touched_lower)}
+        if touched_lower:
+            return {"future_return": (lower - entry) / entry, "barrier": LOWER,
+                    "barrier_time": stamp, "bars_held": step - index, "ambiguous": False}
     exit_price = float(bars[last]["close"])
     return {"future_return": (exit_price - entry) / entry, "barrier": VERTICAL,
             "barrier_time": int(bars[last].get("close_time") or 0),

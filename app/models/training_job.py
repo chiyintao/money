@@ -31,6 +31,24 @@ DEFAULTS = {"interval": "5m", "days": 365, "horizon": 12, "folds": 12, "rounds":
             "min_active_samples": 500}
 
 
+# How many configurations a run compares before it keeps one.
+#
+# This exists because the deflated Sharpe is uninterpretable without it, and the number was
+# previously left at the function default of 1 -- which switches the correction off entirely
+# (expected_max_sharpe returns 0 for a single trial). Every candidate therefore carried its
+# raw Sharpe under a deflated name. One stored candidate shows the result plainly:
+# deflated_sharpe 0.999959 with survives=True, in a manifest whose own verdict reads
+# "out-of-sample edge is negative (-10.33 bp): this would lose money".
+#
+# The number is not guessed. A run fits the same dataset once per backend, so the two
+# backend fits are two draws, and it is the BACKEND choice that the promotion loop then
+# selects between: job.candidates[0] is promoted. Counting that selection is what makes the
+# correction mean something. Tuning of horizon and edge multiple happens by hand between
+# runs and cannot be recovered here, which is why it must be stated by the caller rather
+# than assumed -- pass trials in the job options to record a wider search.
+BACKEND_TRIALS = 2
+
+
 def _now():
     return int(time.time() * 1000)
 
@@ -121,8 +139,13 @@ class TrainingJob:
                 "logs": self.logs[-60:]}
 
 
-def verdict_for(walk_forward, options):
-    """The pass/fail reading of a walk-forward result, stated in plain terms."""
+def verdict_for(walk_forward, options, portfolio=None):
+    """The pass/fail reading of a walk-forward result, stated in plain terms.
+
+    When the portfolio replay is supplied its verdict is stated here too, because these
+    lines are the written answer to "why was this not promoted" and the replay is where a
+    strategy that is right per trade but unprofitable per account shows up.
+    """
     if not walk_forward:
         return ["no walk-forward result"]
     aggregate = walk_forward.get("aggregate") or {}
@@ -145,19 +168,46 @@ def verdict_for(walk_forward, options):
     if negative > positive:
         lines.append("more losing folds than winning ones (%d vs %d): period-dependent"
                      % (negative, positive))
+    if portfolio is not None:
+        from .portfolio_oos import gate_verdict
+        replay = gate_verdict(portfolio)
+        if not replay.get("passes"):
+            lines.append("portfolio replay did not pass: %s"
+                         % ", ".join(replay.get("failures") or ["no_evidence"]))
     if not lines:
         lines.append("passed every check: edge %.2f bp, P(edge>0)=%.2f" % (edge, probability))
     return lines
 
 
-def passes(walk_forward, options):
+def passes(walk_forward, options, portfolio=None):
+    """Whether a run has earned the right to reach the live folder.
+
+    The walk-forward test asks whether the per-prediction edge survives the round trip.
+    That is necessary and not sufficient: it scores each prediction on its own, so it
+    cannot see capital being shared between concurrent positions, a drawdown accumulating,
+    or a small number of large winners carrying a long tail of small losses. The portfolio
+    replay does see those, and `portfolio_oos.gate_verdict` already refuses a replay that
+    lost money -- but the verdict was never consulted here, so a candidate could pass on
+    the per-prediction test alone and be promoted while the account that traded it had
+    lost 17% with a 17.6% drawdown.
+
+    A replay that is missing is not a pass. "No evidence of profitability" and "evidence of
+    profitability" are different answers, and only the second one may promote.
+    """
     if not walk_forward:
         return False
     aggregate = walk_forward.get("aggregate") or {}
     boot = walk_forward.get("bootstrap") or {}
-    return (aggregate.get("active_samples", 0) >= options["min_active_samples"]
+    if not (aggregate.get("active_samples", 0) >= options["min_active_samples"]
             and boot.get("prob_positive", 0.0) >= options["min_prob_positive"]
-            and aggregate.get("net_edge_bps", 0.0) > 0)
+            and aggregate.get("net_edge_bps", 0.0) > 0):
+        return False
+    if portfolio is None:
+        # Explicit opt-out for a caller with no replay, kept so the function can be tested
+        # in isolation. The training run always passes its evidence.
+        return True
+    from .portfolio_oos import gate_verdict
+    return bool(gate_verdict(portfolio).get("passes"))
 
 
 def _release_memory():
@@ -234,14 +284,38 @@ class TrainingRunner:
         is the answer to "why was this not promoted", and it lived only in the training
         job's in-memory record -- so the artifact that a later shift or a budget tool
         selects between carried no statement of why it should not be traded.
+
+        Both records belong to the model that PRODUCED the predictions. The run computes
+        one walk-forward and one portfolio replay, and both are always the first backend's
+        -- so attaching them unconditionally labelled every candidate with another model's
+        validation. A CatBoost manifest could carry walk_forward.backend="lightgbm", and
+        the promotion gate, which only checks that the numbers are present and positive,
+        would have read it as this artifact's evidence. Evidence whose backend is not this
+        artifact's is kept, but kept apart and marked as external, so it can still be read
+        and can never be mistaken for a result about these weights.
         """
         path = Path(candidate_path) / "manifest.json"
         manifest = json.loads(path.read_text(encoding="utf-8"))
         metrics = dict(manifest.get("metrics") or {})
-        if evidence:
-            metrics["portfolio_oos"] = evidence
-        if walk_forward:
-            metrics["walk_forward"] = walk_forward
+        backend = str(manifest.get("backend") or "")
+        own, external = {}, {}
+        for key, record in (("portfolio_oos", evidence), ("walk_forward", walk_forward)):
+            if not record:
+                continue
+            # An unlabelled result cannot be proven to be this artifact's, and "probably
+            # this model's" is not good enough for the evidence a promotion decides on.
+            if backend and str(record.get("backend") or "") == backend:
+                own[key] = record
+            else:
+                external[key] = record
+        metrics.update(own)
+        if external:
+            manifest["external_evidence"] = {
+                **external,
+                "note": ("computed from predictions of a different backend (%s); not evidence "
+                         "about this artifact and not usable by the promotion gate"
+                         % ", ".join(sorted({str(r.get("backend") or "unstated")
+                                             for r in external.values()})))}
         if verdict:
             manifest["verdict"] = list(verdict)
         if len(metrics) == len(manifest.get("metrics") or {}) and "verdict" not in manifest:
@@ -651,18 +725,24 @@ class TrainingRunner:
             oos = None
             _release_memory()
 
-        job.verdict = verdict_for(job.walk_forward, options)
-        job.promoted = passes(job.walk_forward, options)
+        job.verdict = verdict_for(job.walk_forward, options, job.portfolio_oos)
+        job.promoted = passes(job.walk_forward, options, job.portfolio_oos)
         for line in job.verdict:
             job.log("verdict: " + line)
 
         job.stage = "train"
         from .tabular_model import train_tabular
         output_root = candidates_root(self.settings.data_dir, job.tier)
+        # Stated rather than defaulted, because the run below fits both backends and keeps
+        # one. An explicit option wins so a wider hand search can be recorded.
+        trials = int(options.get("trials") or BACKEND_TRIALS)
+        search_note = str(options.get("search_note")
+                          or "backend selection across %d fits" % trials)
         for backend in ("lightgbm", "catboost"):
             try:
                 trained = await loop.run_in_executor(None, lambda b=backend: train_tabular(
-                    rows, b, output_root, options["rounds"], options["cost_bps"]))
+                    rows, b, output_root, options["rounds"], options["cost_bps"],
+                    trials, search_note))
             except Exception as exc:
                 job.log("%s training failed: %s" % (backend, exc))
                 continue

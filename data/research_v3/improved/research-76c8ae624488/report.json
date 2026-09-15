@@ -1,0 +1,707 @@
+{
+ "dataset": "data/research_v3/training_dataset_mainstream.jsonl",
+ "rows": 120000,
+ "audit": {
+  "rows": 120000,
+  "features": 30,
+  "counts": {
+   "constant": 7,
+   "ok": 23
+  },
+  "informative": [
+   "atr_pct",
+   "avg_trade_size_z",
+   "ema20_gap",
+   "ema50_gap",
+   "funding_carry_24h",
+   "funding_rate",
+   "funding_z",
+   "global_long_short_ratio",
+   "long_short_ratio_z",
+   "mark_basis",
+   "oi_change_1h",
+   "oi_change_5m",
+   "oi_price_quadrant",
+   "oi_z",
+   "quote_volume_ratio",
+   "return_10",
+   "rsi",
+   "smart_retail_gap",
+   "taker_buy_sell_ratio_z",
+   "taker_imbalance",
+   "taker_imbalance_z",
+   "trade_count_z",
+   "volume_ratio"
+  ],
+  "dead": [
+   "flow_delta_ratio",
+   "flow_delta_z",
+   "flow_largest_trade_z",
+   "flow_trade_intensity_z",
+   "liquidation_pressure",
+   "liquidation_share",
+   "liquidation_z"
+  ],
+  "degenerate": [],
+  "wasted_share": 0.2333,
+  "verdicts": [
+   {
+    "feature": "flow_delta_ratio",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "flow_delta_z",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "flow_largest_trade_z",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "flow_trade_intensity_z",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "liquidation_pressure",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "liquidation_share",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "liquidation_z",
+    "status": "constant",
+    "distinct": 1,
+    "mode": 0.0,
+    "mode_share": 1.0,
+    "missing_share": 0.0,
+    "family": "flow"
+   },
+   {
+    "feature": "atr_pct",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "avg_trade_size_z",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "order_flow"
+   },
+   {
+    "feature": "ema20_gap",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "ema50_gap",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "funding_carry_24h",
+    "status": "ok",
+    "distinct": 618,
+    "mode": 0.0,
+    "mode_share": 0.424967,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "funding_rate",
+    "status": "ok",
+    "distinct": 537,
+    "mode": 0.0,
+    "mode_share": 0.451792,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "funding_z",
+    "status": "ok",
+    "distinct": 721,
+    "mode": 0.0,
+    "mode_share": 0.406342,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "global_long_short_ratio",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "long_short_ratio_z",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "mark_basis",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "oi_change_1h",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "oi_change_5m",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "oi_price_quadrant",
+    "status": "ok",
+    "distinct": 3,
+    "mode": 0.0,
+    "mode_share": 0.401492,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "oi_z",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "quote_volume_ratio",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "order_flow"
+   },
+   {
+    "feature": "return_10",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "rsi",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   },
+   {
+    "feature": "smart_retail_gap",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "taker_buy_sell_ratio_z",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "positioning"
+   },
+   {
+    "feature": "taker_imbalance",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "order_flow"
+   },
+   {
+    "feature": "taker_imbalance_z",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "order_flow"
+   },
+   {
+    "feature": "trade_count_z",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "order_flow"
+   },
+   {
+    "feature": "volume_ratio",
+    "status": "ok",
+    "distinct": 4097,
+    "mode": null,
+    "mode_share": 0.0,
+    "missing_share": 0.0,
+    "family": "price"
+   }
+  ]
+ },
+ "economics": {
+  "ready": true,
+  "profile": "taker",
+  "cost_bps": 6.0,
+  "label": {
+   "samples": 120000,
+   "ready": true,
+   "mean": 2.2369406263531126e-05,
+   "std": 0.007894530875961179,
+   "mean_bps": 0.22369406263531127,
+   "std_bps": 78.94530875961179,
+   "positive_share": 0.48805,
+   "skew": 4.1740378079994755,
+   "barriers": {
+    "lower": 47259,
+    "vertical": 28733,
+    "upper": 44008
+   },
+   "barrier_shares": {
+    "lower": 0.393825,
+    "vertical": 0.23944166666666666,
+    "upper": 0.36673333333333336
+   },
+   "barrier_balance": 0.4821896194681539
+  },
+  "requirement": {
+   "cost_bps": 6.0,
+   "label_std_bps": 78.9453,
+   "cost_in_sigma": 0.076002,
+   "required_mean_shift_bps": 6.0,
+   "required_correlation": 0.076002,
+   "required_r2": 0.005776,
+   "required_r2_pct": 0.5776
+  },
+  "achievable": {
+   "correlation": 0.05477225575051661,
+   "r2": 0.003,
+   "r2_pct": 0.3
+  },
+  "affordable_horizon_bars": {
+   "bars": 2,
+   "raw_bars": 2,
+   "target_r2": 0.003,
+   "bar_std_bps": 78.9453,
+   "cost_bps": 6.0
+  },
+  "feasible": false,
+  "reasons": [
+   "required_r2_above_achievable:0.005776>0.003000"
+  ]
+ },
+ "features_used": [
+  "atr_pct",
+  "avg_trade_size_z",
+  "ema20_gap",
+  "ema50_gap",
+  "funding_carry_24h",
+  "funding_rate",
+  "funding_z",
+  "global_long_short_ratio",
+  "long_short_ratio_z",
+  "mark_basis",
+  "oi_change_1h",
+  "oi_change_5m",
+  "oi_price_quadrant",
+  "oi_z",
+  "quote_volume_ratio",
+  "return_10",
+  "rsi",
+  "smart_retail_gap",
+  "taker_buy_sell_ratio_z",
+  "taker_imbalance",
+  "taker_imbalance_z",
+  "trade_count_z",
+  "volume_ratio"
+ ],
+ "features_dropped": [
+  "flow_delta_ratio",
+  "flow_delta_z",
+  "flow_largest_trade_z",
+  "flow_trade_intensity_z",
+  "liquidation_pressure",
+  "liquidation_share",
+  "liquidation_z"
+ ],
+ "feature_correlation": {
+  "strongest": [
+   [
+    "atr_pct",
+    0.305535
+   ],
+   [
+    "ema20_gap",
+    0.275039
+   ],
+   [
+    "ema50_gap",
+    0.272325
+   ],
+   [
+    "return_10",
+    -0.157915
+   ],
+   [
+    "oi_change_1h",
+    -0.04738
+   ],
+   [
+    "oi_change_5m",
+    -0.036624
+   ],
+   [
+    "mark_basis",
+    -0.026056
+   ],
+   [
+    "long_short_ratio_z",
+    -0.02473
+   ],
+   [
+    "volume_ratio",
+    0.020776
+   ],
+   [
+    "trade_count_z",
+    0.016189
+   ]
+  ],
+  "max_abs": 0.305535
+ },
+ "validation": {
+  "splits": 14,
+  "rows": 562080,
+  "active_samples": 21550,
+  "active_share_pct": 3.833974,
+  "net_edge_bps": 15.273,
+  "splits_positive_edge": 8,
+  "splits_negative_edge": 5,
+  "path_net_bps_mean": 0.5049,
+  "path_net_bps_std": 0.8507,
+  "path_net_bps_min": -0.0625,
+  "path_net_bps_max": 1.7928,
+  "paths_positive": 4,
+  "paths_negative": 3,
+  "path_sharpe": 0.5935,
+  "combinations": 14,
+  "paths": 7,
+  "groups": 6,
+  "k": 2,
+  "cost_bps": 6.0,
+  "per_split": [
+   {
+    "split": 0,
+    "groups": [
+     0,
+     1
+    ],
+    "test_rows": 37919,
+    "train_rows": 81793,
+    "active_samples": 69,
+    "active_share_pct": 0.181967,
+    "dir_acc_pct": 50.4602,
+    "net_edge_bps": 0.7694
+   },
+   {
+    "split": 1,
+    "groups": [
+     0,
+     2
+    ],
+    "test_rows": 37919,
+    "train_rows": 61273,
+    "active_samples": 79,
+    "active_share_pct": 0.208339,
+    "dir_acc_pct": 50.1912,
+    "net_edge_bps": -3.6176
+   },
+   {
+    "split": 2,
+    "groups": [
+     0,
+     3
+    ],
+    "test_rows": 37919,
+    "train_rows": 40753,
+    "active_samples": 41,
+    "active_share_pct": 0.108125,
+    "dir_acc_pct": 51.3278,
+    "net_edge_bps": 29.0709
+   },
+   {
+    "split": 3,
+    "groups": [
+     0,
+     4
+    ],
+    "test_rows": 37919,
+    "train_rows": 20233,
+    "active_samples": 400,
+    "active_share_pct": 1.05488,
+    "dir_acc_pct": 51.0061,
+    "net_edge_bps": -11.3304
+   },
+   {
+    "split": 4,
+    "groups": [
+     1,
+     2
+    ],
+    "test_rows": 41040,
+    "train_rows": 78384,
+    "active_samples": 195,
+    "active_share_pct": 0.475146,
+    "dir_acc_pct": 48.4235,
+    "net_edge_bps": -8.1639
+   },
+   {
+    "split": 5,
+    "groups": [
+     1,
+     3
+    ],
+    "test_rows": 41040,
+    "train_rows": 57864,
+    "active_samples": 131,
+    "active_share_pct": 0.319201,
+    "dir_acc_pct": 47.9581,
+    "net_edge_bps": 95.6617
+   },
+   {
+    "split": 6,
+    "groups": [
+     1,
+     4
+    ],
+    "test_rows": 41040,
+    "train_rows": 37344,
+    "active_samples": 482,
+    "active_share_pct": 1.174464,
+    "dir_acc_pct": 50.4094,
+    "net_edge_bps": -3.8478
+   },
+   {
+    "split": 7,
+    "groups": [
+     1,
+     5
+    ],
+    "test_rows": 41041,
+    "train_rows": 17111,
+    "active_samples": 0,
+    "active_share_pct": 0.0,
+    "dir_acc_pct": 47.377,
+    "net_edge_bps": 0.0
+   },
+   {
+    "split": 8,
+    "groups": [
+     2,
+     3
+    ],
+    "test_rows": 41040,
+    "train_rows": 78384,
+    "active_samples": 339,
+    "active_share_pct": 0.826023,
+    "dir_acc_pct": 50.6116,
+    "net_edge_bps": 11.169
+   },
+   {
+    "split": 9,
+    "groups": [
+     2,
+     4
+    ],
+    "test_rows": 41040,
+    "train_rows": 57864,
+    "active_samples": 382,
+    "active_share_pct": 0.930799,
+    "dir_acc_pct": 51.8129,
+    "net_edge_bps": -12.3482
+   },
+   {
+    "split": 10,
+    "groups": [
+     2,
+     5
+    ],
+    "test_rows": 41041,
+    "train_rows": 37631,
+    "active_samples": 6728,
+    "active_share_pct": 16.393363,
+    "dir_acc_pct": 51.7068,
+    "net_edge_bps": 18.5166
+   },
+   {
+    "split": 11,
+    "groups": [
+     3,
+     4
+    ],
+    "test_rows": 41040,
+    "train_rows": 78384,
+    "active_samples": 674,
+    "active_share_pct": 1.6423,
+    "dir_acc_pct": 50.7261,
+    "net_edge_bps": 21.9775
+   },
+   {
+    "split": 12,
+    "groups": [
+     3,
+     5
+    ],
+    "test_rows": 41041,
+    "train_rows": 58151,
+    "active_samples": 8899,
+    "active_share_pct": 21.683195,
+    "dir_acc_pct": 51.2244,
+    "net_edge_bps": 12.9392
+   },
+   {
+    "split": 13,
+    "groups": [
+     4,
+     5
+    ],
+    "test_rows": 41041,
+    "train_rows": 78671,
+    "active_samples": 3131,
+    "active_share_pct": 7.628956,
+    "dir_acc_pct": 50.3375,
+    "net_edge_bps": 22.3612
+   }
+  ],
+  "path_detail": [
+   {
+    "path": 0,
+    "samples": 58439,
+    "net_bps": 0.0043,
+    "active_samples": 126
+   },
+   {
+    "path": 1,
+    "samples": 58439,
+    "net_bps": -0.0625,
+    "active_samples": 403
+   },
+   {
+    "path": 2,
+    "samples": 61560,
+    "net_bps": 0.1537,
+    "active_samples": 316
+   },
+   {
+    "path": 3,
+    "samples": 61561,
+    "net_bps": -0.0301,
+    "active_samples": 482
+   },
+   {
+    "path": 4,
+    "samples": 61560,
+    "net_bps": -0.0221,
+    "active_samples": 706
+   },
+   {
+    "path": 5,
+    "samples": 82081,
+    "net_bps": 1.6982,
+    "active_samples": 7402
+   },
+   {
+    "path": 6,
+    "samples": 61561,
+    "net_bps": 1.7928,
+    "active_samples": 9801
+   }
+  ]
+ },
+ "status": "trained",
+ "verdict": [
+  "CPCV: 14 splits, 7 paths, mean edge 15.27 bps",
+  "paths positive: 4/7, path Sharpe 0.59",
+  "strongest single-feature |corr| 0.3055 implies R^2 9.33516%",
+  "edge is positive on average but not on every path"
+ ],
+ "elapsed_s": 14.0
+}

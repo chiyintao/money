@@ -1,0 +1,195 @@
+{
+ "model_version": "coinsuite-v1",
+ "feature_version": "features-v4",
+ "created_at": "20260914T053101Z",
+ "panel": {
+  "digest": "07e01b9c6df724d3fd00f8358b7d5922",
+  "symbols": [
+   "ADAUSDT",
+   "AVAXUSDT",
+   "BNBUSDT",
+   "BTCUSDT",
+   "DOGEUSDT",
+   "DOTUSDT",
+   "ETHUSDT",
+   "LINKUSDT",
+   "LTCUSDT",
+   "SOLUSDT",
+   "TRXUSDT",
+   "XRPUSDT"
+  ],
+  "days": 368,
+  "first_day": 35,
+  "last_day": 402,
+  "origin": "2025-08-06T00:00:00+00:00",
+  "rows": 4416
+ },
+ "horizon_days": 1,
+ "hold_days": 1,
+ "cost_bps_per_side": 6.0,
+ "cost_bps_round_trip": 12.0,
+ "quantile": 0.25,
+ "ridge_lambda": 3.0,
+ "embargo_days": 27,
+ "exit_policy": {
+  "name": "balanced",
+  "label": "\u5747\u8861",
+  "stop_atr_multiple": 1.5,
+  "stop_price_floor": 0.004,
+  "target_rr": 1.8,
+  "breakeven_at_rr": 0.8,
+  "trail_atr_multiple": 1.5,
+  "time_stop_bars": 0,
+  "description": "\u539f\u59cb\u786c\u7f16\u7801\u51e0\u4f55\uff1a\u6b62\u635f 1.5 ATR\uff08\u4e0b\u9650 0.4%\uff09\uff0c\u76c8\u4e8f\u6bd4 1.8\u3002\u5f53\u524d\u9ed8\u8ba4\u3002"
+ },
+ "components": [
+  "momentum",
+  "breakout",
+  "regime",
+  "meta",
+  "risk"
+ ],
+ "blend": {
+  "momentum_weight": 0.7,
+  "breakout_weight": 0.3,
+  "regime_tilt": 0.5,
+  "note": "stated a priori, not searched; see docs/COIN_SUITE_MODEL.md"
+ },
+ "verdict": [
+  "net -15.0 bps per trade over 263 non-overlapping days",
+  "t = -1.28, Sharpe -1.51, hit rate 48.3%",
+  "first half 10.2 bps, second half -40.0 bps",
+  "NOT positive in both halves: this is period-dependent",
+  "months positive: 4/10",
+  "mean cross-sectional rank IC 0.0251 over 263 days",
+  "model-free baseline: -11.7 bps per trade",
+  "the fitted model does NOT beat a rule with no fitted parameters: the components are adding selection noise, not signal",
+  "folds with positive net edge: 0/5",
+  "no reliable edge at this configuration"
+ ],
+ "validation": {
+  "out_of_sample": {
+   "trades": 263,
+   "net_bps_mean": -15.0141,
+   "net_bps_std": 190.0773,
+   "hit_rate": 0.4829,
+   "total_net": -0.394872,
+   "t_stat": -1.281,
+   "sharpe": -1.5091,
+   "first_half_bps": 10.2095,
+   "second_half_bps": -40.0467,
+   "months": 10,
+   "months_positive": 4
+  },
+  "per_fold": [
+   {
+    "fold": 1,
+    "test_rows": 624,
+    "trades": 51,
+    "net_bps_mean": 7.6885,
+    "net_bps_std": 202.4797,
+    "hit_rate": 0.5294,
+    "total_net": 0.039211,
+    "t_stat": 0.2712,
+    "sharpe": 0.7255,
+    "first_half_bps": 13.2095,
+    "second_half_bps": 2.3799,
+    "months": 3,
+    "months_positive": 2
+   },
+   {
+    "fold": 2,
+    "test_rows": 624,
+    "trades": 51,
+    "net_bps_mean": -3.8987,
+    "net_bps_std": 218.6335,
+    "hit_rate": 0.6078,
+    "total_net": -0.019884,
+    "t_stat": -0.1273,
+    "sharpe": -0.3407,
+    "first_half_bps": -22.8215,
+    "second_half_bps": 14.2962,
+    "months": 3,
+    "months_positive": 2
+   },
+   {
+    "fold": 3,
+    "test_rows": 624,
+    "trades": 51,
+    "net_bps_mean": 2.9448,
+    "net_bps_std": 134.256,
+    "hit_rate": 0.4902,
+    "total_net": 0.015019,
+    "t_stat": 0.1566,
+    "sharpe": 0.4191,
+    "first_half_bps": 28.3306,
+    "second_half_bps": -21.4645,
+    "months": 2,
+    "months_positive": 1
+   },
+   {
+    "fold": 4,
+    "test_rows": 624,
+    "trades": 51,
+    "net_bps_mean": -19.674,
+    "net_bps_std": 180.9802,
+    "hit_rate": 0.451,
+    "total_net": -0.100337,
+    "t_stat": -0.7763,
+    "sharpe": -2.0769,
+    "first_half_bps": 7.076,
+    "second_half_bps": -45.3952,
+    "months": 3,
+    "months_positive": 1
+   },
+   {
+    "fold": 5,
+    "test_rows": 672,
+    "trades": 55,
+    "net_bps_mean": -68.2951,
+    "net_bps_std": 202.0053,
+    "hit_rate": 0.3091,
+    "total_net": -0.375623,
+    "t_stat": -2.5073,
+    "sharpe": -6.4591,
+    "first_half_bps": -61.1773,
+    "second_half_bps": -75.1587,
+    "months": 3,
+    "months_positive": 0
+   }
+  ],
+  "baseline": {
+   "trades": 360,
+   "net_bps_mean": -11.6699,
+   "net_bps_std": 179.9194,
+   "hit_rate": 0.4583,
+   "total_net": -0.420116,
+   "t_stat": -1.2307,
+   "sharpe": -1.2392,
+   "first_half_bps": -14.7578,
+   "second_half_bps": -8.582,
+   "months": 13,
+   "months_positive": 5
+  },
+  "rank_ic": 0.025132529351776855,
+  "rank_ic_days": 263,
+  "trades": 263
+ },
+ "files": {
+  "folds": "folds.json",
+  "oos_predictions": "oos_predictions.jsonl",
+  "coefficients": "coefficients.json",
+  "meta_filter": "meta_filter.txt"
+ },
+ "digests": {
+  "folds": "5f4000e532f5afc171062997d0c08b05406db4870a75efa5fc2f8baf001b4fce",
+  "oos_predictions": "7f9cdcebf56415cb4865c4dc6faafa165530e2e4f0fac15427ecae63e6babfeb",
+  "coefficients": "dd20560ab009e6e87c609de961de53edfd30a1052a7e49231f842c13e5c721dd",
+  "meta_filter": "f2861e5a09fcfcbdb0c1edc07d5ef61b2748f81cf51757d4a71bbe1451a6c15b"
+ },
+ "training": {
+  "seconds": 2.6,
+  "folds": 6,
+  "rows": 4416
+ }
+}

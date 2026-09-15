@@ -157,6 +157,39 @@ def target_distance(policy, price, atr):
     return stop_distance(policy, price, atr) * policy.target_rr
 
 
+def cost_aware_breakeven(entry, side, fee_rate, slippage_bps, maker_entry=False,
+                         funding_rate=0.0):
+    """The price at which a position actually breaks even, in fractions of notional.
+
+    Moving the stop to the entry is not breakeven. The round trip charges a fee on the
+    way in, a fee and the spread on the way out, and funding for as long as the position
+    is held; a stop at the entry therefore books a loss on every trade it closes. The
+    stored sessions show exactly that: six stop-outs with the stop sitting on the entry
+    price, every one of them negative, together about -8.61 on accounts of 100, 200 and
+    10,000.
+
+    The offset is the round trip expressed as a price fraction, so it scales with the
+    instrument the way the costs do. It is deliberately the full cost rather than a part
+    of it: a stop that clears the in-fee but not the out-fee is still a losing trade, just
+    a smaller one. Funding is included when a rate is known, because a position held
+    across a settlement pays it whether or not the price moved; it is charged to the side
+    that pays it, so a negative rate (a short paying a long) correctly lowers the offset
+    for a short.
+
+    Returns the absolute price. The caller decides whether to use it -- the stop may only
+    ever tighten, so this can never move a stop backwards.
+    """
+    entry = float(entry or 0.0)
+    if entry <= 0:
+        return entry
+    fee_rate = float(fee_rate or 0.0)
+    spread = float(slippage_bps or 0.0) / 10000.0
+    entry_fee = fee_rate if not maker_entry else min(fee_rate, spread)
+    # The exit is a market order in this system unless a caller says otherwise.
+    offset = entry_fee + fee_rate + spread + abs(float(funding_rate or 0.0))
+    return entry * (1 + offset) if side == 'LONG' else entry * (1 - offset)
+
+
 def plan_levels(policy, price, atr, side):
     """Entry, stop and target for a new position."""
     distance = stop_distance(policy, price, atr)
@@ -169,7 +202,7 @@ def plan_levels(policy, price, atr, side):
             'stop_distance': distance, 'target_distance': target}
 
 
-def manage_position(policy, position, price, atr, bars_held=0):
+def manage_position(policy, position, price, atr, bars_held=0, breakeven_price=None):
     """The stop and target this open position should have right now.
 
     Returns the new levels plus why they changed, or None when nothing moves. Only the
@@ -221,7 +254,11 @@ def manage_position(policy, position, price, atr, bars_held=0):
                 'reason': 'time_stop', 'reason_codes': ['time_stop']}
 
     if policy.breakeven_at_rr and progress_r >= policy.breakeven_at_rr:
-        candidate = entry
+        # The entry price is break-even only in a market that charges nothing. The caller
+        # passes the price that clears the actual round trip when it knows it; the entry
+        # remains the fallback so a position carried in a snapshot, or a caller with no
+        # cost model, still gets the old behaviour rather than no rule at all.
+        candidate = float(breakeven_price) if breakeven_price else entry
         if (up and candidate > new_stop) or (not up and candidate < new_stop):
             new_stop = candidate
             reason.append('breakeven')

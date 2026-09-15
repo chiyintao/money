@@ -103,6 +103,14 @@ class Settings:
     # trades to it, so it is a choice with a cost on both sides and has to be explicit.
     # 'market' preserves the previous behaviour exactly.
     entry_order_type: str = os.getenv("ENTRY_ORDER_TYPE", "market").strip().lower()
+    # How the exit meets the book. Every exit in this system is a market order -- the stop,
+    # the target, the time stop, the liquidation and the manual close all send one, and
+    # there is no resting exit order anywhere in the broker -- but the cost gate priced the
+    # exit as a maker leg whenever the entry was passive, so a resting entry was measured
+    # against 2 x maker when it actually paid maker in and taker plus spread out. The
+    # setting exists so a caller that introduces a genuinely passive exit can say so;
+    # 'market' is what the rest of the system does.
+    exit_order_type: str = os.getenv("EXIT_ORDER_TYPE", "market").strip().lower()
     # Where the passive entry rests. 0 joins the touch; a positive value improves on it by
     # this many basis points, which raises the maker fee but lowers the fill rate.
     entry_passive_offset_bps: float = _float("ENTRY_PASSIVE_OFFSET_BPS", 0.0)

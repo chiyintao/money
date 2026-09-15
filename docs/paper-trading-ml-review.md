@@ -361,7 +361,7 @@ freqtrade 明确文档化其回测的局限（`--eps` 位置叠加"结果无法�
 | `DerivativesStream`、`backfill_klines` 死代码 | 已修 | 与 `derivatives_collect.py`/`ingest.py` 重复，已删除 |
 | walk-forward purge/embargo、`portfolio_oos` 生产者 | 已修 | `app/models/portfolio_oos.py` 用同一 `PaperAccount`/`RiskEngine` 回放样本外预测；训练作业接线并写入候选 manifest |
 | 价格档位/状态机分散在六个模块 | 已修 | `app/core/order_state.py` 单一状态定义；`EXPIRED` 与 `CANCELED` 分离 |
-| 账户三套视图（持仓/现金/挂单）从不互校 | 已修 | `app/backtest/account_reconcile.py` 定时比对并上报差异 |
+| 账户三套视图（持仓/现金/挂单）从不互校 | 已修 | `app/ops/account_reconcile.py` 定时比对并上报差异（原在 `app/backtest/`，策略层为用它反向依赖回测层，已移入诊断层） |
 
 ### 9.3 修复过程中发现的新问题
 
@@ -973,7 +973,7 @@ PARTIALLY_FILLED: PARTIALLY_FILLED, FILLED, CANCELED, EXPIRED
 
 ### 20.5 本轮改动落点
 
-`app/core/order_state.py`（表修正 + `transition(changes)` + `_rebuilt()`）、`app/trading/broker.py`（`advance()` 唯一应用点 + `transition_refusals`）、`app/trading/execution.py`（深度成交路径改走 `broker.advance`）、`app/backtest/account_reconcile.py`（拒绝进 `findings`）、`app/ops/prometheus.py`（`order_transition_refused`）。
+`app/core/order_state.py`（表修正 + `transition(changes)` + `_rebuilt()`）、`app/trading/broker.py`（`advance()` 唯一应用点 + `transition_refusals`）、`app/trading/execution.py`（深度成交路径改走 `broker.advance`）、`app/ops/account_reconcile.py`（拒绝进 `findings`）、`app/ops/prometheus.py`（`order_transition_refused`）。
 
 ### 20.6 测试（本轮 +11，共 676，起点 665）
 

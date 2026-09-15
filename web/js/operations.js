@@ -40,17 +40,48 @@ export function operationsShell() {
 </section>`;
 }
 
+// Reasons that mean the signal is trading on unsupported ground. They were already being
+// rendered, but flattened into the same muted cell as "ensemble_agrees", so a signal the
+// model had no basis for looked exactly like one it did. 298 of the 303 signals that ever
+// reached ensemble_agrees carried out_of_distribution_warning, so this is the common case,
+// not an edge case.
+const ALARM_CODES = {
+  out_of_distribution_warning: "越界输入（模型未见过的取值）",
+  out_of_distribution: "越界输入（已拦截）",
+  degraded_features: "特征退化",
+  model_not_promoted: "未晋级权重",
+  edge_gate_disabled: "edge 门未启用",
+};
+
+function reasonCell(signal) {
+  const codes = signal.reason_codes || [];
+  const alarms = codes.filter(c => ALARM_CODES[c]).map(c => ALARM_CODES[c]);
+  const rest = codes.filter(c => !ALARM_CODES[c]);
+  let out = esc(signal.source || "—");
+  if (alarms.length) {
+    out += '<small class="down"><strong>' + esc(alarms.join(" · ")) + "</strong></small>";
+  }
+  if (rest.length) out += "<small>" + esc(rest.join(" · ")) + "</small>";
+  return out;
+}
+
 function decisionRow(signal) {
   const votes = Object.entries(signal.votes || {})
     .map(([name, v]) => esc(name) + " " + value(v * 10000, 3)).join(" · ");
   const when = signal.bar_time ? new Date(signal.bar_time).toLocaleString() : "—";
+  // "candidate" means the weights never passed promotion, and the loop trades them anyway
+  // while MODEL_REQUIRE_PROMOTED is 0. Showing the bare word invites the reading that it is
+  // a normal state rather than an unvalidated one.
+  const mode = signal.model_mode === "candidate"
+    ? '<small class="down"><strong>候选权重（未通过审核）</strong></small>'
+    : "<small>" + esc(String(signal.model_mode || "")) + "</small>";
   return "<tr>"
-    + "<td><b>" + esc(signal.symbol) + "</b><small>" + esc(String(signal.model_mode || "")) + "</small></td>"
+    + "<td><b>" + esc(signal.symbol) + "</b>" + mode + "</td>"
     + "<td>" + esc(signal.side || "—") + "</td>"
     + "<td>" + value(signal.edge_bps) + "</td>"
     + "<td>" + value(signal.agreement, 2) + "</td>"
     + '<td class="muted">' + (votes || "—") + "</td>"
-    + "<td>" + esc(signal.source || "—") + "<small>" + esc((signal.reason_codes || []).join(" · ")) + "</small></td>"
+    + "<td>" + reasonCell(signal) + "</td>"
     + "<td>" + esc(when) + "</td>"
     + "</tr>";
 }
@@ -122,6 +153,30 @@ export function renderModels(data, error = "") {
   html("modelRows", shadow.join("") || emptyRow(7, "暂无影子预测记录"));
 }
 
+// The reconciliation findings were sent by the backend and read by nothing.
+//
+// snapshot.py has put `state.reconciliation` in the payload for as long as the checker has
+// existed, and this view never looked at it. The consequence was measured on the real
+// database: 20 consecutive checks reported position_order_mismatch and cash_mismatch --
+// one account disagreeing with its own ledger by 612 units -- and no operator ever saw one,
+// because the only readout was "account_audit", a different field. A check whose result
+// nothing renders is a check that does not exist.
+function reconciliationCell(state) {
+  const report = state.reconciliation || {};
+  const findings = report.findings || [];
+  if (!report.checked_at) return ["账户核对", "尚未运行"];
+  const when = new Date(report.checked_at).toLocaleTimeString();
+  if (!findings.length) return ["账户核对", "一致 · " + when];
+  const positions = report.positions || {};
+  const differences = positions.differences || [];
+  // Name the symbol and the size of the disagreement, because "mismatch" alone does not
+  // tell an operator whether to act.
+  const detail = differences.slice(0, 3).map(d =>
+    esc(d.symbol) + " " + (d.difference == null ? "方向缺失" : value(d.difference, 4))).join(" · ");
+  const extra = differences.length > 3 ? " 等 " + differences.length + " 项" : "";
+  return ["账户核对", findings.join(",") + (detail ? " · " + detail + extra : "") + " · " + when];
+}
+
 export function renderHealth(state) {
   const connector = state.connector_health || {};
   const persistence = state.persistence || {};
@@ -131,10 +186,18 @@ export function renderHealth(state) {
     ["重连次数", value(connector.reconnects ?? state.ws_reconnects, 0)],
     ["风控", state.risk_state?.halted ? "已熔断" : "未熔断"],
     ["账户审计", state.account_audit ? JSON.stringify(state.account_audit) : "未知"],
+    reconciliationCell(state),
     ["持久化", Object.keys(persistence).length ? JSON.stringify(persistence) : "暂无状态"],
   ];
-  html("healthGrid", cells.map(([label, text]) =>
-    "<div><span>" + esc(label) + "</span><strong>" + esc(text) + "</strong></div>").join(""));
+  html("healthGrid", cells.map(([label, text]) => {
+    // A disagreement between the account and its ledger is the one cell here that means
+    // the numbers elsewhere on the page cannot be trusted, so it is coloured as a fault
+    // rather than left to look like every other reading.
+    const broken = label === "账户核对" && text.indexOf("一致") !== 0 && text !== "尚未运行";
+    return "<div><span>" + esc(label) + "</span>"
+      + (broken ? '<strong class="down">' + esc(text) + "</strong>"
+                : "<strong>" + esc(text) + "</strong>") + "</div>";
+  }).join(""));
 
   const fresh = Object.entries(state.mark_event_age_ms || {}).map(([symbol, age]) => {
     const recent = age >= 0 && age <= 5000;

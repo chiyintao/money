@@ -64,6 +64,22 @@ class RiskEngine:
     # budget scales linearly down to zero at no edge. Set to 0 to disable edge scaling
     # entirely, which restores the pre-audit behaviour of sizing every signal the same.
     sizing_reference_edge_bps: float=25.0
+    # The fraction of the per-trade risk budget a signal receives once it has cleared the
+    # entry gate, however small its measured edge.
+    #
+    # This exists because the reference above turned out to be a *scale* rather than a
+    # ceiling. Measured on 150 scored signals, the median net edge is -12 bps and the
+    # signals that clear the 0.5 bps floor cluster below 4 bps, while the reference sat at
+    # 25 -- so three quarters of everything that traded was sized at under a sixth of its
+    # budget, and the eight trades of the last session used a mean 13.9% of the $100 budget
+    # they were granted. The ramp is exact (scale == edge/25 up to the cap, independent of
+    # stop and target geometry), so that is not a rounding effect.
+    #
+    # A floor says something different and narrower than lowering the reference: it does not
+    # claim the model can rank a 2 bps signal against an 8 bps one. It claims only that
+    # clearing the gate is itself evidence worth acting on, which is the one judgement the
+    # gate was calibrated to make. 0 disables it and restores the pure ramp.
+    sizing_floor_scale: float=0.0
     # Volatility targeting. target_volatility is per bar and expressed in the same units as
     # the realized measure; 0 disables the scaling entirely.
     target_volatility: float=0.0
@@ -289,7 +305,15 @@ class RiskEngine:
             # which is what makes the two input forms agree instead of merely resembling
             # each other -- feeding edge_bps=0 and probability_up=break_even must produce
             # the same scale, and previously did not.
-            probability = break_even + (abs(float(edge_bps)) / 10000.0) / span
+            #
+            # The edge keeps its sign. This read abs(edge_bps), so a prediction of -10bp
+            # was sized exactly like +10bp: the worse the model expected the trade to be,
+            # the more of the risk budget it received. The serving layer computes a NET
+            # figure that is negative for any prediction below the round trip, so this was
+            # reachable on ordinary signals rather than only on malformed input, and the
+            # direction was already chosen by that layer -- a negative net edge means there
+            # was no trade there to size.
+            probability = break_even + (float(edge_bps) / 10000.0) / span
             probability = max(0.0, min(1.0, probability))
         inputs['implied_probability'] = round(probability, 6)
         kelly = kelly_at(probability)
@@ -316,7 +340,14 @@ class RiskEngine:
         # the caller needs to see.
         if scale <= 1e-9:
             return 0.0, inputs
-        return min(1.0, scale), inputs
+        # The floor is applied only to a signal that already has positive Kelly, so it can
+        # never turn a refusal into a position: the zero-scale return above has already
+        # happened by this point. It raises a small position, never creates one, and the
+        # report carries both numbers so the difference is visible in the artifact.
+        floor = max(0.0, min(1.0, float(self.sizing_floor_scale)))
+        inputs['scale_before_floor'] = round(scale, 6)
+        inputs['sizing_floor'] = floor
+        return min(1.0, max(scale, floor)), inputs
 
     def risk_budget(self, equity, open_risk=0.0):
         """Cash this entry may still lose: the per-trade cap inside what is left of the

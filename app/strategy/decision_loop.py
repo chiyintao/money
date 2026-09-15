@@ -427,6 +427,31 @@ def flush_account_events(runtime):
         state.stored_trades += 1
 
 
+def _breakeven_for(runtime, position):
+    """The cost-aware breakeven price for one open position, or None.
+
+    The levels are the broker's, not a guess: the fee the trade will pay on the way out
+    and the spread it will cross are the same numbers the account charges when the close
+    actually happens, and the entry-side fee is already recorded on the position. Without
+    this the "breakeven" rule moved the stop onto the entry price, which every close then
+    booked as a loss.
+    """
+    try:
+        broker = runtime.broker
+        return exit_policy.cost_aware_breakeven(
+            entry=position.entry, side=position.side,
+            fee_rate=getattr(broker, 'fee_rate', 0.0),
+            slippage_bps=getattr(broker, 'slippage_bps', 0.0),
+            # The entry leg's own fee is already on the position; what the exit will pay
+            # is the broker's rate, and only a genuinely passive entry avoids the spread.
+            maker_entry=bool(getattr(getattr(runtime, 'decisions', None), 'maker_entry', False)),
+            funding_rate=getattr(position, 'funding_rate', 0.0) or 0.0)
+    except Exception:
+        # A cost model that cannot be read is not a reason to skip exit management: the
+        # trailing and time-stop rules still apply, and the caller falls back to the entry.
+        return None
+
+
 def manage_open_position(runtime, symbol, price, now_ms=None):
     """Apply the exit policy to a position that is already open.
 
@@ -461,7 +486,9 @@ def manage_open_position(runtime, symbol, price, now_ms=None):
         getattr(runtime.settings, 'interval', '1m'))
     if opened and interval_ms > 0:
         bars_held = int((now_ms - opened) // interval_ms)
-    decision = exit_policy.manage_position(policy, position, price, atr, bars_held)
+    decision = exit_policy.manage_position(
+        policy, position, price, atr, bars_held,
+        breakeven_price=_breakeven_for(runtime, position))
     if not decision:
         return None
     if decision.get('exit_now'):
@@ -761,7 +788,7 @@ async def run_decision_loop(runtime):
         if now_seconds - float(getattr(cache, 'last_reconcile', 0) or 0) >= reconcile_interval:
             cache.last_reconcile = now_seconds
             try:
-                from ..backtest.account_reconcile import reconcile
+                from ..ops.account_reconcile import reconcile
 
                 report = reconcile(runtime)
                 runtime.reconciliation = report

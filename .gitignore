@@ -23,13 +23,28 @@ data/archive_cache/
 data/pretrained/
 data/wheels/
 
+# Built datasets. Regenerable in about two minutes per tier now that the builder
+# runs one process per symbol, so they are the first thing to drop before moving.
+data/research_v3/training_dataset*.jsonl
+data/research_v3/training_dataset*.profile.json
+
+# The daily panels behind the research write-ups. Same class as the tier datasets
+# above -- pure derived data, and each one carries a .manifest.json recording its
+# digest, columns and coverage. The manifest is kept (it is a few kilobytes and is
+# the evidence); the rows are not, because fifty-five megabytes of JSONL cannot be
+# compressed by git and would sit in the history for ever. Rebuild with:
+#   python -m app.models.daily_panel --output <path> --symbols <coins>
+data/research_v4/panel_*.jsonl
+
 # caches and scratch
 .pytest_cache/
 __pycache__/
 *.pyc
 catboost_info/
 data/_*.json
+data/_*.py
 data/ui_checks/
+_tmp_*
 
 # Contract specs and per-run state.
 data/contract_specs.json
